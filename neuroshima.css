@@ -1,0 +1,20 @@
+.sheet-color-mode0:checked ~ .sheet-root  {
+    --cprcs-text:   #000000ff;
+}
+
+.sheet-edit-mode0:checked ~ * .sheet-edit-mode,
+.sheet-edit-mode1:checked ~ * .sheet-readonly-mode {
+    display: none;
+}
+
+.sheet-main-content {
+    width: 100%;
+}
+
+.sheet-bookmark-container {
+    min-width: 40px;
+}
+
+.sheet-bookmark-container .sheet-bookmark-button {
+    writing-mode: vertical-lr;
+}
