@@ -28,12 +28,10 @@ function switchRadio(msg) {
     let paramsText = msg.content.replace("!nscs|-|switchRadio", "");
     let params = paramsText.split("|-|")
     let characterId = getParam(params, "csId:");
-    let sheetPage = getParam(params, "sheet_page:");
-    let originValue = getParam(params, "origin_value:");
 
-    setAttrNSCS(characterId, "sheet_page", sheetPage);
-    setAttrNSCS(characterId, "origin_value", originValue);
-
+    setAttrNSCS(characterId, "sheet_page", getParam(params, "sheet_page:"));
+    setAttrNSCS(characterId, "origin_value", getParam(params, "origin_value:"));
+    setAttrNSCS(characterId, "origin_skill_value", getParam(params, "origin_skill_value:"));
 }
 
 function getAttrNSCS(character, attrName, defaultValue) {
