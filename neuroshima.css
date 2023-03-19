@@ -5,24 +5,40 @@
     font-family: var(--nscs-main-font);
 }
 
-.sheet-color-mode0:checked ~ .sheet-root  {
-    --nscs-text:   #000000ff;
-}
-
 .sheet-background0:checked ~ .sheet-root  {
     --nscs-background1: black;
     --nscs-background2: black;
     --nscs-bookmark-background1: red;
     --nscs-bookmark-border1: 2px solid #7d0000;
     --nscs-bookmark-text-color: white;
+    --nscs-button-background: white;
+    --nscs-button-color: black;
+    --nscs-select-button-background: black;
+    --nscs-select-button-color: white;
 }
 
 .sheet-background1:checked ~ .sheet-root  {
+    --nscs-background1: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/LetherBackground1.jpg?raw=true");
+    --nscs-background2: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/LetherBackground2.jpg?raw=true");
+    --nscs-bookmark-background1: red;
+    --nscs-bookmark-border1: 2px solid #7d0000;
+    --nscs-bookmark-text-color: white;
+    --nscs-button-background: white;
+    --nscs-button-color: black;
+    --nscs-select-button-background: black;
+    --nscs-select-button-color: white;
+}
+
+.sheet-background2:checked ~ .sheet-root  {
     --nscs-background1: url("https://raw.githubusercontent.com/plrazorpl/neuroshima-cs/main/img/Page1.jpg");
     --nscs-background2: url("https://raw.githubusercontent.com/plrazorpl/neuroshima-cs/main/img/Page2.jpg");
     --nscs-bookmark-background1: red;
     --nscs-bookmark-border1: 2px solid #7d0000;
     --nscs-bookmark-text-color: white;
+    --nscs-button-background: white;
+    --nscs-button-color: black;
+    --nscs-select-button-background: black;
+    --nscs-select-button-color: white;
 }
 
 .sheet-row {
@@ -172,8 +188,12 @@
 }
 
 .sheet-main-content > .sheet-page .sheet-selectable-button {
-    background: black;
-    color: white;
+    background: var(--nscs-button-background);
+    color: var(--nscs-button-color);
+}
+
+.sheet-main-content > .sheet-page .sheet-selectable-button:before {
+    display: none;
 }
 
 .sheet-origin01:checked ~ * .sheet-origin-button01,
@@ -188,6 +208,36 @@
 .sheet-origin10:checked ~ * .sheet-origin-button10,
 .sheet-origin11:checked ~ * .sheet-origin-button11,
 .sheet-origin12:checked ~ * .sheet-origin-button12 {
-    background: white !important;
-    color: black !important;
+    background: var(--nscs-select-button-background) !important;
+    color: var(--nscs-select-button-color) !important;
+}
+
+.sheet-origin-description01,
+.sheet-origin-description02,
+.sheet-origin-description03,
+.sheet-origin-description04,
+.sheet-origin-description05,
+.sheet-origin-description06,
+.sheet-origin-description07,
+.sheet-origin-description08,
+.sheet-origin-description09,
+.sheet-origin-description10,
+.sheet-origin-description11,
+.sheet-origin-description12 {
+    display: none;
+}
+
+.sheet-origin01:checked ~ * .sheet-origin-description01,
+.sheet-origin02:checked ~ * .sheet-origin-description02,
+.sheet-origin03:checked ~ * .sheet-origin-description03,
+.sheet-origin04:checked ~ * .sheet-origin-description04,
+.sheet-origin05:checked ~ * .sheet-origin-description05,
+.sheet-origin06:checked ~ * .sheet-origin-description06,
+.sheet-origin07:checked ~ * .sheet-origin-description07,
+.sheet-origin08:checked ~ * .sheet-origin-description08,
+.sheet-origin09:checked ~ * .sheet-origin-description09,
+.sheet-origin10:checked ~ * .sheet-origin-description10,
+.sheet-origin11:checked ~ * .sheet-origin-description11,
+.sheet-origin12:checked ~ * .sheet-origin-description12 {
+    display: block;
 }
