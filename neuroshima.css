@@ -25,6 +25,72 @@
     --nscs-bookmark-text-color: white;
 }
 
+.sheet-row {
+    display: -webkit-box !important;
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.sheet-col-1 {
+    -webkit-box-flex: 0;
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+
+.sheet-col-2 {
+    -webkit-box-flex: 0;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.sheet-col-3 {
+    -webkit-box-flex: 0;
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+.sheet-col-4 {
+    -webkit-box-flex: 0;
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.sheet-col-5 {
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.sheet-col-6 {
+    -webkit-box-flex: 0;
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.sheet-col-7 {
+    -webkit-box-flex: 0;
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.sheet-col-8 {
+    -webkit-box-flex: 0;
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+
+.sheet-col-9 {
+    -webkit-box-flex: 0;
+    flex: 0 0 90%;
+    max-width: 90%;
+}
+
+.sheet-col-10 {
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
 .sheet-edit-mode0:checked ~ * .sheet-edit-mode,
 .sheet-edit-mode1:checked ~ * .sheet-readonly-mode {
     display: none;
@@ -47,12 +113,14 @@
 }
 
 .sheet-page1,
-.sheet-page2 {
+.sheet-page2,
+.sheet-page3 {
     display: none;
 }
 
 .sheet-page1-enable:checked ~ * .sheet-page1,
-.sheet-page2-enable:checked ~ * .sheet-page2 {
+.sheet-page2-enable:checked ~ * .sheet-page2,
+.sheet-page3-enable:checked ~ * .sheet-page3 {
     display: block;
 }
 
@@ -101,4 +169,25 @@
 .sheet-page {
     position: relative;
     z-index: 1;
+}
+
+.sheet-main-content > .sheet-page .sheet-selectable-button {
+    background: black;
+    color: white;
+}
+
+.sheet-origin01:checked ~ * .sheet-origin-button01,
+.sheet-origin02:checked ~ * .sheet-origin-button02,
+.sheet-origin03:checked ~ * .sheet-origin-button03,
+.sheet-origin04:checked ~ * .sheet-origin-button04,
+.sheet-origin05:checked ~ * .sheet-origin-button05,
+.sheet-origin06:checked ~ * .sheet-origin-button06,
+.sheet-origin07:checked ~ * .sheet-origin-button07,
+.sheet-origin08:checked ~ * .sheet-origin-button08,
+.sheet-origin09:checked ~ * .sheet-origin-button09,
+.sheet-origin10:checked ~ * .sheet-origin-button10,
+.sheet-origin11:checked ~ * .sheet-origin-button11,
+.sheet-origin12:checked ~ * .sheet-origin-button12 {
+    background: white !important;
+    color: black !important;
 }

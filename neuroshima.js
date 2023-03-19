@@ -29,8 +29,11 @@ function switchRadio(msg) {
     let params = paramsText.split("|-|")
     let characterId = getParam(params, "csId:");
     let sheetPage = getParam(params, "sheet_page:");
+    let originValue = getParam(params, "origin_value:");
 
-    setAttrNSCS(characterId, "sheet_page", +sheetPage);
+    setAttrNSCS(characterId, "sheet_page", sheetPage);
+    setAttrNSCS(characterId, "origin_value", originValue);
+
 }
 
 function getAttrNSCS(character, attrName, defaultValue) {
@@ -65,6 +68,9 @@ function getAttrNSCS(character, attrName, defaultValue) {
 }
 
 function setAttrNSCS(character, attrName, value) {
+    if (value == null) {
+        return;
+    }
     let attr = getAttrNSCS(character, attrName, value);
     attr.set({current: value});
 }
