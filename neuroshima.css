@@ -1,5 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.sheet-root {
+    --nscs-main-font: 'Roboto Mono', monospace;
+    font-family: var(--nscs-main-font);
+}
+
 .sheet-color-mode0:checked ~ .sheet-root  {
-    --cprcs-text:   #000000ff;
+    --nscs-text:   #000000ff;
+}
+
+.sheet-background0:checked ~ .sheet-root  {
+    --nscs-background1: black;
+    --nscs-background2: black;
+    --nscs-bookmark-background1: red;
+    --nscs-bookmark-border1: 2px solid #7d0000;
+    --nscs-bookmark-text-color: white;
+}
+
+.sheet-background1:checked ~ .sheet-root  {
+    --nscs-background1: url("https://raw.githubusercontent.com/plrazorpl/neuroshima-cs/main/img/Page1.jpg");
+    --nscs-background2: url("https://raw.githubusercontent.com/plrazorpl/neuroshima-cs/main/img/Page2.jpg");
+    --nscs-bookmark-background1: red;
+    --nscs-bookmark-border1: 2px solid #7d0000;
+    --nscs-bookmark-text-color: white;
 }
 
 .sheet-edit-mode0:checked ~ * .sheet-edit-mode,
@@ -7,14 +30,75 @@
     display: none;
 }
 
+.sheet-page {
+    min-height: 400px;
+}
+
+.sheet-page1 {
+    background: var(--nscs-background1);
+}
+
+.sheet-page2 {
+    background: var(--nscs-background2);
+}
+
+.sheet-page3 {
+    background: var(--nscs-background2);
+}
+
+.sheet-page1,
+.sheet-page2 {
+    display: none;
+}
+
+.sheet-page1-enable:checked ~ * .sheet-page1,
+.sheet-page2-enable:checked ~ * .sheet-page2 {
+    display: block;
+}
+
 .sheet-main-content {
     width: 100%;
 }
 
-.sheet-bookmark-container {
-    min-width: 40px;
+.sheet-bookmark {
+    vertical-align: top;
 }
 
-.sheet-bookmark-container .sheet-bookmark-button {
+.sheet-bookmark-container {
+    margin-right: -10px;
+    z-index: -1000;
+}
+
+.sheet-bookmark > .sheet-bookmark-container > button[class^="sheet-bookmark-button"] {
     writing-mode: vertical-lr;
+    background: var(--nscs-bookmark-background1);
+    color: var(--nscs-bookmark-text-color);
+    padding: 10px 5px 10px 35px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin: 2px 0;
+    border: var(--nscs-bookmark-border1);
+    border-left-style: none;
+    z-index: 0;
+    position: relative;
+    left: -20px;
+    font-family: var(--nscs-main-font);
+}
+
+.sheet-bookmark-button1:before,
+.sheet-bookmark-button2:before,
+.sheet-bookmark-button3:before {
+    display: none;
+}
+
+.sheet-page1-enable:checked ~ * .sheet-bookmark-button1,
+.sheet-page2-enable:checked ~ * .sheet-bookmark-button2,
+.sheet-page3-enable:checked ~ * .sheet-bookmark-button3 {
+    z-index: 100 !important;
+    left: -10px !important;
+}
+
+.sheet-page {
+    position: relative;
+    z-index: 1;
 }

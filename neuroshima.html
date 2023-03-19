@@ -8,23 +8,38 @@
 <input type='radio' class='sheet-edit-mode0' name='attr_edit_mode' style="display: none;" value='0' checked />
 <input type='radio' class='sheet-edit-mode1' name='attr_edit_mode' style="display: none;" value='1' />
 
+<input type='radio' class='sheet-background0' name='attr_background' style="display: none;" value='0' />
+<input type='radio' class='sheet-background1' name='attr_background' style="display: none;" value='1' checked />
+
+<input type='radio' class='sheet-page1-enable' name='attr_sheet_page' style="display: none;" value='0' checked />
+<input type='radio' class='sheet-page2-enable' name='attr_sheet_page' style="display: none;" value='1' />
+<input type='radio' class='sheet-page3-enable' name='attr_sheet_page' style="display: none;" value='2' />
+
 <div class="sheet-root">
     <table>
         <tr>
             <td class="sheet-main-content">
+                <div class="sheet-page sheet-page1">
 
+                </div>
+                <div class="sheet-page sheet-page2">
+
+                </div>
+                <div class="sheet-page sheet-page3">
+
+                </div>
             </td>
             <td class="sheet-bookmark">
                 <div class="sheet-bookmark-container">
-                    <div class="sheet-bookmark-button">
-                        Test 1
-                    </div>
-                    <div class="sheet-bookmark-button">
+                    <button type="roll" class="sheet-bookmark-button sheet-bookmark-button1" value="!nscs|-|switchRadio|-|sheet_page:0|-|csId:@{character_id}">
+                        Podstawowe
+                    </button>
+                    <button type="roll" class="sheet-bookmark-button sheet-bookmark-button2" value="!nscs|-|switchRadio|-|sheet_page:1|-|csId:@{character_id}">
                         Test 2
-                    </div>
-                    <div class="sheet-bookmark-button">
+                    </button>
+                    <button type="roll" class="sheet-bookmark-button sheet-bookmark-button3" value="!nscs|-|switchRadio|-|sheet_page:2|-|csId:@{character_id}">
                         Test 3
-                    </div>
+                    </button>
                 </div>
             </td>
         </tr>
