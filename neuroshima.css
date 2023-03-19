@@ -241,3 +241,7 @@
 .sheet-origin12:checked ~ * .sheet-origin-description12 {
     display: block;
 }
+
+.sheet-standard-image {
+    width: 100%
+}
