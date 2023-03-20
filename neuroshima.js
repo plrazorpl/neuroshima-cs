@@ -70,13 +70,13 @@ function recalculateData(characterId) {
 }
 
 function updateParams(params, characterId) {
-    setAttrNSCS(characterId, "sheet_page", getParam(params, "sheet_page:"));
-    setAttrNSCS(characterId, "origin_value", getParam(params, "origin_value:"));
-    setAttrNSCS(characterId, "origin_skill_value", getParam(params, "origin_skill_value:"));
-    setAttrNSCS(characterId, "profession_value", getParam(params, "profession_value:"));
-    setAttrNSCS(characterId, "profession_skill_value", getParam(params, "profession_skill_value:"));
-    setAttrNSCS(characterId, "specialization_value", getParam(params, "specialization_value:"));
-    setAttrNSCS(characterId, "main_page_value", getParam(params, "main_page_value:"));
+    params.forEach(element => {
+        let params = element.split(":");
+        if (params[0] === "csId") {
+            return;
+        }
+        setAttrNSCS(characterId, params[0], params[1]);
+    });
 
     recalculateData(characterId);
 }

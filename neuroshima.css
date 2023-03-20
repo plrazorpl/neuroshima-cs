@@ -1,31 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 .sheet-root {
-    --nscs-main-font: 'Roboto Mono', monospace;
+    --nscs-main-font: 'Courier New', 'Roboto Mono', monospace;
     font-family: var(--nscs-main-font);
+    font-weight: bold;
 }
 
 .sheet-background0:checked ~ .sheet-root  {
-    --nscs-background1: black;
-    --nscs-background2: black;
-    --nscs-bookmark-background1: red;
-    --nscs-bookmark-border1: 2px solid #7d0000;
-    --nscs-bookmark-text-color: white;
-    --nscs-button-background: white;
-    --nscs-button-color: black;
-    --nscs-select-button-background: black;
-    --nscs-select-button-color: white;
-    --nscs-standard-color-text: black;
-}
-
-.sheet-background1:checked ~ .sheet-root  {
-    --nscs-background1: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/LetherBackground1.jpg?raw=true");
-    --nscs-background2: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/LetherBackground2.jpg?raw=true");
-    --nscs-bookmark-background1: red;
-    --nscs-bookmark-border1: 2px solid #7d0000;
-    --nscs-bookmark-text-color: white;
-    --nscs-button-background: white;
-    --nscs-button-color: black;
+    --nscs-background1: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/To.jpg?raw=true");
+    --nscs-background2: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/To.jpg?raw=true");
+    --nscs-text-color: #46d525;
+    --nscs-text-disabled-color: #296a1a;
+    --nscs-button-background: none;
+    --nscs-button-color: #46d525;
+    --nscs-button-text-outline: none;
+    --nscs-button-border: 2px solid #296a1a;
+    --nscs-button-border-radius: 0;
+    --nscs-disabled-button-background: none;
+    --nscs-disabled-button-color: #46d525;
+    --nscs-disabled-button-text-outline: none;
+    --nscs-disabled-button-border: 2px solid #296a1a;
+    --nscs-upgrade-ico: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/Poziom.png?raw=true");
+    --nscs-settings-ico: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/Ustawienia.png?raw=true");
     --nscs-select-button-background: black;
     --nscs-select-button-color: white;
     --nscs-standard-color-text: white;
@@ -33,23 +29,82 @@
     --nscs-checked-ico:   url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/whitecheck.png?raw=true");
 }
 
-.sheet-background2:checked ~ .sheet-root  {
-    --nscs-background1: url("https://raw.githubusercontent.com/plrazorpl/neuroshima-cs/main/img/Page1.jpg");
-    --nscs-background2: url("https://raw.githubusercontent.com/plrazorpl/neuroshima-cs/main/img/Page2.jpg");
-    --nscs-bookmark-background1: red;
-    --nscs-bookmark-border1: 2px solid #7d0000;
-    --nscs-bookmark-text-color: white;
-    --nscs-button-background: white;
-    --nscs-button-color: black;
-    --nscs-select-button-background: black;
-    --nscs-select-button-color: white;
-    --nscs-standard-color-text: black;
+div[class^="sheet-root"] > div[class^="sheet-main-content"] {
+    color: var(--nscs-text-color);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] button {
+    color: var(--nscs-button-color);
+    background: var(--nscs-button-background);
+    text-shadow: var(--nscs-button-text-outline);
+    border: var(--nscs-button-border);
+    border-radius: var(--nscs-button-border-radius);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-borderless-input {
+    background: none;
+    color: var(--nscs-text-color);
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-borderless-input:active {
+    outline: none;
+}
+
+.sheet-first-column-to-right tr>td:nth-child(1) {
+    text-align: right;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-page1-table-text .sheet-borderless-input {
+    font-size: 1.8rem;
+}
+
+.sheet-photo-text {
+    font-size: 1.8rem;
+    text-align: center;
+    width: calc(100% - 30px);
+}
+
+.sheet-page1-table-text {
+    font-size: 1.8rem;
+    margin: 0 30px;
 }
 
 .sheet-row {
     display: -webkit-box !important;
     display: flex !important;
     flex-wrap: wrap;
+}
+
+.sheet-avatar-box-inside {
+    margin: 5px;
+    position: relative;
+}
+
+.sheet-col-1-3 {
+    -webkit-box-flex: 0;
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+}
+
+.sheet-col-header-l {
+    -webkit-box-flex: 0;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.sheet-col-header-m {
+    -webkit-box-flex: 0;
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+
+.sheet-col-header-r {
+    -webkit-box-flex: 0;
+    flex: 0 0 15%;
+    max-width: 15%;
 }
 
 .sheet-col-1 {
@@ -117,6 +172,145 @@
     text-align: center;
 }
 
+.sheet-subbuttons-header-section {
+    margin-top: 10px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-buttons-header button,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-col-header-r button {
+    width: 90%;
+    color: var(--nscs-disabled-button-color);
+    background: var(--nscs-disabled-button-background);
+    text-shadow: var(--nscs-disabled-button-text-outline);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-form-textarea {
+    border: var(--nscs-button-border);
+    background: #ffffff20;
+    color: var(--nscs-text-color);
+    margin: 10px;
+    height: 100%;
+    width: calc(100% - 30px);
+    resize: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] input[type="text"]:read-only {
+    width: 100%;
+    background: none;
+    color: var(--nscs-text-color);
+    border: var(--nscs-button-border);
+    text-align: center;
+}
+
+.sheet-page {
+    width: 95%;
+    margin: auto;
+}
+
+.sheet-form-page-1,
+.sheet-form-page-2,
+.sheet-form-page-3,
+.sheet-form-page-4,
+.sheet-form-page-5,
+.sheet-form-page-6 {
+    display: none;
+}
+
+.sheet-form-page01:checked ~ * .sheet-form-page-1,
+.sheet-form-page02:checked ~ * .sheet-form-page-2,
+.sheet-form-page03:checked ~ * .sheet-form-page-3,
+.sheet-form-page04:checked ~ * .sheet-form-page-4,
+.sheet-form-page05:checked ~ * .sheet-form-page-5,
+.sheet-form-page06:checked ~ * .sheet-form-page-6 {
+    display: block;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-form-page-number:before {
+    display: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-form-page-number {
+    border: none;
+    color: var(--nscs-text-disabled-color);
+    outline: none;
+    box-shadow: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-form-page-number-button:before {
+    display: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-form-page-number-button {
+    border: var(--nscs-button-border);
+    color: var(--nscs-text-color);
+    outline: none;
+    box-shadow: none;
+    display: none;
+}
+
+.sheet-form-paginator table {
+    margin: 30px auto;
+}
+
+.sheet-form-page-numberN6,
+.sheet-form-page-numberP1 {
+    color: var(--nscs-text-disabled-color) !important;
+    border: var(--nscs-disabled-button-border) !important;
+}
+
+.sheet-form-page01:checked ~ * .sheet-form-page-numberP1,
+.sheet-form-page02:checked ~ * .sheet-form-page-numberP2,
+.sheet-form-page03:checked ~ * .sheet-form-page-numberP3,
+.sheet-form-page04:checked ~ * .sheet-form-page-numberP4,
+.sheet-form-page05:checked ~ * .sheet-form-page-numberP5,
+.sheet-form-page06:checked ~ * .sheet-form-page-numberP6 {
+    display: initial !important;
+}
+
+.sheet-form-page01:checked ~ * .sheet-form-page-numberN1,
+.sheet-form-page02:checked ~ * .sheet-form-page-numberN2,
+.sheet-form-page03:checked ~ * .sheet-form-page-numberN3,
+.sheet-form-page04:checked ~ * .sheet-form-page-numberN4,
+.sheet-form-page05:checked ~ * .sheet-form-page-numberN5,
+.sheet-form-page06:checked ~ * .sheet-form-page-numberN6 {
+    display: initial !important;
+}
+
+.sheet-form-page01:checked ~ * .sheet-form-page-number1,
+.sheet-form-page02:checked ~ * .sheet-form-page-number2,
+.sheet-form-page03:checked ~ * .sheet-form-page-number3,
+.sheet-form-page04:checked ~ * .sheet-form-page-number4,
+.sheet-form-page05:checked ~ * .sheet-form-page-number5,
+.sheet-form-page06:checked ~ * .sheet-form-page-number6 {
+    color: var(--nscs-text-color) !important;
+}
+
+.sheet-main-page1-enable:checked ~ * .sheet-main-page-button01,
+.sheet-main-page2-enable:checked ~ * .sheet-main-page-button02,
+.sheet-main-page3-enable:checked ~ * .sheet-main-page-button03,
+.sheet-main-page4-enable:checked ~ * .sheet-main-page-button04,
+.sheet-main-page5-enable:checked ~ * .sheet-main-page-button05,
+.sheet-main-page6-enable:checked ~ * .sheet-main-page-button06,
+.sheet-page1-enable:checked ~ * .sheet-page-button01,
+.sheet-page2-enable:checked ~ * .sheet-page-button02,
+.sheet-page3-enable:checked ~ * .sheet-page-button03,
+.sheet-page4-enable:checked ~ * .sheet-page-button04,
+.sheet-page5-enable:checked ~ * .sheet-page-button05,
+.sheet-page6-enable:checked ~ * .sheet-page-button06,
+.sheet-page7-enable:checked ~ * .sheet-page-button07,
+.sheet-page8-enable:checked ~ * .sheet-page-button08,
+.sheet-page9-enable:checked ~ * .sheet-page-button09 {
+    color: var(--nscs-button-color) !important;
+    background: var(--nscs-button-background) !important;
+    text-shadow: var(--nscs-button-text-outline) !important;
+}
+
+.sheet-form-description {
+    font-weight: normal;
+    font-style: italic;
+    margin-top: 5px;
+}
+
 .sheet-main-page-header-function-available-info {
     position: absolute;
     left: 10px;
@@ -143,13 +337,65 @@
 
 .sheet-main-page-header-app-full-name {
     text-align: center;
-    border: 2px solid black;
-    display: inline;
-    padding: 0 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.sheet-main-page-button:before {
+.sheet-main-page-button:before,
+.sheet-upgrade-button:before,
+.sheet-settings-button:before {
     display: none;
+}
+
+.sheet-sop {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.sheet-micro-text {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.sheet-capp-logo {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.sheet-capp-logo img {
+    width: 90%;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-upgrade-button {
+    background: var(--nscs-upgrade-ico);
+    width: 30px;
+    height: 30px;
+    background-size: 59px;
+    background-repeat: no-repeat;
+    background-position: -11px -11px;
+    border: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-settings-button {
+    background: var(--nscs-settings-ico);
+    width: 30px;
+    height: 30px;
+    background-size: 59px;
+    background-repeat: no-repeat;
+    background-position: -11px -11px;
+    border: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-upgrade-button:active {
+    outline: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-settings-button:active {
+    outline: none;
+}
+
+.sheet-column-header-m-table {
+    margin-top: 37px;
 }
 
 .sheet-main-page-button {
@@ -173,57 +419,15 @@
     min-height: 400px;
 }
 
-.sheet-page1 {
-    background: var(--nscs-background1);
-}
-
-.sheet-page2 {
-    background: var(--nscs-background2);
-}
-
-.sheet-page3 {
-    background: var(--nscs-background1);
-}
-
-.sheet-page4 {
-    background: var(--nscs-background2);
-}
-
-.sheet-page5 {
-    background: var(--nscs-background1);
-}
-
-.sheet-page6 {
-    background: var(--nscs-background2);
-}
-
-.sheet-page7 {
-    background: var(--nscs-background1);
-}
-
-.sheet-page8 {
-    background: var(--nscs-background2);
-}
-
-.sheet-page9 {
-    background: var(--nscs-background1);
-}
-
-.sheet-page10 {
-    background: var(--nscs-background2);
-}
-
-.sheet-page11 {
-    background: var(--nscs-background1);
-}
-
-.sheet-page12 {
-    background: var(--nscs-background2);
-}
-
 .sheet-page1,
 .sheet-page2,
-.sheet-page3 {
+.sheet-page3,
+.sheet-page4,
+.sheet-page5,
+.sheet-page6,
+.sheet-page7,
+.sheet-page8,
+.sheet-page9 {
     display: none;
 }
 .sheet-main-page1-enable:checked ~ * .sheet-main-page1,
@@ -248,6 +452,8 @@
 
 .sheet-main-content {
     width: 100%;
+    background: var(--nscs-background1);
+    height: 860px;
 }
 
 .sheet-bookmark {
@@ -257,22 +463,6 @@
 .sheet-bookmark-container {
     margin-right: -10px;
     z-index: -1000;
-}
-
-.sheet-bookmark > .sheet-bookmark-container > button[class^="sheet-bookmark-button"] {
-    writing-mode: vertical-lr;
-    background: var(--nscs-bookmark-background1);
-    color: var(--nscs-bookmark-text-color);
-    padding: 10px 5px 10px 35px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    margin: 2px 0;
-    border: var(--nscs-bookmark-border1);
-    border-left-style: none;
-    z-index: 0;
-    position: relative;
-    left: -20px;
-    font-family: var(--nscs-main-font);
 }
 
 .sheet-bookmark-button1:before,
@@ -631,4 +821,10 @@
     background: var(--nscs-checked-ico);
     background-size: 20px;
     background-repeat: no-repeat;
+}
+
+.sheet-page1-title {
+    margin-top: 30px;
+    font-size: 2.5rem;
+    text-align: center;
 }

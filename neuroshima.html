@@ -1,11 +1,19 @@
-<input type='radio' class='sheet-main-page1-enable' name='attr_sheet_main_page_value' style="display: none;" value='0' checked />
-<input type='radio' class='sheet-main-page2-enable' name='attr_sheet_main_page_value' style="display: none;" value='1' />
-<input type='radio' class='sheet-main-page3-enable' name='attr_sheet_main_page_value' style="display: none;" value='2' />
-<input type='radio' class='sheet-main-page4-enable' name='attr_sheet_main_page_value' style="display: none;" value='3' />
-<input type='radio' class='sheet-main-page5-enable' name='attr_sheet_main_page_value' style="display: none;" value='4' />
+<input type='radio' class='sheet-main-page1-enable' name='attr_main_page_value' style="display: none;" value='0' checked />
+<input type='radio' class='sheet-main-page2-enable' name='attr_main_page_value' style="display: none;" value='1' />
+<input type='radio' class='sheet-main-page3-enable' name='attr_main_page_value' style="display: none;" value='2' />
+<input type='radio' class='sheet-main-page4-enable' name='attr_main_page_value' style="display: none;" value='3' />
+<input type='radio' class='sheet-main-page5-enable' name='attr_main_page_value' style="display: none;" value='4' />
+<input type='radio' class='sheet-main-page6-enable' name='attr_main_page_value' style="display: none;" value='5' />
 
 <input type='radio' class='sheet-employee-disable' name='attr_employee' style="display: none;" value='0' />
 <input type='radio' class='sheet-employee-enable'  name='attr_employee' style="display: none;" value='1' checked />
+
+<input type='radio' class='sheet-form-page01' name='attr_sheet_form_page' style="display: none;" value='0' checked />
+<input type='radio' class='sheet-form-page02' name='attr_sheet_form_page' style="display: none;" value='1' />
+<input type='radio' class='sheet-form-page03' name='attr_sheet_form_page' style="display: none;" value='2' />
+<input type='radio' class='sheet-form-page04' name='attr_sheet_form_page' style="display: none;" value='3' />
+<input type='radio' class='sheet-form-page05' name='attr_sheet_form_page' style="display: none;" value='4' />
+<input type='radio' class='sheet-form-page06' name='attr_sheet_form_page' style="display: none;" value='5' />
 
 <input type='radio' class='sheet-color-mode0' name='attr_sheet_color_mode' style="display: none;" value='0' checked />
 <input type='radio' class='sheet-color-mode1' name='attr_sheet_color_mode' style="display: none;" value='1' />
@@ -17,8 +25,7 @@
 <input type='radio' class='sheet-edit-mode0' name='attr_edit_mode' style="display: none;" value='0' checked />
 <input type='radio' class='sheet-edit-mode1' name='attr_edit_mode' style="display: none;" value='1' />
 
-<input type='radio' class='sheet-background0' name='attr_background' style="display: none;" value='0' />
-<input type='radio' class='sheet-background1' name='attr_background' style="display: none;" value='1' checked />
+<input type='radio' class='sheet-background0' name='attr_background' style="display: none;" value='0' checked />
 
 <input type='radio' class='sheet-page1-enable' name='attr_sheet_page' style="display: none;" value='0' checked />
 <input type='radio' class='sheet-page2-enable' name='attr_sheet_page' style="display: none;" value='1' />
@@ -170,59 +177,380 @@
 
 <div class="sheet-root">
     <div class="sheet-main-content">
-        <div class="sheet-main-page-header">
-            <div class="sheet-main-page-header-function-available-info">
-                * funkcja dostępna <br/>
-                tylko dla kierownictwa
-            </div>
-            <div class="sheet-main-page-header-logo">
-                logo
-            </div>
-            <div class="sheet-main-page-header-app-name">
-                C.A.P.P.
-            </div>
-            <div class="sheet-main-page-header-app-full-name">
-                Cyfrowy Analizer Predyspozycji Pracownika
-            </div>
-        </div>
-        <div>
-            <table>
-                <tr>
-                    <td>
+        <div class="sheet-row">
+            <div class="sheet-col-header-l">
+                <div class="sheet-main-page-header-app-full-name">
+                    Cyfrowy Analizer Predyspozycji Pracownika
+                </div>
+                <div class="sheet-row sheet-buttons-header">
+                    <div class="sheet-col-1-3">
                         <button type="roll" class="sheet-main-page-button sheet-main-page-button01" value="!nscs|-|switchRadio|-|main_page_value:0|-|csId:@{character_id}">
                             Konto pracownika
                         </button>
-                    </td>
-                    <td class="sheet-only-for-employee">
+                    </div>
+                    <div class="sheet-col-1-3">
                         <button type="roll" class="sheet-main-page-button sheet-main-page-button02" value="!nscs|-|switchRadio|-|main_page_value:1|-|csId:@{character_id}">
-                            Symulacja*
-                        </button>
-                    </td>
-                    <td>
-                        <button type="roll" class="sheet-main-page-button sheet-main-page-button03" value="!nscs|-|switchRadio|-|main_page_value:2|-|csId:@{character_id}">
                             Wyposażenie
                         </button>
-                    </td>
-                    <td>
-                        <button type="roll" class="sheet-main-page-button sheet-main-page-button04" value="!nscs|-|switchRadio|-|main_page_value:3|-|csId:@{character_id}">
-                            Konto pracownika
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-main-page-button03" value="!nscs|-|switchRadio|-|main_page_value:2|-|csId:@{character_id}">
+                            Notatki
                         </button>
-                    </td>
-                    <td class="sheet-expander"></td>
-                    <td>
-                        <button type="roll" class="sheet-main-page-button sheet-main-page-button05" value="!nscs|-|switchRadio|-|main_page_value:4|-|csId:@{character_id}">
-                            Ustawienia
+                    </div>
+                </div>
+                <div class="sheet-row sheet-buttons-header sheet-main-page1 sheet-subbuttons-header-section">
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button01" value="!nscs|-|switchRadio|-|sheet_page:0|-|csId:@{character_id}">
+                            Dane osobowe
                         </button>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button02" value="!nscs|-|switchRadio|-|sheet_page:1|-|csId:@{character_id}">
+                            Pochodzenie
+                        </button>
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button03" value="!nscs|-|switchRadio|-|sheet_page:2|-|csId:@{character_id}">
+                            Profesja
+                        </button>
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button04" value="!nscs|-|switchRadio|-|sheet_page:3|-|csId:@{character_id}">
+                            Współczynniki
+                        </button>
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button05" value="!nscs|-|switchRadio|-|sheet_page:4|-|csId:@{character_id}">
+                            Specjalizacje
+                        </button>
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button06" value="!nscs|-|switchRadio|-|sheet_page:5|-|csId:@{character_id}">
+                            Umiejętności
+                        </button>
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button07" value="!nscs|-|switchRadio|-|sheet_page:6|-|csId:@{character_id}">
+                            Sztuczki
+                        </button>
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button08" value="!nscs|-|switchRadio|-|sheet_page:7|-|csId:@{character_id}">
+                            Choroby
+                        </button>
+                    </div>
+                    <div class="sheet-col-1-3">
+                        <button type="roll" class="sheet-main-page-button sheet-page-button09" value="!nscs|-|switchRadio|-|sheet_page:8|-|csId:@{character_id}">
+                            Reputacja
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="sheet-col-header-m">
+                <table class="sheet-column-header-m-table">
+                    <tr>
+                        <td>
+                            <button type="roll" class="sheet-upgrade-button" value="!nscs|-|switchRadio|-|main_page_value:3|-|csId:@{character_id}">
+                            </button>
+                        </td>
+                        <td>
+                            <button type="roll" class="sheet-settings-button" value="!nscs|-|switchRadio|-|main_page_value:4|-|csId:@{character_id}">
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+                <div class="sheet-sop">
+                    S.O.P
+                </div>
+                <div class="sheet-micro-text">
+                    System obsługi
+                </div>
+                <div class="sheet-micro-text">
+                    pracownika
+                </div>
+                <div>
+                    <input type="text" name="attr_free_exp" readonly>
+                </div>
+            </div>
+            <div class="sheet-col-header-r">
+                <div class="sheet-capp-logo">
+                    <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/Logo_CAPP.png?raw=true">
+                </div>
+                <div>
+                    <button type="roll" class="sheet-main-page-button sheet-main-page-button06" value="!nscs|-|switchRadio|-|main_page_value:5|-|csId:@{character_id}">
+                        Symulacja
+                    </button>
+                </div>
+                <div class="sheet-micro-text">
+                    * funkcja dostępna
+                </div>
+                <div class="sheet-micro-text">
+                    tylko dla kierownictwa
+                </div>
+            </div>
         </div>
         <div class="sheet-main-page sheet-main-page1">
             <div class="sheet-page sheet-page1">
-                <div class="sheet-page-header">
-                    <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/Neurosima%20logo1.png?raw=true">
+                <div class="sheet-page1-title">
+                    Dane osobowe
                 </div>
+                <div class="sheet-row">
+                    <div class="sheet-col-7">
+                        <table class="sheet-first-column-to-right sheet-page1-table-text">
+                            <tr>
+                                <td>
+                                    Imię i Nazwisko:
+                                </td>
+                                <td>
+                                    <input name="attr_character_name" type="text" class="sheet-borderless-input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Pseudonim:
+                                </td>
+                                <td>
+                                    <input name="attr_street_name" type="text" class="sheet-borderless-input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Płeć:
+                                </td>
+                                <td>
+                                    <input name="attr_sex" type="text" class="sheet-borderless-input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Karnacja:
+                                </td>
+                                <td>
+                                    <input name="attr_complexion" type="text" class="sheet-borderless-input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Wiek:
+                                </td>
+                                <td>
+                                    <input name="attr_old" type="text" class="sheet-borderless-input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Skazy/blizny:
+                                </td>
+                                <td>
+                                    <input name="attr_scars" type="text" class="sheet-borderless-input">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="sheet-col-3">
+                        <div class="sheet-photo-text">
+                            Zdjęcie
+                        </div>
+                        <div class="sheet-avatar-box-inside">
+                            <img name="attr_character_avatar" style="width: calc(100% - 40px);">
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-page1-title" style="margin-top: 10px">
+                    Formularz
+                </div>
+                <div class="sheet-form-page-1">
+                    <div class="sheet-row">
+                        <div class="sheet-col-5">
+                            <div class="sheet-form-question">
+                                1. Jest późny wieczór, od zachodu zbliża się wichura, pierwsze podmuchy poruszają konarami skarłowaciałych drzew.
+                                Wyłaniasz się zza załomu muru, przekraczasz ulicę i wchodzisz do knajpy.
+                                Panujący w niej zgiełk ustaje, a zgromadzeni wewnątrz dostrzegają...
+                            </div>
+                            <div class="sheet-form-description">
+                                Jak wyglądasz? Jak się poruszasz, jak spoglądasz?
+                                Jesteś wysoki czy niski, ubierasz się niechlujnie czy szpanersko?
+                                Broń jest widoczna czy ukryta pod płaszczem?
+                                Jesteś pewny siebie czy raczej czujnym wzrokiem spoglądasz w stronę nieznajomych?
+                            </div>
+                        </div>
+                        <div class="sheet-col-5">
+                            <textarea class="sheet-form-textarea" name="attr_form_1"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-form-page-2">
+                    <div class="sheet-row">
+                        <div class="sheet-col-5">
+                            <div class="sheet-form-question">
+                                2. Siedzisz przy barze, rozglądając się po zniszczonych, poprzecinanych seriami pocisków ścianach.
+                                W pewnym momencie dosiada się facet o krzywym spojrzeniu i stawia ci piwo. Co robisz?
+                            </div>
+                            <div class="sheet-form-description">
+                                Jesteś kontaktowy czy mrukliwy? Łatwo nawiązujesz przyjaźnie czy raczej jesteś nieufny.
+                                A może twój styl bycia sprawia, że takie patałachy nigdy się do ciebie nie dosiadają?
+                                Gadasz jak najęty czy cedzisz słowa jak Clint Eastwood?
+                            </div>
+                        </div>
+                        <div class="sheet-col-5">
+                            <textarea class="sheet-form-textarea" name="attr_form_2"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-form-page-3">
+                    <div class="sheet-row">
+                        <div class="sheet-col-5">
+                            <div class="sheet-form-question">
+                                3. W końcu jeden z tych palantów podchodzi do jakieś laski i bez słowa uderza ją w twarz.
+                                Panienka przewraca się na ziemię, on kopie ją, a następnie łapie za włosy i wyciąga na zewnątrz knajpy.
+                                I co ty na to?
+                            </div>
+                            <div class="sheet-form-description">
+                                Jak z uczuciami? Wiesz co to litość? Jesteś brutalny czy delikatny?
+                                Co sądzisz o przemocy? Zabiłeś już kogoś czy nie? Masz jakieś zasady moralne? No jak, co z tobą?
+                            </div>
+                        </div>
+                        <div class="sheet-col-5">
+                            <textarea class="sheet-form-textarea" name="attr_form_3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-form-page-4">
+                    <div class="sheet-row">
+                        <div class="sheet-col-5">
+                            <div class="sheet-form-question">
+                                4. Zamieszanie się kończy, sączysz zimne piwo, cicha muzyka uspokaja cię.
+                                Wracasz wspomnieniami do dawnych dni, do czasów młodości. Wspominasz rodzinę...
+                            </div>
+                            <div class="sheet-form-description">
+                                Jakie masz nastawienie do tradycji i rodziny? Co sądzisz o swoim ojcu i matce?
+                                Masz rodzeństwo? Jesteś samotny czy może gdzieś daleko stąd ktoś na ciebie czeka?
+                            </div>
+                        </div>
+                        <div class="sheet-col-5">
+                            <textarea class="sheet-form-textarea" name="attr_form_4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-form-page-5">
+                    <div class="sheet-row">
+                        <div class="sheet-col-5">
+                            <div class="sheet-form-question">
+                                5. Przypominają ci się słowa twojego ojca. Możesz je powtórzyć?
+                            </div>
+                            <div class="sheet-form-description">
+                                Czy twój ojciec, lub ktoś inny, bardzo dla ciebie ważny, czegoś cię nauczył?
+                                Zdradził ci jakąś mądrość, prawdę życiową? Jest coś, za co go wyjątkowo szanujesz?
+                                Chciałbyś być taki jak on?
+                            </div>
+                        </div>
+                        <div class="sheet-col-5">
+                            <textarea class="sheet-form-textarea" name="attr_form_5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-form-page-6">
+                    <div class="sheet-row">
+                        <div class="sheet-col-5">
+                            <div class="sheet-form-question">
+                                6. Nagle spokój zostaje brutalnie przerwany hukiem wystrzału.
+                                Ktoś kogoś postrzelił, teraz wychodzą na zewnątrz,
+                                słychać krzyki, jeszcze jeden huk wystrzału.
+                                Ktoś właśnie kopnął w kalendarz. Dobrze, że to nie ty, co?
+                            </div>
+                            <div class="sheet-form-description">
+                                Boisz się śmierci? Jak reagujesz w sytuacjach niebezpiecznych?
+                                Mięknie ci rura czy dalej jesteś hardy?
+                                Myślisz czasami o końcu? Masz jakiś cel, który chciałbyś osiągnąć zanim wyciągniesz kopyta?
+                            </div>
+                        </div>
+                        <div class="sheet-col-5">
+                            <textarea class="sheet-form-textarea" name="attr_form_6"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-form-paginator">
+                    <table>
+                        <tr>
+                            <td>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberP1" value="!nscs|-|switchRadio|-|sheet_form_page:0|-|csId:@{character_id}">
+                                    Poprzednie
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberP2" value="!nscs|-|switchRadio|-|sheet_form_page:0|-|csId:@{character_id}">
+                                    Poprzednie
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberP3" value="!nscs|-|switchRadio|-|sheet_form_page:1|-|csId:@{character_id}">
+                                    Poprzednie
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberP4" value="!nscs|-|switchRadio|-|sheet_form_page:2|-|csId:@{character_id}">
+                                    Poprzednie
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberP5" value="!nscs|-|switchRadio|-|sheet_form_page:3|-|csId:@{character_id}">
+                                    Poprzednie
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberP6" value="!nscs|-|switchRadio|-|sheet_form_page:4|-|csId:@{character_id}">
+                                    Poprzednie
+                                </button>
+                            </td>
+                            <td>
+                                <button type="roll" class="sheet-form-page-number sheet-form-page-number1" value="!nscs|-|switchRadio|-|sheet_form_page:0|-|csId:@{character_id}">
+                                    1
+                                </button>
+                            </td>
+                            <td>
+                                <button type="roll" class="sheet-form-page-number sheet-form-page-number2" value="!nscs|-|switchRadio|-|sheet_form_page:1|-|csId:@{character_id}">
+                                    2
+                                </button>
+                            </td>
+                            <td>
+                                <button type="roll" class="sheet-form-page-number sheet-form-page-number3" value="!nscs|-|switchRadio|-|sheet_form_page:2|-|csId:@{character_id}">
+                                    3
+                                </button>
+                            </td>
+                            <td>
+                                <button type="roll" class="sheet-form-page-number sheet-form-page-number4" value="!nscs|-|switchRadio|-|sheet_form_page:3|-|csId:@{character_id}">
+                                    4
+                                </button>
+                            </td>
+                            <td>
+                                <button type="roll" class="sheet-form-page-number sheet-form-page-number5" value="!nscs|-|switchRadio|-|sheet_form_page:4|-|csId:@{character_id}">
+                                    5
+                                </button>
+                            </td>
+                            <td>
+                                <button type="roll" class="sheet-form-page-number sheet-form-page-number6" value="!nscs|-|switchRadio|-|sheet_form_page:5|-|csId:@{character_id}">
+                                    6
+                                </button>
+                            </td>
+                            <td>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberN1" value="!nscs|-|switchRadio|-|sheet_form_page:1|-|csId:@{character_id}">
+                                    Następne
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberN2" value="!nscs|-|switchRadio|-|sheet_form_page:2|-|csId:@{character_id}">
+                                    Następne
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberN3" value="!nscs|-|switchRadio|-|sheet_form_page:3|-|csId:@{character_id}">
+                                    Następne
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberN4" value="!nscs|-|switchRadio|-|sheet_form_page:4|-|csId:@{character_id}">
+                                    Następne
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberN5" value="!nscs|-|switchRadio|-|sheet_form_page:5|-|csId:@{character_id}">
+                                    Następne
+                                </button>
+                                <button type="roll" class="sheet-form-page-number-button sheet-form-page-numberN6" value="!nscs|-|switchRadio|-|sheet_form_page:5|-|csId:@{character_id}">
+                                    Następne
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
 
+        <div class="sheet-main-page sheet-main-page1">
+            <div class="sheet-page sheet-page2">
                 <div>
                     Pochodzenie
                 </div>
@@ -854,20 +1182,4 @@
 <!--                </div>-->
         </div>
     </div>
-    <td class="sheet-bookmark">
-        <div class="sheet-bookmark-container">
-            <button type="roll" class="sheet-bookmark-button sheet-bookmark-button1" value="!nscs|-|switchRadio|-|sheet_page:0|-|csId:@{character_id}">
-                Pochodzenie
-            </button>
-            <button type="roll" class="sheet-bookmark-button sheet-bookmark-button2" value="!nscs|-|switchRadio|-|sheet_page:1|-|csId:@{character_id}">
-                Profesja
-            </button>
-            <button type="roll" class="sheet-bookmark-button sheet-bookmark-button3" value="!nscs|-|switchRadio|-|sheet_page:2|-|csId:@{character_id}">
-                Współczynniki
-            </button>
-            <button type="roll" class="sheet-bookmark-button sheet-bookmark-button4" value="!nscs|-|switchRadio|-|sheet_page:3|-|csId:@{character_id}">
-                Specjalizacje
-            </button>
-        </div>
-    </td>
 </div>
