@@ -29,6 +29,8 @@
     --nscs-select-button-background: black;
     --nscs-select-button-color: white;
     --nscs-standard-color-text: white;
+    --nscs-unchecked-ico: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/whitenocheck.png?raw=true");
+    --nscs-checked-ico:   url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/whitecheck.png?raw=true");
 }
 
 .sheet-background2:checked ~ .sheet-root  {
@@ -254,6 +256,14 @@
     font-size: 1.5rem;
 }
 
+.sheet-origin-skill-info {
+    color: var(--nscs-standard-color-text);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 25px;
+    border-bottom: var(--nscs-standard-color-text) 2px solid;
+}
+
 .sheet-bold-description-text {
     color: var(--nscs-standard-color-text);
     font-size: 1.5rem;
@@ -262,4 +272,63 @@
 
 .sheet-origin-skill-section {
     margin-top: 15px;
+}
+
+.sheet-main-content > .sheet-page button {
+    min-height: 16px;
+    min-width: 16px;
+    border: none;
+}
+
+.sheet-main-content > .sheet-page button:before {
+    display: none;
+}
+
+.sheet-main-content > .sheet-page .sheet-check-ico {
+    background: var(--nscs-unchecked-ico);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.sheet-origin-skill01:checked ~ * .sheet-check-origin-skill01,
+.sheet-origin-skill02:checked ~ * .sheet-check-origin-skill02,
+.sheet-origin-skill03:checked ~ * .sheet-check-origin-skill03,
+.sheet-origin-skill04:checked ~ * .sheet-check-origin-skill04,
+.sheet-origin-skill05:checked ~ * .sheet-check-origin-skill05,
+.sheet-origin-skill06:checked ~ * .sheet-check-origin-skill06,
+.sheet-origin-skill07:checked ~ * .sheet-check-origin-skill07,
+.sheet-origin-skill08:checked ~ * .sheet-check-origin-skill08,
+.sheet-origin-skill09:checked ~ * .sheet-check-origin-skill09,
+.sheet-origin-skill10:checked ~ * .sheet-check-origin-skill10,
+.sheet-origin-skill11:checked ~ * .sheet-check-origin-skill11,
+.sheet-origin-skill12:checked ~ * .sheet-check-origin-skill12,
+.sheet-origin-skill13:checked ~ * .sheet-check-origin-skill13,
+.sheet-origin-skill14:checked ~ * .sheet-check-origin-skill14,
+.sheet-origin-skill15:checked ~ * .sheet-check-origin-skill15,
+.sheet-origin-skill16:checked ~ * .sheet-check-origin-skill16,
+.sheet-origin-skill17:checked ~ * .sheet-check-origin-skill17,
+.sheet-origin-skill18:checked ~ * .sheet-check-origin-skill18,
+.sheet-origin-skill19:checked ~ * .sheet-check-origin-skill19,
+.sheet-origin-skill20:checked ~ * .sheet-check-origin-skill20,
+.sheet-origin-skill21:checked ~ * .sheet-check-origin-skill21,
+.sheet-origin-skill22:checked ~ * .sheet-check-origin-skill22,
+.sheet-origin-skill23:checked ~ * .sheet-check-origin-skill23,
+.sheet-origin-skill24:checked ~ * .sheet-check-origin-skill24,
+.sheet-origin-skill25:checked ~ * .sheet-check-origin-skill25,
+.sheet-origin-skill26:checked ~ * .sheet-check-origin-skill26,
+.sheet-origin-skill27:checked ~ * .sheet-check-origin-skill27,
+.sheet-origin-skill28:checked ~ * .sheet-check-origin-skill28,
+.sheet-origin-skill29:checked ~ * .sheet-check-origin-skill29,
+.sheet-origin-skill30:checked ~ * .sheet-check-origin-skill30,
+.sheet-origin-skill31:checked ~ * .sheet-check-origin-skill31,
+.sheet-origin-skill32:checked ~ * .sheet-check-origin-skill32,
+.sheet-origin-skill33:checked ~ * .sheet-check-origin-skill33,
+.sheet-origin-skill34:checked ~ * .sheet-check-origin-skill34,
+.sheet-origin-skill35:checked ~ * .sheet-check-origin-skill35,
+.sheet-origin-skill36:checked ~ * .sheet-check-origin-skill36 {
+    background: var(--nscs-checked-ico);
+    background-size: 20px;
+    background-repeat: no-repeat;
 }
