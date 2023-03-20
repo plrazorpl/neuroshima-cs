@@ -76,6 +76,7 @@ function updateParams(params, characterId) {
     setAttrNSCS(characterId, "profession_value", getParam(params, "profession_value:"));
     setAttrNSCS(characterId, "profession_skill_value", getParam(params, "profession_skill_value:"));
     setAttrNSCS(characterId, "specialization_value", getParam(params, "specialization_value:"));
+    setAttrNSCS(characterId, "main_page_value", getParam(params, "main_page_value:"));
 
     recalculateData(characterId);
 }

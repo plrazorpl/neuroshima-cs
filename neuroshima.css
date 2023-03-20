@@ -112,6 +112,58 @@
     max-width: 100%;
 }
 
+.sheet-main-page-header {
+    position: relative;
+    text-align: center;
+}
+
+.sheet-main-page-header-function-available-info {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.sheet-main-page-header-logo {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.sheet-main-page-header-app-name {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 150px;
+    border: 2px solid black;
+    margin: 5px auto;
+}
+
+.sheet-main-page-header-app-full-name {
+    text-align: center;
+    border: 2px solid black;
+    display: inline;
+    padding: 0 20px;
+}
+
+.sheet-main-page-button:before {
+    display: none;
+}
+
+.sheet-main-page-button {
+
+}
+
+.sheet-expander {
+    width: 100%;
+}
+
+.sheet-employee-disable:checked ~ * .sheet-only-for-employee {
+    display: none;
+}
+
 .sheet-edit-mode0:checked ~ * .sheet-edit-mode,
 .sheet-edit-mode1:checked ~ * .sheet-readonly-mode {
     display: none;
@@ -174,7 +226,11 @@
 .sheet-page3 {
     display: none;
 }
-
+.sheet-main-page1-enable:checked ~ * .sheet-main-page1,
+.sheet-main-page2-enable:checked ~ * .sheet-main-page2,
+.sheet-main-page3-enable:checked ~ * .sheet-main-page3,
+.sheet-main-page4-enable:checked ~ * .sheet-main-page4,
+.sheet-main-page5-enable:checked ~ * .sheet-main-page5,
 .sheet-page1-enable:checked ~ * .sheet-page1,
 .sheet-page2-enable:checked ~ * .sheet-page2,
 .sheet-page3-enable:checked ~ * .sheet-page3,
