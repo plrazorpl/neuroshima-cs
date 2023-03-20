@@ -130,6 +130,42 @@
 }
 
 .sheet-page3 {
+    background: var(--nscs-background1);
+}
+
+.sheet-page4 {
+    background: var(--nscs-background2);
+}
+
+.sheet-page5 {
+    background: var(--nscs-background1);
+}
+
+.sheet-page6 {
+    background: var(--nscs-background2);
+}
+
+.sheet-page7 {
+    background: var(--nscs-background1);
+}
+
+.sheet-page8 {
+    background: var(--nscs-background2);
+}
+
+.sheet-page9 {
+    background: var(--nscs-background1);
+}
+
+.sheet-page10 {
+    background: var(--nscs-background2);
+}
+
+.sheet-page11 {
+    background: var(--nscs-background1);
+}
+
+.sheet-page12 {
     background: var(--nscs-background2);
 }
 
@@ -141,7 +177,16 @@
 
 .sheet-page1-enable:checked ~ * .sheet-page1,
 .sheet-page2-enable:checked ~ * .sheet-page2,
-.sheet-page3-enable:checked ~ * .sheet-page3 {
+.sheet-page3-enable:checked ~ * .sheet-page3,
+.sheet-page4-enable:checked ~ * .sheet-page4,
+.sheet-page5-enable:checked ~ * .sheet-page5,
+.sheet-page6-enable:checked ~ * .sheet-page6,
+.sheet-page7-enable:checked ~ * .sheet-page7,
+.sheet-page8-enable:checked ~ * .sheet-page8,
+.sheet-page9-enable:checked ~ * .sheet-page9,
+.sheet-page10-enable:checked ~ * .sheet-page10,
+.sheet-page11-enable:checked ~ * .sheet-page11,
+.sheet-page12-enable:checked ~ * .sheet-page12 {
     display: block;
 }
 
@@ -176,13 +221,31 @@
 
 .sheet-bookmark-button1:before,
 .sheet-bookmark-button2:before,
-.sheet-bookmark-button3:before {
+.sheet-bookmark-button3:before,
+.sheet-bookmark-button4:before,
+.sheet-bookmark-button5:before,
+.sheet-bookmark-button6:before,
+.sheet-bookmark-button7:before,
+.sheet-bookmark-button8:before,
+.sheet-bookmark-button9:before,
+.sheet-bookmark-button10:before,
+.sheet-bookmark-button11:before,
+.sheet-bookmark-button12:before {
     display: none;
 }
 
 .sheet-page1-enable:checked ~ * .sheet-bookmark-button1,
 .sheet-page2-enable:checked ~ * .sheet-bookmark-button2,
-.sheet-page3-enable:checked ~ * .sheet-bookmark-button3 {
+.sheet-page3-enable:checked ~ * .sheet-bookmark-button3,
+.sheet-page4-enable:checked ~ * .sheet-bookmark-button4,
+.sheet-page5-enable:checked ~ * .sheet-bookmark-button5,
+.sheet-page6-enable:checked ~ * .sheet-bookmark-button6,
+.sheet-page7-enable:checked ~ * .sheet-bookmark-button7,
+.sheet-page8-enable:checked ~ * .sheet-bookmark-button8,
+.sheet-page9-enable:checked ~ * .sheet-bookmark-button9,
+.sheet-page10-enable:checked ~ * .sheet-bookmark-button10,
+.sheet-page11-enable:checked ~ * .sheet-bookmark-button11,
+.sheet-page12-enable:checked ~ * .sheet-bookmark-button12 {
     z-index: 100 !important;
     left: -10px !important;
 }
@@ -280,6 +343,7 @@
 }
 
 .sheet-origin-skill-info,
+.sheet-ability-info,
 .sheet-profession-skill-info {
     color: var(--nscs-standard-color-text);
     font-size: 2.5rem;
@@ -295,6 +359,7 @@
 }
 
 .sheet-origin-skill-section,
+.sheet-ability-section,
 .sheet-profession-skill-section {
     margin-top: 15px;
 }
@@ -501,4 +566,13 @@
 .sheet-profession25:checked ~ * .sheet-profession-description25,
 .sheet-profession26:checked ~ * .sheet-profession-description26 {
     display: block;
+}
+
+.sheet-specialization01:checked ~ * .sheet-check-specialization01,
+.sheet-specialization02:checked ~ * .sheet-check-specialization02,
+.sheet-specialization03:checked ~ * .sheet-check-specialization03,
+.sheet-specialization04:checked ~ * .sheet-check-specialization04 {
+    background: var(--nscs-checked-ico);
+    background-size: 20px;
+    background-repeat: no-repeat;
 }
