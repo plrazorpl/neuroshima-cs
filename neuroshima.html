@@ -866,7 +866,13 @@
                                         Człowiek z... nie twój zasrany interes
                                     </div>
                                     <div class="sheet-origin-bonus">
-                                        +1 do dowwwwwolneolneolneolneolnegggggo Wsp.o Wsp.o Wsp.o Wsp.o Ws
+                                        <select name="attr_origin_selected_ability">
+                                            <option value="bd">+1 do budowy</option>
+                                            <option value="ag">+1 do zręczności</option>
+                                            <option value="pr">+1 do percepcji</option>
+                                            <option value="cha">+1 do charakteru</option>
+                                            <option value="int">+1 do sprytu</option>
+                                        </select>
                                     </div>
                                     <div class="sheet-origin-description">
                                         <div class="sheet-origin-description-paragraph">
@@ -1080,71 +1086,571 @@
                         </div>
                     </div>
                 </div>
-                <div class="sheet-origin-description01">
-                    <div class="sheet-row">
-                        <div class="sheet-col-7">
-                            <div class="sheet-standard-description-text">
-                                W świecie rządzonym przez mordercę, reguły są jasne i proste. Trzeba umieć walczyć,
-                                by przeżyć. Jeśli ktoś coś ci ukradł, to znaczy, że źle tego strzegłeś. Jeśli ktoś
-                                obił ci mordę, to znaczy, że ci się należało. <br/>
-                                Nie ma sądów. Nie ma dziesięciu przykazań. Nie ma gadki o nie pożądaniu żony
-                                bliźniego swego. Co się tak gapisz?! Tak, pochodzę z Hegemoni i jakoś nie narzekam.
-                                To twarda szkoła życia, ale wierz mi, nie chciałbym urodzić się gdzie indziej. Nasz
-                                świat jest prosty: albo ktoś mówi ci prawdę, albo strzelasz mu w łeb. Albo potrafisz
-                                udowodnić, że jesteś mężczyzną, albo kopiesz w kalendarz nim dożyjesz dwudziestki.<br/>
-                                Dlatego Hegemonia się rozrasta, a ty szczasz na mój widok i kulisz za każdym
-                                razem, kiedy podnoszę głos. Pochodzę z Hegemonii i we mnie jest siła.<br/>
-                                Jeśli spotkasz kogoś, kto wychował się u nas, nie zadzieraj z nim. Nie próbuj go
-                                oszukać, ani okłamać. Nie próbuj być cwany. Nie warto.
-                            </div>
-                            <div class="sheet-origin-skill-info">
-                                Cechy (wybierz jedną)
-                            </div>
-                            <div class="sheet-origin-skill-section">
-                                <div class="sheet-bold-description-text">
-                                    <button type="roll" class="sheet-check-ico sheet-check-origin-skill01" value="!nscs|-|switchRadio|-|origin_skill_value:0|-|csId:@{character_id}">
-                                    </button> Urodzony morderca
+                <div class="sheet-origin-select-title">
+                    Cechy (wybierz jedną z nich)
+                </div>
+                <div class="sheet-origin-skills">
+                    <div class="sheet-origin-skill-package01">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill01" value="!nscs|-|switchRadio|-|origin_skill_value:0|-|csId:@{character_id}">
+                                        Urodzony morderca
+                                    </button>
                                 </div>
-                                <div class="sheet-standard-description-text">
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description01">
                                     Wyrzuciliby cię z Areny za szczególne bestialstwo.
-                                    Wybierz sobie dowolny pakiet Umiejętności Wojownika. <br/>
-                                    Wszystkie Umiejętności z paczki posiadasz na
-                                    poziomie +2.
+                                    Wybierz sobie dowolny pakiet Umiejętności Wojownika.
+                                    Wszystkie Umiejętności z paczki posiadasz na poziomie +2
                                 </div>
                             </div>
-                            <div class="sheet-origin-skill-section">
-                                <div class="sheet-bold-description-text">
-                                    <button type="roll" class="sheet-check-ico sheet-check-origin-skill02" value="!nscs|-|switchRadio|-|origin_skill_value:1|-|csId:@{character_id}">
-                                    </button> Wiesz, zjadłem własnego psa
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill02" value="!nscs|-|switchRadio|-|origin_skill_value:1|-|csId:@{character_id}">
+                                        Wiesz, zjadłem własnego psa
+                                    </button>
                                 </div>
-                                <div class="sheet-standard-description-text">
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description02">
                                     Budzisz grozę. Twój widok paraliżuje. Jeżeli udało ci
                                     się kogoś zastraszyć (test Morale przed walką), w
-                                    walce z nim automatycznie wygrywasz Inicjatywę.
+                                    walce z nim automatycznie wygrywasz Inicjatywę
                                 </div>
                             </div>
-                            <div class="sheet-origin-skill-section">
-                                <div class="sheet-bold-description-text">
-                                    <button type="roll" class="sheet-check-ico sheet-check-origin-skill03" value="!nscs|-|switchRadio|-|origin_skill_value:2|-|csId:@{character_id}">
-                                    </button> Zawzięty sukinkot
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill03" value="!nscs|-|switchRadio|-|origin_skill_value:2|-|csId:@{character_id}">
+                                        Zawzięty sukinkot
+                                    </button>
                                 </div>
-                                <div class="sheet-standard-description-text">
-                                    Mówią o tobie, że pociągniesz do grobu swojego zabójcę.
-                                    To prawda. Jesteś uparty, twardy i nie popuszczasz.
-                                    Raz w ciągu sesji, podczas wykonywania testu
-                                    Umiejętności, zamiast wymaganego Współczynnika
-                                    możesz użyć Charakteru.
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description03">
+                                    Mówią o tobie, że pociągniesz do grobu swojego zabójcę. To prawda. Jesteś uparty, twardy i nie popuszczasz.
+                                    Raz w ciągu sesji, podczas wykonywania testu Umiejętności, zamiast wymaganego Współczynnika możesz użyć Charakteru.
                                 </div>
                             </div>
                         </div>
-                        <div class="sheet-col-3">
-                            <div class="sheet-standard-description-text">
-                                Cecha: +1 do Budowy
+                    </div>
+                    <div class="sheet-origin-skill-package02">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill04" value="!nscs|-|switchRadio|-|origin_skill_value:3|-|csId:@{character_id}">
+                                        Fart
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description04">
+                                    No i z czego się cieszysz? Myślisz, że masz farta i
+                                    właśnie dlatego jesteś bezpieczny, jak jajeczko pod
+                                    dupcią mamusi kurki? A chcesz przetestować swoje
+                                    szczęście? Popatrz, załaduję jedną kulę i zagramy w
+                                    rosyjską ruletkę, chcesz? Co, tak... Poważnie chcesz?
+                                    Jesteś chory.
+                                    Wiesz, zróbmy tak, że trzykrotnie podczas sesji
+                                    możesz powtórzyć jeden nieudany rzut na dowolnej
+                                    z trzech kości.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill05" value="!nscs|-|switchRadio|-|origin_skill_value:4|-|csId:@{character_id}">
+                                        Hazardzista
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description05">
+                                    Zwinne paluszki to bogactwo naturalne. Znasz tysiąc oszustw.
+                                    Miałeś okazję wyćwiczyć swoje dłonie i manipulujesz nimi lepiej niż japoński robot.
+                                    Zaczynasz grę posiadając (gratisowo!) wszystkie Umiejętności z pakietu Zdolności manualne na poziomie +2
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill06" value="!nscs|-|switchRadio|-|origin_skill_value:5|-|csId:@{character_id}">
+                                        Telepata
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description06">
+                                    A ty telepata jesteś? Skąd wiesz, że on blefuje? Co znaczy, że on nas nie zabije? Masz to gdzieś na piśmie? Chyba nie myślisz, że ci uwierzę!
+                                    Poziom trudności wszystkich testów Blefu, Perswazji i Zastraszania w stosunku do ciebie jest zwiększany o jeden w górę.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package03">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill07" value="!nscs|-|switchRadio|-|origin_skill_value:6|-|csId:@{character_id}">
+                                        Towarzysz
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description07">
+                                    Ten skorpion to też twój przyjaciel? Wiesz, psa bym zrozumiał, może
+                                    jakiegoś ptaka, czy coś. Ale skorpion? Wybierz sobie inne!
+                                    Możesz wybrać jedno zwierzę, które będzie twoim kompanem,
+                                    będzie ci służyło, ale musisz je kochać. Zwierzęciem może być dowol-ny ssak,
+                                    ptak, gad lub inne stworzenie, za pozwoleniem MG. Od tej
+                                    pory jest was dwóch. Gdybyś na przykład miał tandem, moglibyście
+                                    sobie pojeździć po pustyni, he, he...
+                                    Takiemu towarzyszowi możesz wydawać kilka rodzajów poleceń,
+                                    jak np. „bierz go”, „do nogi”, „cicho”, „leżeć” itp.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill08" value="!nscs|-|switchRadio|-|origin_skill_value:7|-|csId:@{character_id}">
+                                        Jestem duchem pustyni
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description08">
+                                    Nauczyłeś się przydatnej sztuczki. W trudnych warunkach (wysoka
+                                    temperatura lub brak pożywienia i wody), potrafisz pogrążyć się w
+                                    katalepsji i przeżyć. W stanie uśpienia leżysz nieruchomo i nie odbierasz żadnych
+                                    bodźców zewnętrznych do czasu, aż warunki staną się
+                                    bardziej sprzyjające. W ten sposób możesz przetrwać trzy miesiące.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill09" value="!nscs|-|switchRadio|-|origin_skill_value:8|-|csId:@{character_id}">
+                                        Polegam tylko na sobie
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description09">
+                                    Jeżeli posługujesz się bronią własnej roboty (nie dotyczy broni palnej),
+                                    lub jakimkolwiek innym wykonanym przez siebie narzędziem,
+                                    w każdym teście z jego wykorzystaniem możesz odjąć dwa oczka od
+                                    rzutu na jednej z kostek.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package04">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill10" value="!nscs|-|switchRadio|-|origin_skill_value:9|-|csId:@{character_id}">
+                                        Zalety klasycznego <br/>
+                                        wykształcenia
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description10">
+                                    Miałeś bardzo dobrych nauczycieli. Jeżeli na dalszym etapie
+                                    tworzenia postaci wybierzesz jako specjalizację Technika, otrzymujesz dodatkowe 10 punktów do wydania na Umiejętności
+                                    oparte o Spryt.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill11" value="!nscs|-|switchRadio|-|origin_skill_value:10|-|csId:@{character_id}">
+                                        Wizja
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description11">
+                                    Wiele lat odbudowywania NJ nauczyło cię, jak pracować w ruinach. Teraz możesz wjechać nawet do największej dziury, ale
+                                    nie dostrzeżesz ruin i syfu, lecz plac budowy. Taki optymizm
+                                    przydaje się w wielu sytuacjach. Jesteś w jakiejś zapadłej wiosce, którą w ciągu ośmiu godzin trzeba zamienić na twierdzę?
+                                    Inni by płakali. Ty zabierasz się do roboty. MG jest zobowiązany podpowiedzieć ci, jak najlepiej odbudować lub przebudować
+                                    daną lokację - według potrzeb (nocleg, dom, twierdza itp.).
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill12" value="!nscs|-|switchRadio|-|origin_skill_value:11|-|csId:@{character_id}">
+                                        Czas patriotów
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description12">
+                                    Heroizm to twoje drugie imię. Raz na sesję, wykonując test
+                                    Cholernie trudny możesz dodać wartość swojego Charakteru do
+                                    testowanej Umiejętności. Krótko mówiąc, raz na sesję zdajesz
+                                    automatycznie test, mam rację?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package05">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill13" value="!nscs|-|switchRadio|-|origin_skill_value:12|-|csId:@{character_id}">
+                                        Człowiek zwany koniem
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description13">
+                                    Jesteś silny jak wół, zwinny jak puma i twardy jak
+                                    głaz. Kiedy idziesz po górach, powodujesz lawinę.
+                                    Kiedy dosiadasz konia, to koń... Co ja ci zresztą będę
+                                    opowiadał? Wybierz pakiet Umiejętności - Sprawność
+                                    albo Jeździectwo. Poziom trudności każdego testu
+                                    Umiejętności z wybranej grupy jest obniżany o jeden poziom.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill14" value="!nscs|-|switchRadio|-|origin_skill_value:13|-|csId:@{character_id}">
+                                        Doktor Quinn
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description14">
+                                    Nigdy nie słyszałeś o doktor Quinn? Żona „człowieka
+                                    obrusa”, najsłynniejsza felczerka z Teksau. Jeździ i
+                                    leczy. Zresztą nie tylko ona! Każda kobieta pochodząca z Teksasu posiada wszystkie
+                                    Umiejętności z pakietu Medycyna na poziomie +4. Każda, dasz wiarę?
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill15" value="!nscs|-|switchRadio|-|origin_skill_value:14|-|csId:@{character_id}">
+                                        Zdrowa okolica
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description15">
+                                    Wychowałeś się w zdrowej, nieskażonej okolicy.
+                                    Jesteś dobrze odżywiony i nie zostałeś napromieniowany.
+                                    Na etapie tworzenia postaci nie musisz wykonywać rzutu określającego choroby, jakich się nabawiłeś.
+                                    I jak? Teraz zastanów się, po co ci żona felczerka, panie Quinn...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package06">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill16" value="!nscs|-|switchRadio|-|origin_skill_value:15|-|csId:@{character_id}">
+                                        Szlachetnie urodzony
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description16">
+                                    Urodziłeś się, by panować nad innymi. Wiesz jak traktować ludzi.
+                                    Wybierz sobie jeden pakiet Umiejętności opartych o Charakter. Każdą z Umiejętności w
+                                    pakiecie posiadasz na poziomie +2.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill17" value="!nscs|-|switchRadio|-|origin_skill_value:16|-|csId:@{character_id}">
+                                        Pojedynkowicz
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description17">
+                                    Nigdy nie przepuściłeś okazji, by zmierzyć się z przeciwnikiem.
+                                    Dawałeś wrogom nauczkę i sam się czegoś nauczyłeś.
+                                    Najważniejsza nauka, jaką wyciągnąłeś, to ta, iż każdego można pokonać. Podczas walki
+                                    sam na sam ignorujesz pierwszą Lekką ranę lub
+                                    Draśnięcie. Żaden przeciwnik nie zdoła cię przerazić.
+                                    I dlatego właśnie jesteś twardzielem.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill18" value="!nscs|-|switchRadio|-|origin_skill_value:17|-|csId:@{character_id}">
+                                        Wychuchana spluwa
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description18">
+                                    Wybierz jedną z broni palnych, które nosisz przy
+                                    sobie. Każdego wieczoru czyścisz ją, chuchasz, dmuchasz i w efekcie możesz dla niej zawsze powtórzyć
+                                    rzut na efekt zacięcia się broni
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package07">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill19" value="!nscs|-|switchRadio|-|origin_skill_value:18|-|csId:@{character_id}">
+                                        Człowiek-aligator
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description19">
+                                    Połowę życia spędziłeś w wodzie, na trzęsawiskach lub
+                                    w tropiku. W czasie każdej walki, w której wykorzystujesz do ukrycia się zbiornik
+                                    wodny lub bagno (gdy jesteś zanurzony), osłona maskuje cię o dwa poziomy lepiej.
+                                    Dodatkowo, w przypadku błyskawicznego ataku z
+                                    zaskoczenia na terenie wodnym lub bagiennym, twoi
+                                    przeciwnicy są automatycznie zaskoczeni
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill20" value="!nscs|-|switchRadio|-|origin_skill_value:19|-|csId:@{character_id}">
+                                        Ja już swoje odchorowałem
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description20">
+                                    Żyłeś w niezdrowej okolicy Miami i uodporniłeś się na
+                                    wiele chorób i jadów. Możesz powtórzyć każdy rzut odpornościowy przeciw chorobom i truciznom pochodzenia
+                                    organicznego.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill21" value="!nscs|-|switchRadio|-|origin_skill_value:20|-|csId:@{character_id}">
+                                        Walkabout
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description21">
+                                    Siedzisz sobie w knajpie i nagle postanawiasz iść na mały
+                                    walkabout. Wychodzisz i przez miesiąc włóczysz się po
+                                    okolicy. Wracasz do knajpy, patrzysz, a twoje ziółka na
+                                    stole wystygły. Myślisz sobie - nie będę pił zimnych. I
+                                    idzisz odwiedzić kumpla w Vegas.
+                                    Możesz powtórzyć każdy test Kondycji. Zaczynasz
+                                    ze Sztuczką „Dom na plecach”.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package08">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill19" value="!nscs|-|switchRadio|-|origin_skill_value:18|-|csId:@{character_id}">
+                                        Człowiek-aligator
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description19">
+                                    Połowę życia spędziłeś w wodzie, na trzęsawiskach lub
+                                    w tropiku. W czasie każdej walki, w której wykorzystujesz do ukrycia się zbiornik
+                                    wodny lub bagno (gdy jesteś zanurzony), osłona maskuje cię o dwa poziomy lepiej.
+                                    Dodatkowo, w przypadku błyskawicznego ataku z
+                                    zaskoczenia na terenie wodnym lub bagiennym, twoi
+                                    przeciwnicy są automatycznie zaskoczeni
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill20" value="!nscs|-|switchRadio|-|origin_skill_value:19|-|csId:@{character_id}">
+                                        Ja już swoje odchorowałem
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description20">
+                                    Żyłeś w niezdrowej okolicy Miami i uodporniłeś się na
+                                    wiele chorób i jadów. Możesz powtórzyć każdy rzut odpornościowy przeciw chorobom i truciznom pochodzenia
+                                    organicznego.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill21" value="!nscs|-|switchRadio|-|origin_skill_value:20|-|csId:@{character_id}">
+                                        Walkabout
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description21">
+                                    Siedzisz sobie w knajpie i nagle postanawiasz iść na mały
+                                    walkabout. Wychodzisz i przez miesiąc włóczysz się po
+                                    okolicy. Wracasz do knajpy, patrzysz, a twoje ziółka na
+                                    stole wystygły. Myślisz sobie - nie będę pił zimnych. I
+                                    idzisz odwiedzić kumpla w Vegas.
+                                    Możesz powtórzyć każdy test Kondycji. Zaczynasz
+                                    ze Sztuczką „Dom na plecach”.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package09">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill25" value="!nscs|-|switchRadio|-|origin_skill_value:24|-|csId:@{character_id}">
+                                        Cholerny kaznodzieja
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description25">
+                                    Potrafisz walnąć taki monolog, że słuchacze nie wiedzą, co ze
+                                    sobą zrobić. Jeżeli próbujesz przekonać kogoś do racji, w które
+                                    sam wierzysz (sprawy wiary), w testach Perswazji odrzucasz
+                                    kostkę, która najmniej ci odpowiada, i mówisz, że wypadło na
+                                    niej tyle, co na innej. Trochę to skomplikowane, nie? Ale wiesz,
+                                    sprawy wiary to trudny temat
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill26" value="!nscs|-|switchRadio|-|origin_skill_value:25|-|csId:@{character_id}">
+                                        Wierzę
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description26">
+                                    Chłopie, nie będę lazł pięćset metrów do tej głupiej stacji tylko
+                                    dlatego, że przez lornetkę widzisz tam automat z Colą. On nie
+                                    działa, to nie ma sensu... Co? Co znaczy, że wierzysz, że działa?
+                                    I co, chcesz, bym teraz tam poszedł? Bo ty wierzysz?! No bez
+                                    jaj. To, że raz w ciągu sesji, w sytuacji zagrożenia, możesz
+                                    powiedzieć MG „wierzę” i wtedy MG powinien dać ci szansę
+                                    wykaraskania się z sytuacji, nie oznacza, że da nam teraz tę
+                                    Colę! Zrozum! Tylko w sytuacji zagrożenia! I w dodatku ostateczna decyzja należy do MG!
+                                    A przecież wiesz, że on jest złośliwy! Nie da nam tej Coli, mówię ci...
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill27" value="!nscs|-|switchRadio|-|origin_skill_value:26|-|csId:@{character_id}">
+                                        Przed wojną wszystko <br/> było lepsze
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description27">
+                                    Przysłuchiwałeś się opowieściom doświadczonych wojowników
+                                    i mądrych starców. Chłonąłeś historie o czasach sprzed wojny.
+                                    Wszystkie testy Sprytu związane z wiedzą o czasach przed
+                                    Apokalipsą mogą być dla ciebie co najwyżej Trudne. Co najwyżej, łapiesz?
+                                    Mistrz Gry może sobie bełkotać o Bardzo Trudnym, o Cholernie trudnym... Wiesz co?
+                                    Pokaż mu ten podręcznik, otwórz na tej stronie i daj mu to przeczytać: „Mistrzu Gry,
+                                    do ciebie mówię. Ten facet, co dał ci teraz podręcznik, wie o
+                                    czasach sprzed wojny wszystko. Łapiesz to? Więc nie smuć o
+                                    Bardzo trudnym teście!”
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package10">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill28" value="!nscs|-|switchRadio|-|origin_skill_value:27|-|csId:@{character_id}">
+                                        Coś mi tu śmierdzi
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description28">
+                                    Dorastałeś na terenach opanowanych przez mutków.
+                                    Wyczuwasz ich inność, choćby nie wiem jak się maskowali.
+                                    Za każdym razem, gdy stajesz wobec osoby
+                                    dotkniętej niewidocznymi mutacjami, MG powinien
+                                    wykonać sekretny rzut na Percepcję (Trudny) i w
+                                    razie powodzenia testu, poinformować cię, że czujesz
+                                    się nieswojo. Rączki świerzbią, nie? Spluwa się gotuje..
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill29" value="!nscs|-|switchRadio|-|origin_skill_value:28|-|csId:@{character_id}">
+                                        Chodźmy, na pewno już utonął
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description29">
+                                    Masz płuca jak miechy. Jesteś w stanie wytrzymać
+                                    pod wodą dwa razy dłużej, niż przeciętny człowiek.
+                                    To znaczy ile? Pół minuty za każde 4 punkty
+                                    Budowy. Właśnie tyle
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill30" value="!nscs|-|switchRadio|-|origin_skill_value:29|-|csId:@{character_id}">
+                                        Kwas w żyłach, <br/> płucach
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description30">
+                                    Urodziłeś się i mieszkałeś przy Wielkiej Rzece. Je-
+                                    steś tak przesiąknięty płynącą w niej trucizną, że
+                                    żadna nowa franca już w ciebie nie wejdzie. Możesz
+                                    powtórzyć każdy rzut odpornościowy przeciw trują-
+                                    cym chemikaliom i substancjom żrącym
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package11">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill31" value="!nscs|-|switchRadio|-|origin_skill_value:30|-|csId:@{character_id}">
+                                        Na symulatorze to działało...
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description31">
+                                    Jak to spokojnie! Jak grałeś w to?! W co grałeś? Symulator?! O
+                                    czym ty człowieku pieprzysz, strzelają do nas, nie rozumiesz?!
+                                    Ja też przeszedłem służbę wojskową, w dodatku na froncie i
+                                    jakoś nie jestem taki spokojny! Miałeś dostęp do komputerowych
+                                    symulatorów pojazdów i pola walki? No popatrz, to po
+                                    prostu wspaniale. Grałeś sobie w Quake, kiedy do mnie strzelali
+                                    na froncie, tak? I każesz mi być spokojny?! I co, trochę się
+                                    z nich nauczyłeś?! Możesz przerzucić jedną kostkę w testach
+                                    Wozów bojowych, Maszyn Ciężkich i Komputerów? Super. To
+                                    lepiej przerzucaj, bo mamy kłopoty!!!
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill32" value="!nscs|-|switchRadio|-|origin_skill_value:31|-|csId:@{character_id}">
+                                        Hi-Tech
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description32">
+                                    Od maleńkości rosłeś w otoczeniu wytworów zaawansowanej
+                                    technologii. Mikser do pomarańczy, czasem suszarka do wło-
+                                    sów. Co więcej, było i radio, a nawet jakiś wykrywacz ruchu...
+                                    No dobra, koniec jaj. Posterunek to najlepiej wyposażony w
+                                    sprzęt elektroniczny przyczółek ludzkości. W każdym teście
+                                    związanym z obsługą urządzenia elektronicznego możesz
+                                    przerzucić jedną z kostek, właśnie dlatego, że dawno temu za
+                                    grzechotkę robił ci słoik z procesorami, a za łopatkę płyta główna
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill33" value="!nscs|-|switchRadio|-|origin_skill_value:32|-|csId:@{character_id}">
+                                        Moloch? Coś o nim słyszałem
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description33">
+                                    Miałeś kontakt z Molochem i jego tworami. Znasz slangowe
+                                    nazwy określające maszyny, potrafisz rozpoznawać je i wiesz,
+                                    czego możesz się spodziewać po każdym z tworów Bestii.
+                                    Każdy test związany z maszynami Molocha może być dla ciebie co
+                                    najwyżej Bardzo Trudny.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-origin-skill-package12">
+                        <div class="sheet-row">
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill34" value="!nscs|-|switchRadio|-|origin_skill_value:33|-|csId:@{character_id}">
+                                        Jeśli ma silnik to ruszy
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description34">
+                                    W czasie nie dłuższym niż 30 sekund jesteś w stanie
+                                    uruchomić dowolny pojazd z silnikiem spalinowym,
+                                    pod warunkiem, że jest on zdatny do jazdy. I o ile ma
+                                    paliwo. Jeśli MG uważa, że wóz może jeździć, ty go
+                                    uruchomisz. Tak to działa.
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill35" value="!nscs|-|switchRadio|-|origin_skill_value:34|-|csId:@{character_id}">
+                                        Siódme poty
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description35">
+                                    Jeżeli prowadzisz dowolny pojazd z silnikiem
+                                    spalinowym, jesteś w stanie wycisnąć z niego 25% ponad
+                                    maksymalną prędkość, balansując na granicy
+                                    zatarcia silnika, a nawet rozpadnięcia się całej
+                                    konstrukcji maszyny. Kiedy pojazd zatrzyma się, nie ruszy
+                                    ponownie, aż do momentu naprawienia uszkodzeń
+                                    (Bardzo Trudny test Mechaniki).
+                                </div>
+                            </div>
+                            <div class="sheet-col-1-3">
+                                <div>
+                                    <button type="roll" class="sheet-selectable-button sheet-check-origin-skill36" value="!nscs|-|switchRadio|-|origin_skill_value:35|-|csId:@{character_id}">
+                                        Ale jazda!
+                                    </button>
+                                </div>
+                                <div class="sheet-origin-skill-description sheet-origin-skill-description36">
+                                    Lata spędzone na ulicach Detroit zrobiły swoje. Jeżeli strzelasz w ruchu - z pędzącego pojazdu, wierzchowca, spadając itp. - nie doliczasz sobie żadnych
+                                    utrudnień za strzał w ruchu.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 

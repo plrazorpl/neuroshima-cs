@@ -315,11 +315,16 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-image-
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-image-section > div {
     display: none;
     margin-top: 60px;
-    /*margin-bottom: 20px;*/
 }
 
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-pages > div {
     display: none;
+}
+
+.sheet-origin-select-title {
+    font-size: 2.0rem;
+    text-align: center;
+    margin: 20px 5px 10px 5px;
 }
 
 .sheet-origin-header {
@@ -341,6 +346,18 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-pages 
 
 }
 
+.sheet-origin01:checked ~ * .sheet-origin-skill-package01,
+.sheet-origin02:checked ~ * .sheet-origin-skill-package02,
+.sheet-origin03:checked ~ * .sheet-origin-skill-package03,
+.sheet-origin04:checked ~ * .sheet-origin-skill-package04,
+.sheet-origin05:checked ~ * .sheet-origin-skill-package05,
+.sheet-origin06:checked ~ * .sheet-origin-skill-package06,
+.sheet-origin07:checked ~ * .sheet-origin-skill-package07,
+.sheet-origin08:checked ~ * .sheet-origin-skill-package08,
+.sheet-origin09:checked ~ * .sheet-origin-skill-package09,
+.sheet-origin10:checked ~ * .sheet-origin-skill-package10,
+.sheet-origin11:checked ~ * .sheet-origin-skill-package11,
+.sheet-origin12:checked ~ * .sheet-origin-skill-package12,
 .sheet-origin01:checked ~ * .sheet-origin-image01,
 .sheet-origin02:checked ~ * .sheet-origin-image02,
 .sheet-origin03:checked ~ * .sheet-origin-image03,
@@ -368,18 +385,6 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-pages 
     display: block !important;
 }
 
-.sheet-origin01:checked ~ * .sheet-origin-button01,
-.sheet-origin02:checked ~ * .sheet-origin-button02,
-.sheet-origin03:checked ~ * .sheet-origin-button03,
-.sheet-origin04:checked ~ * .sheet-origin-button04,
-.sheet-origin05:checked ~ * .sheet-origin-button05,
-.sheet-origin06:checked ~ * .sheet-origin-button06,
-.sheet-origin07:checked ~ * .sheet-origin-button07,
-.sheet-origin08:checked ~ * .sheet-origin-button08,
-.sheet-origin09:checked ~ * .sheet-origin-button09,
-.sheet-origin10:checked ~ * .sheet-origin-button10,
-.sheet-origin11:checked ~ * .sheet-origin-button11,
-.sheet-origin12:checked ~ * .sheet-origin-button12,
 .sheet-main-page1-enable:checked ~ * .sheet-main-page-button01,
 .sheet-main-page2-enable:checked ~ * .sheet-main-page-button02,
 .sheet-main-page3-enable:checked ~ * .sheet-main-page-button03,
@@ -398,6 +403,111 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-pages 
     color: var(--nscs-button-color) !important;
     background: var(--nscs-button-background) !important;
     text-shadow: var(--nscs-button-text-outline) !important;
+}
+
+.sheet-origin01:checked ~ * .sheet-origin-button01,
+.sheet-origin02:checked ~ * .sheet-origin-button02,
+.sheet-origin03:checked ~ * .sheet-origin-button03,
+.sheet-origin04:checked ~ * .sheet-origin-button04,
+.sheet-origin05:checked ~ * .sheet-origin-button05,
+.sheet-origin06:checked ~ * .sheet-origin-button06,
+.sheet-origin07:checked ~ * .sheet-origin-button07,
+.sheet-origin08:checked ~ * .sheet-origin-button08,
+.sheet-origin09:checked ~ * .sheet-origin-button09,
+.sheet-origin10:checked ~ * .sheet-origin-button10,
+.sheet-origin11:checked ~ * .sheet-origin-button11,
+.sheet-origin12:checked ~ * .sheet-origin-button12,
+.sheet-origin-skill01:checked ~ * .sheet-check-origin-skill01,
+.sheet-origin-skill02:checked ~ * .sheet-check-origin-skill02,
+.sheet-origin-skill03:checked ~ * .sheet-check-origin-skill03,
+.sheet-origin-skill04:checked ~ * .sheet-check-origin-skill04,
+.sheet-origin-skill05:checked ~ * .sheet-check-origin-skill05,
+.sheet-origin-skill06:checked ~ * .sheet-check-origin-skill06,
+.sheet-origin-skill07:checked ~ * .sheet-check-origin-skill07,
+.sheet-origin-skill08:checked ~ * .sheet-check-origin-skill08,
+.sheet-origin-skill09:checked ~ * .sheet-check-origin-skill09,
+.sheet-origin-skill10:checked ~ * .sheet-check-origin-skill10,
+.sheet-origin-skill11:checked ~ * .sheet-check-origin-skill11,
+.sheet-origin-skill12:checked ~ * .sheet-check-origin-skill12,
+.sheet-origin-skill13:checked ~ * .sheet-check-origin-skill13,
+.sheet-origin-skill14:checked ~ * .sheet-check-origin-skill14,
+.sheet-origin-skill15:checked ~ * .sheet-check-origin-skill15,
+.sheet-origin-skill16:checked ~ * .sheet-check-origin-skill16,
+.sheet-origin-skill17:checked ~ * .sheet-check-origin-skill17,
+.sheet-origin-skill18:checked ~ * .sheet-check-origin-skill18,
+.sheet-origin-skill19:checked ~ * .sheet-check-origin-skill19,
+.sheet-origin-skill20:checked ~ * .sheet-check-origin-skill20,
+.sheet-origin-skill21:checked ~ * .sheet-check-origin-skill21,
+.sheet-origin-skill22:checked ~ * .sheet-check-origin-skill22,
+.sheet-origin-skill23:checked ~ * .sheet-check-origin-skill23,
+.sheet-origin-skill24:checked ~ * .sheet-check-origin-skill24,
+.sheet-origin-skill25:checked ~ * .sheet-check-origin-skill25,
+.sheet-origin-skill26:checked ~ * .sheet-check-origin-skill26,
+.sheet-origin-skill27:checked ~ * .sheet-check-origin-skill27,
+.sheet-origin-skill28:checked ~ * .sheet-check-origin-skill28,
+.sheet-origin-skill29:checked ~ * .sheet-check-origin-skill29,
+.sheet-origin-skill30:checked ~ * .sheet-check-origin-skill30,
+.sheet-origin-skill31:checked ~ * .sheet-check-origin-skill31,
+.sheet-origin-skill32:checked ~ * .sheet-check-origin-skill32,
+.sheet-origin-skill33:checked ~ * .sheet-check-origin-skill33,
+.sheet-origin-skill34:checked ~ * .sheet-check-origin-skill34,
+.sheet-origin-skill35:checked ~ * .sheet-check-origin-skill35,
+.sheet-origin-skill36:checked ~ * .sheet-check-origin-skill36 {
+    color: var(--nscs-button-color) !important;
+    background: var(--nscs-button-background) !important;
+    text-shadow: var(--nscs-button-text-outline) !important;
+    border: var(--nscs-button-border) !important;
+}
+
+.sheet-origin-skill01:checked ~ * .sheet-origin-skill-description01,
+.sheet-origin-skill02:checked ~ * .sheet-origin-skill-description02,
+.sheet-origin-skill03:checked ~ * .sheet-origin-skill-description03,
+.sheet-origin-skill04:checked ~ * .sheet-origin-skill-description04,
+.sheet-origin-skill05:checked ~ * .sheet-origin-skill-description05,
+.sheet-origin-skill06:checked ~ * .sheet-origin-skill-description06,
+.sheet-origin-skill07:checked ~ * .sheet-origin-skill-description07,
+.sheet-origin-skill08:checked ~ * .sheet-origin-skill-description08,
+.sheet-origin-skill09:checked ~ * .sheet-origin-skill-description09,
+.sheet-origin-skill10:checked ~ * .sheet-origin-skill-description10,
+.sheet-origin-skill11:checked ~ * .sheet-origin-skill-description11,
+.sheet-origin-skill12:checked ~ * .sheet-origin-skill-description12,
+.sheet-origin-skill13:checked ~ * .sheet-origin-skill-description13,
+.sheet-origin-skill14:checked ~ * .sheet-origin-skill-description14,
+.sheet-origin-skill15:checked ~ * .sheet-origin-skill-description15,
+.sheet-origin-skill16:checked ~ * .sheet-origin-skill-description16,
+.sheet-origin-skill17:checked ~ * .sheet-origin-skill-description17,
+.sheet-origin-skill18:checked ~ * .sheet-origin-skill-description18,
+.sheet-origin-skill19:checked ~ * .sheet-origin-skill-description19,
+.sheet-origin-skill20:checked ~ * .sheet-origin-skill-description20,
+.sheet-origin-skill21:checked ~ * .sheet-origin-skill-description21,
+.sheet-origin-skill22:checked ~ * .sheet-origin-skill-description22,
+.sheet-origin-skill23:checked ~ * .sheet-origin-skill-description23,
+.sheet-origin-skill24:checked ~ * .sheet-origin-skill-description24,
+.sheet-origin-skill25:checked ~ * .sheet-origin-skill-description25,
+.sheet-origin-skill26:checked ~ * .sheet-origin-skill-description26,
+.sheet-origin-skill27:checked ~ * .sheet-origin-skill-description27,
+.sheet-origin-skill28:checked ~ * .sheet-origin-skill-description28,
+.sheet-origin-skill29:checked ~ * .sheet-origin-skill-description29,
+.sheet-origin-skill30:checked ~ * .sheet-origin-skill-description30,
+.sheet-origin-skill31:checked ~ * .sheet-origin-skill-description31,
+.sheet-origin-skill32:checked ~ * .sheet-origin-skill-description32,
+.sheet-origin-skill33:checked ~ * .sheet-origin-skill-description33,
+.sheet-origin-skill34:checked ~ * .sheet-origin-skill-description34,
+.sheet-origin-skill35:checked ~ * .sheet-origin-skill-description35,
+.sheet-origin-skill36:checked ~ * .sheet-origin-skill-description36 {
+    color: var(--nscs-button-color);
+}
+
+.sheet-origin-skill-description {
+    color: var(--nscs-disabled-button-color);
+}
+
+.sheet-origin-skills {
+    margin: 10px;
+}
+
+.sheet-origin-skills > div {
+    display: none;
 }
 
 .sheet-form-description {
@@ -490,6 +600,18 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-settings-butt
     outline: none;
 }
 
+div[class^="sheet-root"] > div[class^="sheet-main-content"] select {
+    color: var(--nscs-text-color);
+    background: none;
+    border: var(--nscs-button-border);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] select:hover {
+    color: var(--nscs-text-color);
+    background: var(--nscs-background1);
+    border: var(--nscs-button-border);
+}
+
 .sheet-column-header-m-table {
     margin-top: 37px;
 }
@@ -553,7 +675,8 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-selectable-bu
 .sheet-main-content {
     width: 100%;
     background: var(--nscs-background1);
-    height: 860px;
+    min-height: 860px;
+    background-repeat: repeat-y;
 }
 
 .sheet-bookmark {
@@ -701,47 +824,6 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-selectable-bu
     background-repeat: no-repeat;
     width: 16px;
     height: 16px;
-}
-
-.sheet-origin-skill01:checked ~ * .sheet-check-origin-skill01,
-.sheet-origin-skill02:checked ~ * .sheet-check-origin-skill02,
-.sheet-origin-skill03:checked ~ * .sheet-check-origin-skill03,
-.sheet-origin-skill04:checked ~ * .sheet-check-origin-skill04,
-.sheet-origin-skill05:checked ~ * .sheet-check-origin-skill05,
-.sheet-origin-skill06:checked ~ * .sheet-check-origin-skill06,
-.sheet-origin-skill07:checked ~ * .sheet-check-origin-skill07,
-.sheet-origin-skill08:checked ~ * .sheet-check-origin-skill08,
-.sheet-origin-skill09:checked ~ * .sheet-check-origin-skill09,
-.sheet-origin-skill10:checked ~ * .sheet-check-origin-skill10,
-.sheet-origin-skill11:checked ~ * .sheet-check-origin-skill11,
-.sheet-origin-skill12:checked ~ * .sheet-check-origin-skill12,
-.sheet-origin-skill13:checked ~ * .sheet-check-origin-skill13,
-.sheet-origin-skill14:checked ~ * .sheet-check-origin-skill14,
-.sheet-origin-skill15:checked ~ * .sheet-check-origin-skill15,
-.sheet-origin-skill16:checked ~ * .sheet-check-origin-skill16,
-.sheet-origin-skill17:checked ~ * .sheet-check-origin-skill17,
-.sheet-origin-skill18:checked ~ * .sheet-check-origin-skill18,
-.sheet-origin-skill19:checked ~ * .sheet-check-origin-skill19,
-.sheet-origin-skill20:checked ~ * .sheet-check-origin-skill20,
-.sheet-origin-skill21:checked ~ * .sheet-check-origin-skill21,
-.sheet-origin-skill22:checked ~ * .sheet-check-origin-skill22,
-.sheet-origin-skill23:checked ~ * .sheet-check-origin-skill23,
-.sheet-origin-skill24:checked ~ * .sheet-check-origin-skill24,
-.sheet-origin-skill25:checked ~ * .sheet-check-origin-skill25,
-.sheet-origin-skill26:checked ~ * .sheet-check-origin-skill26,
-.sheet-origin-skill27:checked ~ * .sheet-check-origin-skill27,
-.sheet-origin-skill28:checked ~ * .sheet-check-origin-skill28,
-.sheet-origin-skill29:checked ~ * .sheet-check-origin-skill29,
-.sheet-origin-skill30:checked ~ * .sheet-check-origin-skill30,
-.sheet-origin-skill31:checked ~ * .sheet-check-origin-skill31,
-.sheet-origin-skill32:checked ~ * .sheet-check-origin-skill32,
-.sheet-origin-skill33:checked ~ * .sheet-check-origin-skill33,
-.sheet-origin-skill34:checked ~ * .sheet-check-origin-skill34,
-.sheet-origin-skill35:checked ~ * .sheet-check-origin-skill35,
-.sheet-origin-skill36:checked ~ * .sheet-check-origin-skill36 {
-    background: var(--nscs-checked-ico);
-    background-size: 20px;
-    background-repeat: no-repeat;
 }
 
 .sheet-profession-skill01:checked ~ * .sheet-check-profession-skill01,
