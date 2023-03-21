@@ -14,10 +14,10 @@
     --nscs-button-background: none;
     --nscs-button-color: #46d525;
     --nscs-button-text-outline: none;
-    --nscs-button-border: 2px solid #296a1a;
+    --nscs-button-border: 2px solid #46d525;
     --nscs-button-border-radius: 0;
     --nscs-disabled-button-background: none;
-    --nscs-disabled-button-color: #46d525;
+    --nscs-disabled-button-color: #296a1a;
     --nscs-disabled-button-text-outline: none;
     --nscs-disabled-button-border: 2px solid #296a1a;
     --nscs-upgrade-ico: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/Poziom.png?raw=true");
@@ -87,6 +87,12 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-page1-table-t
     -webkit-box-flex: 0;
     flex: 0 0 33.3333333333%;
     max-width: 33.3333333333%;
+}
+
+.sheet-col-1-4 {
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 25%;
 }
 
 .sheet-col-header-l {
@@ -285,6 +291,95 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-form-page-num
     color: var(--nscs-text-color) !important;
 }
 
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-page2 {
+    margin-top: 20px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-tabs {
+    margin: 5px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-page2 .sheet-selectable-button {
+    width: 90%;
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 2px 0;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-image-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-image-section > div {
+    display: none;
+    margin-top: 60px;
+    /*margin-bottom: 20px;*/
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-pages > div {
+    display: none;
+}
+
+.sheet-origin-header {
+    font-size: 2.0rem;
+    text-align: center;
+    margin: 20px 5px 10px 5px;
+}
+
+.sheet-origin-bonus {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.sheet-origin-description {
+    margin: 10px;
+}
+
+.sheet-origin-description > div {
+
+}
+
+.sheet-origin01:checked ~ * .sheet-origin-image01,
+.sheet-origin02:checked ~ * .sheet-origin-image02,
+.sheet-origin03:checked ~ * .sheet-origin-image03,
+.sheet-origin04:checked ~ * .sheet-origin-image04,
+.sheet-origin05:checked ~ * .sheet-origin-image05,
+.sheet-origin06:checked ~ * .sheet-origin-image06,
+.sheet-origin07:checked ~ * .sheet-origin-image07,
+.sheet-origin08:checked ~ * .sheet-origin-image08,
+.sheet-origin09:checked ~ * .sheet-origin-image09,
+.sheet-origin10:checked ~ * .sheet-origin-image10,
+.sheet-origin11:checked ~ * .sheet-origin-image11,
+.sheet-origin12:checked ~ * .sheet-origin-image12,
+.sheet-origin01:checked ~ * .sheet-origin-page01,
+.sheet-origin02:checked ~ * .sheet-origin-page02,
+.sheet-origin03:checked ~ * .sheet-origin-page03,
+.sheet-origin04:checked ~ * .sheet-origin-page04,
+.sheet-origin05:checked ~ * .sheet-origin-page05,
+.sheet-origin06:checked ~ * .sheet-origin-page06,
+.sheet-origin07:checked ~ * .sheet-origin-page07,
+.sheet-origin08:checked ~ * .sheet-origin-page08,
+.sheet-origin09:checked ~ * .sheet-origin-page09,
+.sheet-origin10:checked ~ * .sheet-origin-page10,
+.sheet-origin11:checked ~ * .sheet-origin-page11,
+.sheet-origin12:checked ~ * .sheet-origin-page12 {
+    display: block !important;
+}
+
+.sheet-origin01:checked ~ * .sheet-origin-button01,
+.sheet-origin02:checked ~ * .sheet-origin-button02,
+.sheet-origin03:checked ~ * .sheet-origin-button03,
+.sheet-origin04:checked ~ * .sheet-origin-button04,
+.sheet-origin05:checked ~ * .sheet-origin-button05,
+.sheet-origin06:checked ~ * .sheet-origin-button06,
+.sheet-origin07:checked ~ * .sheet-origin-button07,
+.sheet-origin08:checked ~ * .sheet-origin-button08,
+.sheet-origin09:checked ~ * .sheet-origin-button09,
+.sheet-origin10:checked ~ * .sheet-origin-button10,
+.sheet-origin11:checked ~ * .sheet-origin-button11,
+.sheet-origin12:checked ~ * .sheet-origin-button12,
 .sheet-main-page1-enable:checked ~ * .sheet-main-page-button01,
 .sheet-main-page2-enable:checked ~ * .sheet-main-page-button02,
 .sheet-main-page3-enable:checked ~ * .sheet-main-page-button03,
@@ -343,7 +438,8 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-form-page-num
 
 .sheet-main-page-button:before,
 .sheet-upgrade-button:before,
-.sheet-settings-button:before {
+.sheet-settings-button:before,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-selectable-button:before {
     display: none;
 }
 
@@ -398,8 +494,12 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-settings-butt
     margin-top: 37px;
 }
 
-.sheet-main-page-button {
-
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-main-page-button,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-selectable-button {
+    color: var(--nscs-disabled-button-color);
+    background: var(--nscs-disabled-button-background);
+    text-shadow: var(--nscs-disabled-button-text-outline);
+    border: var(--nscs-disabled-button-border);
 }
 
 .sheet-expander {
@@ -520,33 +620,8 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-settings-butt
     outline: none;
 }
 
-.sheet-main-content > .sheet-page .sheet-selectable-button {
-    background: var(--nscs-button-background);
-    color: var(--nscs-button-color);
-}
-
-.sheet-main-content > .sheet-page .sheet-selectable-button:before {
-    display: none;
-}
-
 .sheet-3char-select select {
     width: 50px;
-}
-
-.sheet-origin01:checked ~ * .sheet-origin-button01,
-.sheet-origin02:checked ~ * .sheet-origin-button02,
-.sheet-origin03:checked ~ * .sheet-origin-button03,
-.sheet-origin04:checked ~ * .sheet-origin-button04,
-.sheet-origin05:checked ~ * .sheet-origin-button05,
-.sheet-origin06:checked ~ * .sheet-origin-button06,
-.sheet-origin07:checked ~ * .sheet-origin-button07,
-.sheet-origin08:checked ~ * .sheet-origin-button08,
-.sheet-origin09:checked ~ * .sheet-origin-button09,
-.sheet-origin10:checked ~ * .sheet-origin-button10,
-.sheet-origin11:checked ~ * .sheet-origin-button11,
-.sheet-origin12:checked ~ * .sheet-origin-button12 {
-    background: var(--nscs-select-button-background) !important;
-    color: var(--nscs-select-button-color) !important;
 }
 
 .sheet-origin-description01,
