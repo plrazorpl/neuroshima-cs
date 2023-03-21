@@ -83,6 +83,30 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-page1-table-t
     position: relative;
 }
 
+.sheet-col-1-8 {
+    -webkit-box-flex: 0;
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
+}
+
+.sheet-col-2-8 {
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.sheet-col-3-8 {
+    -webkit-box-flex: 0;
+    flex: 0 0 37.5%;
+    max-width: 37.5%;
+}
+
+.sheet-col-6-8 {
+    -webkit-box-flex: 0;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
 .sheet-col-1-3 {
     -webkit-box-flex: 0;
     flex: 0 0 33.3333333333%;
@@ -928,36 +952,6 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-selectable-bu
     background-repeat: no-repeat;
 }
 
-.sheet-profession01:checked ~ * .sheet-profession-button01,
-.sheet-profession02:checked ~ * .sheet-profession-button02,
-.sheet-profession03:checked ~ * .sheet-profession-button03,
-.sheet-profession04:checked ~ * .sheet-profession-button04,
-.sheet-profession05:checked ~ * .sheet-profession-button05,
-.sheet-profession06:checked ~ * .sheet-profession-button06,
-.sheet-profession07:checked ~ * .sheet-profession-button07,
-.sheet-profession08:checked ~ * .sheet-profession-button08,
-.sheet-profession09:checked ~ * .sheet-profession-button09,
-.sheet-profession10:checked ~ * .sheet-profession-button10,
-.sheet-profession11:checked ~ * .sheet-profession-button11,
-.sheet-profession12:checked ~ * .sheet-profession-button12,
-.sheet-profession13:checked ~ * .sheet-profession-button13,
-.sheet-profession14:checked ~ * .sheet-profession-button14,
-.sheet-profession15:checked ~ * .sheet-profession-button15,
-.sheet-profession16:checked ~ * .sheet-profession-button16,
-.sheet-profession17:checked ~ * .sheet-profession-button17,
-.sheet-profession18:checked ~ * .sheet-profession-button18,
-.sheet-profession19:checked ~ * .sheet-profession-button19,
-.sheet-profession20:checked ~ * .sheet-profession-button20,
-.sheet-profession21:checked ~ * .sheet-profession-button21,
-.sheet-profession22:checked ~ * .sheet-profession-button22,
-.sheet-profession23:checked ~ * .sheet-profession-button23,
-.sheet-profession24:checked ~ * .sheet-profession-button24,
-.sheet-profession25:checked ~ * .sheet-profession-button25,
-.sheet-profession26:checked ~ * .sheet-profession-button26 {
-    background: var(--nscs-select-button-background) !important;
-    color: var(--nscs-select-button-color) !important;
-}
-
 .sheet-profession-description01,
 .sheet-profession-description02,
 .sheet-profession-description03,
@@ -1029,4 +1023,129 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-selectable-bu
     margin-top: 30px;
     font-size: 2.5rem;
     text-align: center;
+}
+
+.sheet-professional-select-icons .sheet-professional-select-icon-disabled {
+    display: initial;
+}
+
+.sheet-professional-select-icons .sheet-professional-select-icon-enabled {
+    display: none;
+}
+
+.sheet-professional-select-icons .sheet-professional-select-icon {
+    position: relative;
+    margin: 2px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-professional-select-icons .sheet-professional-select-icon button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: initial;
+    width: 95%;
+    height: 95%;
+    border: none;
+}
+
+.sheet-professional-main-title {
+    margin-top: 5px;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.sheet-professional-sub-title {
+    font-style: italic;
+    text-align: center;
+}
+
+.sheet-professional-title > div {
+    display: none
+}
+
+.sheet-profession01:checked ~ * .sheet-professional-title .sheet-professional-title01,
+.sheet-profession02:checked ~ * .sheet-professional-title .sheet-professional-title02,
+.sheet-profession03:checked ~ * .sheet-professional-title .sheet-professional-title03,
+.sheet-profession04:checked ~ * .sheet-professional-title .sheet-professional-title04,
+.sheet-profession05:checked ~ * .sheet-professional-title .sheet-professional-title05,
+.sheet-profession06:checked ~ * .sheet-professional-title .sheet-professional-title06,
+.sheet-profession07:checked ~ * .sheet-professional-title .sheet-professional-title07,
+.sheet-profession08:checked ~ * .sheet-professional-title .sheet-professional-title08,
+.sheet-profession09:checked ~ * .sheet-professional-title .sheet-professional-title09,
+.sheet-profession10:checked ~ * .sheet-professional-title .sheet-professional-title10,
+.sheet-profession11:checked ~ * .sheet-professional-title .sheet-professional-title11,
+.sheet-profession12:checked ~ * .sheet-professional-title .sheet-professional-title12,
+.sheet-profession13:checked ~ * .sheet-professional-title .sheet-professional-title13,
+.sheet-profession14:checked ~ * .sheet-professional-title .sheet-professional-title14,
+.sheet-profession15:checked ~ * .sheet-professional-title .sheet-professional-title15,
+.sheet-profession16:checked ~ * .sheet-professional-title .sheet-professional-title16,
+.sheet-profession17:checked ~ * .sheet-professional-title .sheet-professional-title17,
+.sheet-profession18:checked ~ * .sheet-professional-title .sheet-professional-title18,
+.sheet-profession19:checked ~ * .sheet-professional-title .sheet-professional-title19,
+.sheet-profession20:checked ~ * .sheet-professional-title .sheet-professional-title20,
+.sheet-profession21:checked ~ * .sheet-professional-title .sheet-professional-title21,
+.sheet-profession22:checked ~ * .sheet-professional-title .sheet-professional-title22,
+.sheet-profession23:checked ~ * .sheet-professional-title .sheet-professional-title23,
+.sheet-profession24:checked ~ * .sheet-professional-title .sheet-professional-title24,
+.sheet-profession25:checked ~ * .sheet-professional-title .sheet-professional-title25,
+.sheet-profession26:checked ~ * .sheet-professional-title .sheet-professional-title26 {
+    display: block;
+}
+
+.sheet-profession01:checked ~ * .sheet-professional-select-icon01 .sheet-professional-select-icon-disabled,
+.sheet-profession02:checked ~ * .sheet-professional-select-icon02 .sheet-professional-select-icon-disabled,
+.sheet-profession03:checked ~ * .sheet-professional-select-icon03 .sheet-professional-select-icon-disabled,
+.sheet-profession04:checked ~ * .sheet-professional-select-icon04 .sheet-professional-select-icon-disabled,
+.sheet-profession05:checked ~ * .sheet-professional-select-icon05 .sheet-professional-select-icon-disabled,
+.sheet-profession06:checked ~ * .sheet-professional-select-icon06 .sheet-professional-select-icon-disabled,
+.sheet-profession07:checked ~ * .sheet-professional-select-icon07 .sheet-professional-select-icon-disabled,
+.sheet-profession08:checked ~ * .sheet-professional-select-icon08 .sheet-professional-select-icon-disabled,
+.sheet-profession09:checked ~ * .sheet-professional-select-icon09 .sheet-professional-select-icon-disabled,
+.sheet-profession10:checked ~ * .sheet-professional-select-icon10 .sheet-professional-select-icon-disabled,
+.sheet-profession11:checked ~ * .sheet-professional-select-icon11 .sheet-professional-select-icon-disabled,
+.sheet-profession12:checked ~ * .sheet-professional-select-icon12 .sheet-professional-select-icon-disabled,
+.sheet-profession13:checked ~ * .sheet-professional-select-icon13 .sheet-professional-select-icon-disabled,
+.sheet-profession14:checked ~ * .sheet-professional-select-icon14 .sheet-professional-select-icon-disabled,
+.sheet-profession15:checked ~ * .sheet-professional-select-icon15 .sheet-professional-select-icon-disabled,
+.sheet-profession16:checked ~ * .sheet-professional-select-icon16 .sheet-professional-select-icon-disabled,
+.sheet-profession17:checked ~ * .sheet-professional-select-icon17 .sheet-professional-select-icon-disabled,
+.sheet-profession18:checked ~ * .sheet-professional-select-icon18 .sheet-professional-select-icon-disabled,
+.sheet-profession19:checked ~ * .sheet-professional-select-icon19 .sheet-professional-select-icon-disabled,
+.sheet-profession20:checked ~ * .sheet-professional-select-icon20 .sheet-professional-select-icon-disabled,
+.sheet-profession21:checked ~ * .sheet-professional-select-icon21 .sheet-professional-select-icon-disabled,
+.sheet-profession22:checked ~ * .sheet-professional-select-icon22 .sheet-professional-select-icon-disabled,
+.sheet-profession23:checked ~ * .sheet-professional-select-icon23 .sheet-professional-select-icon-disabled,
+.sheet-profession24:checked ~ * .sheet-professional-select-icon24 .sheet-professional-select-icon-disabled,
+.sheet-profession25:checked ~ * .sheet-professional-select-icon25 .sheet-professional-select-icon-disabled,
+.sheet-profession26:checked ~ * .sheet-professional-select-icon26 .sheet-professional-select-icon-disabled {
+    display: none;
+}
+
+.sheet-profession01:checked ~ * .sheet-professional-select-icon01 .sheet-professional-select-icon-enabled,
+.sheet-profession02:checked ~ * .sheet-professional-select-icon02 .sheet-professional-select-icon-enabled,
+.sheet-profession03:checked ~ * .sheet-professional-select-icon03 .sheet-professional-select-icon-enabled,
+.sheet-profession04:checked ~ * .sheet-professional-select-icon04 .sheet-professional-select-icon-enabled,
+.sheet-profession05:checked ~ * .sheet-professional-select-icon05 .sheet-professional-select-icon-enabled,
+.sheet-profession06:checked ~ * .sheet-professional-select-icon06 .sheet-professional-select-icon-enabled,
+.sheet-profession07:checked ~ * .sheet-professional-select-icon07 .sheet-professional-select-icon-enabled,
+.sheet-profession08:checked ~ * .sheet-professional-select-icon08 .sheet-professional-select-icon-enabled,
+.sheet-profession09:checked ~ * .sheet-professional-select-icon09 .sheet-professional-select-icon-enabled,
+.sheet-profession10:checked ~ * .sheet-professional-select-icon10 .sheet-professional-select-icon-enabled,
+.sheet-profession11:checked ~ * .sheet-professional-select-icon11 .sheet-professional-select-icon-enabled,
+.sheet-profession12:checked ~ * .sheet-professional-select-icon12 .sheet-professional-select-icon-enabled,
+.sheet-profession13:checked ~ * .sheet-professional-select-icon13 .sheet-professional-select-icon-enabled,
+.sheet-profession14:checked ~ * .sheet-professional-select-icon14 .sheet-professional-select-icon-enabled,
+.sheet-profession15:checked ~ * .sheet-professional-select-icon15 .sheet-professional-select-icon-enabled,
+.sheet-profession16:checked ~ * .sheet-professional-select-icon16 .sheet-professional-select-icon-enabled,
+.sheet-profession17:checked ~ * .sheet-professional-select-icon17 .sheet-professional-select-icon-enabled,
+.sheet-profession18:checked ~ * .sheet-professional-select-icon18 .sheet-professional-select-icon-enabled,
+.sheet-profession19:checked ~ * .sheet-professional-select-icon19 .sheet-professional-select-icon-enabled,
+.sheet-profession20:checked ~ * .sheet-professional-select-icon20 .sheet-professional-select-icon-enabled,
+.sheet-profession21:checked ~ * .sheet-professional-select-icon21 .sheet-professional-select-icon-enabled,
+.sheet-profession22:checked ~ * .sheet-professional-select-icon22 .sheet-professional-select-icon-enabled,
+.sheet-profession23:checked ~ * .sheet-professional-select-icon23 .sheet-professional-select-icon-enabled,
+.sheet-profession24:checked ~ * .sheet-professional-select-icon24 .sheet-professional-select-icon-enabled,
+.sheet-profession25:checked ~ * .sheet-professional-select-icon25 .sheet-professional-select-icon-enabled,
+.sheet-profession26:checked ~ * .sheet-professional-select-icon26 .sheet-professional-select-icon-enabled {
+    display: initial;
 }
