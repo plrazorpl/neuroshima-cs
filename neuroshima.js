@@ -61,12 +61,19 @@ function recalculateAbility(characterId, abilityName) {
     setAttrNSCS(characterId, "ch_" + abilityName, value);
 }
 
+function recalculateDescriptionOriginSkill20(characterId) {
+    const selectedOption = getAttrNSCS(characterId, "origin_skill20_selected", "0").get("current");
+    let description = ORIGIN_SKILLS[selectedOption].description;
+    setAttrNSCS(characterId, "origin_skill_description20", description);
+}
+
 function recalculateData(characterId) {
     recalculateAbility(characterId, "bd");
     recalculateAbility(characterId, "ag");
     recalculateAbility(characterId, "pr");
     recalculateAbility(characterId, "cha");
     recalculateAbility(characterId, "int");
+    recalculateDescriptionOriginSkill20(characterId);
 }
 
 function updateParams(params, characterId) {

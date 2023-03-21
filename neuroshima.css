@@ -498,6 +498,51 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-pages 
     color: var(--nscs-button-color);
 }
 
+div[class^="sheet-root"] > div[class^="sheet-main-content"] select[class^="sheet-check-origin-skill20"] {
+    border: var(--nscs-disabled-button-border);
+    color: var(--nscs-text-disabled-color);
+    background: none;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] select[class^="sheet-check-origin-skill20"]:hover {
+    background: none;
+    border: var(--nscs-disabled-button-border);
+    color: var(--nscs-text-disabled-color);
+}
+
+.sheet-origin-skill20:checked ~ * select[class^="sheet-check-origin-skill20"] {
+    border: var(--nscs-button-border);
+    color: var(--nscs-text-color);
+}
+
+.sheet-origin-skill20:checked ~ * select[class^="sheet-check-origin-skill20"]:hover {
+    border: var(--nscs-button-border);
+    color: var(--nscs-text-color);
+    background: black !important;
+}
+
+.sheet-origin-skill20:checked ~ * .sheet-origin-skill-textarea {
+    color: var(--nscs-text-color) !important;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-skill-textarea {
+    border: none;
+    background: transparent;
+    color: var(--nscs-text-disabled-color);
+    height: 300px;
+    width: calc(100% - 30px);
+    resize: none;
+    cursor: auto;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-origin-skill-textarea:focus {
+    outline: none;
+}
+
 .sheet-origin-skill-description {
     color: var(--nscs-disabled-button-color);
 }
