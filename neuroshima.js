@@ -1,6 +1,6 @@
 var lockUpdate = false;
 
-on("chat:message", function(msg) {
+on("chat:message", function (msg) {
     try {
         // log("msg= " + msg);
         // log("chat:message= " + JSON.stringify(msg));
@@ -9,6 +9,10 @@ on("chat:message", function(msg) {
             switchRadio(msg);
         } else if (msg.content.startsWith("!nscs|-|randomAbilities")) {
             randomAbiliteis(msg);
+        } else if (msg.content.startsWith("!nscs|-|parametersRoll|-|")) {
+            parametersRoll(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|parametersRollAll|-|")) {
+            parametersRollAll(msg.content);
         }
     } catch (e) {
         lockUpdate = false;
@@ -17,7 +21,7 @@ on("chat:message", function(msg) {
     }
 });
 
-on("change:attribute", function(msg) {
+on("change:attribute", function (msg) {
     try {
         if (lockUpdate) {
             return;
@@ -29,6 +33,70 @@ on("change:attribute", function(msg) {
         log(e);
     }
 });
+
+function rollAnimation(characterId, diceAttr, currentTimeout, maxTimeout, multiplier, calculateFunction) {
+    if (currentTimeout > maxTimeout) {
+        return;
+    }
+    setTimeout(() => {
+        let val = randomInteger(20);
+        if (val < 6) {
+            val = 6;
+        }
+        setAttrNSCS(characterId, diceAttr, val);
+        rollAnimation(characterId, diceAttr, currentTimeout * multiplier, maxTimeout, multiplier, calculateFunction);
+        calculateFunction();
+    }, currentTimeout);
+}
+
+function parametersRoll(msg) {
+    let paramsText = msg.replace("!nscs|-|parametersRoll", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    const resultAttr = getParam(params, "result:");
+    const dice1Attr = getParam(params, "dice1:");
+    const dice2Attr = getParam(params, "dice2:");
+    const dice3Attr = getParam(params, "dice3:");
+    setAttrNSCS(characterId, resultAttr, "");
+    setAttrNSCS(characterId, dice1Attr, "");
+    setAttrNSCS(characterId, dice2Attr, "");
+    setAttrNSCS(characterId, dice3Attr, "");
+
+    const calculateFunction = () => {
+        const el1 = +(getAttrNSCS(characterId, dice1Attr, "6").get("current"));
+        const el2 = +(getAttrNSCS(characterId, dice2Attr, "6").get("current"));
+        const el3 = +(getAttrNSCS(characterId, dice3Attr, "6").get("current"));
+        const calculation = (el1 + el2 + el3)/3;
+        const result = Math.ceil(calculation);
+        setAttrNSCS(characterId, resultAttr, result);
+    }
+
+    rollAnimation(characterId, dice1Attr, 10, 1000, 1.4, calculateFunction);
+    setTimeout(() => {
+        rollAnimation(characterId, dice2Attr, 10, 1000, 1.4, calculateFunction);
+    }, 300);
+    setTimeout(() => {
+        rollAnimation(characterId, dice3Attr, 10, 1000, 1.4, calculateFunction);
+    }, 600);
+}
+
+function parametersRollAll(msg) {
+    let paramsText = msg.replace("!nscs|-|parametersRollAll|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+
+    for (let toClear of ROLL_ALL_DICES_PARAMETERS.clearData) {
+        setAttrNSCS(characterId, toClear, "");
+    }
+
+    for (let i = 0; i < ROLL_ALL_DICES_PARAMETERS.rolls.length; i++) {
+        let params = ROLL_ALL_DICES_PARAMETERS.rolls[i];
+        params += "|-|csId:" + characterId;
+        setTimeout(() => {
+            parametersRoll(params);
+        }, ROLL_ALL_DICES_PARAMETERS.latency * i);
+    }
+}
 
 function getParam(params, key) {
     for (const element of params) {

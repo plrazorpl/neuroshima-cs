@@ -1250,3 +1250,132 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-professional-
 .sheet-profession-skill52:checked ~ * .sheet-professional-data .sheet-profession52 .sheet-profession-description {
     color: var(--nscs-text-color);
 }
+
+.sheet-parameters-dices-container {
+    position: relative;
+    min-width: 160px;
+    max-width: 160px;
+    height: 122px;
+}
+
+.sheet-parameters-dice {
+    position: absolute;
+    width: 75px;
+}
+
+.sheet-parameters-dice1 {
+    left: 48px;
+}
+
+.sheet-parameters-dice2 {
+    top: 60px;
+    left: 10px;
+}
+
+.sheet-parameters-dice3 {
+    top: 60px;
+    left: 85px;
+}
+
+.sheet-parameters-dice-input {
+    position: absolute;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-dice-input > input[type="text"] {
+    background: var(--nscs-select-button-background);
+    width: 36px;
+    cursor: default;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-dice-input > input[type="text"]:focus {
+    outline: none;
+}
+
+.sheet-parameters-dice-input1 {
+    top: 30px;
+    left: 68px;
+}
+
+.sheet-parameters-dice-input2 {
+    top: 90px;
+    left: 30px;
+}
+
+.sheet-parameters-dice-input3 {
+    top: 90px;
+    left: 105px;
+}
+
+.sheet-parameters-dice-inputR {
+    top: 10px;
+    left: -15px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-dice-input > input[type="text"][class^="sheet-parameters-dice-input-result"] {
+    height: 40px;
+    width: 40px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.sheet-parameters-dice-inputR > div {
+
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-dice-button {
+    position: absolute;
+    right: -30px;
+    background: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/Dices.png?raw=true") no-repeat;
+    background-size: 36px;
+    width: 30px;
+    height: 30px;
+    top: 16px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-all-dice-button {
+    background: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/Dices.png?raw=true") no-repeat;
+    background-size: 46px;
+    width: 40px;
+    height: 40px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-all-dice-button:before {
+    display: none;
+}
+
+.sheet-parameters-dice-button:before {
+    display: none;
+}
+
+.sheet-parameters-roll-all-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.sheet-parameters-table-hard-level-row > td {
+    width: 40px;
+    height: 40px;
+    border: var(--nscs-button-border);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.sheet-parameters-table-insert-value > td {
+    width: 60px;
+    height: 60px;
+    border: var(--nscs-button-border);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.sheet-parameters-table-param-name {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 5px 0 0 5px;
+    vertical-align: bottom;
+}
+
+.sheet-parameters-table-place-holder {
+    min-height: 35px;
+    display: block;
+}

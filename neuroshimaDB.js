@@ -159,3 +159,41 @@ const ORIGIN_SKILLS = {
         description: "Lata spędzone na ulicach Detroit zrobiły swoje. Jeżeli strzelasz w ruchu - z pędzącego pojazdu, wierzchowca, spadając itp. - nie doliczasz sobie żadnych utrudnień za strzał w ruchu."
     },
 }
+
+const ROLL_ALL_DICES_PARAMETERS = {
+    rolls: [
+        "result:parameters_roll_1_r|-|dice1:parameters_roll_1_1|-|dice2:parameters_roll_1_2|-|dice3:parameters_roll_1_3",
+        "result:parameters_roll_2_r|-|dice1:parameters_roll_2_1|-|dice2:parameters_roll_2_2|-|dice3:parameters_roll_2_3",
+        "result:parameters_roll_3_r|-|dice1:parameters_roll_3_1|-|dice2:parameters_roll_3_2|-|dice3:parameters_roll_3_3",
+        "result:parameters_roll_4_r|-|dice1:parameters_roll_4_1|-|dice2:parameters_roll_4_2|-|dice3:parameters_roll_4_3",
+        "result:parameters_roll_5_r|-|dice1:parameters_roll_5_1|-|dice2:parameters_roll_5_2|-|dice3:parameters_roll_5_3",
+        "result:parameters_roll_6_r|-|dice1:parameters_roll_6_1|-|dice2:parameters_roll_6_2|-|dice3:parameters_roll_6_3",
+    ],
+    clearData: [
+        "parameters_roll_1_r",
+        "parameters_roll_2_r",
+        "parameters_roll_3_r",
+        "parameters_roll_4_r",
+        "parameters_roll_5_r",
+        "parameters_roll_6_r",
+        "parameters_roll_1_1",
+        "parameters_roll_2_1",
+        "parameters_roll_3_1",
+        "parameters_roll_4_1",
+        "parameters_roll_5_1",
+        "parameters_roll_6_1",
+        "parameters_roll_1_2",
+        "parameters_roll_2_2",
+        "parameters_roll_3_2",
+        "parameters_roll_4_2",
+        "parameters_roll_5_2",
+        "parameters_roll_6_2",
+        "parameters_roll_1_3",
+        "parameters_roll_2_3",
+        "parameters_roll_3_3",
+        "parameters_roll_4_3",
+        "parameters_roll_5_3",
+        "parameters_roll_6_3",
+    ],
+    latency: 300
+}
