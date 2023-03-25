@@ -119,6 +119,12 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-page1-table-t
     max-width: 25%;
 }
 
+.sheet-col-3-4 {
+    -webkit-box-flex: 0;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
 .sheet-col-header-l {
     -webkit-box-flex: 0;
     flex: 0 0 75%;
