@@ -1353,16 +1353,16 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-al
 }
 
 .sheet-parameters-table-hard-level-row > td {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border: var(--nscs-button-border);
     text-align: center;
     font-size: 1.5rem;
 }
 
 .sheet-parameters-table-insert-value > td {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border: var(--nscs-button-border);
     text-align: center;
     font-size: 1.5rem;
@@ -1379,3 +1379,37 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-al
     min-height: 35px;
     display: block;
 }
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-table-insert-value > td > input[type="text"]:focus,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-table-hard-level-row > td > input[type="text"]:focus {
+    outline: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-table-insert-value > td > input[type="text"] {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: center;
+    color: var(--nscs-text-color);
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-table-hard-level-row > td > input[type="text"] {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: center;
+    color: var(--nscs-text-color);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: default;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-table-hard-level-text-row > td {
+    font-size: 1rem;
+    text-align: center;
+}
+

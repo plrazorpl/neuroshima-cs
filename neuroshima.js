@@ -142,6 +142,34 @@ function recalculateData(characterId) {
     recalculateAbility(characterId, "cha");
     recalculateAbility(characterId, "int");
     recalculateDescriptionOriginSkill20(characterId);
+
+    recalculateParameter(characterId, "bd");
+    recalculateParameter(characterId, "ag");
+    recalculateParameter(characterId, "pr");
+    recalculateParameter(characterId, "cha");
+    recalculateParameter(characterId, "int");
+}
+
+function prepareParameterLevelText(val, correctVal, mod) {
+    if (!correctVal) {
+        return "";
+    }
+
+    const result = +val + mod;
+
+    return result > 0 ? result : "";
+}
+
+function recalculateParameter(characterId, param) {
+    const val = getAttrNSCS(characterId, "parameters_insert_" + param +"_main", "").get("current");
+    const correctVal = val != "" && Number.isInteger(+val);
+    setAttrNSCS(characterId, "parameters_" + param + "_level_0", prepareParameterLevelText(val, correctVal, 2));
+    setAttrNSCS(characterId, "parameters_" + param + "_level_1", prepareParameterLevelText(val, correctVal, 0));
+    setAttrNSCS(characterId, "parameters_" + param + "_level_2", prepareParameterLevelText(val, correctVal, -2));
+    setAttrNSCS(characterId, "parameters_" + param + "_level_3", prepareParameterLevelText(val, correctVal, -5));
+    setAttrNSCS(characterId, "parameters_" + param + "_level_4", prepareParameterLevelText(val, correctVal, -8));
+    setAttrNSCS(characterId, "parameters_" + param + "_level_5", prepareParameterLevelText(val, correctVal, -11));
+    setAttrNSCS(characterId, "parameters_" + param + "_level_6", prepareParameterLevelText(val, correctVal, -15));
 }
 
 function updateParams(params, characterId) {
