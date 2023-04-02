@@ -27,6 +27,14 @@
     --nscs-standard-color-text: white;
     --nscs-unchecked-ico: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/whitenocheck.png?raw=true");
     --nscs-checked-ico:   url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/whitecheck.png?raw=true");
+    --nscs-technic-active-color: #e4b434;
+    --nscs-technic-inactive-color: #977928;
+    --nscs-smarty-active-color: #ce30f0;
+    --nscs-smarty-inactive-color: #8f23a6;
+    --nscs-ranger-active-color: #46d525;
+    --nscs-ranger-inactive-color: #296a1a;
+    --nscs-warrior-active-color: #ed3565;
+    --nscs-warrior-inactive-color: #7f1a34;
 }
 
 div[class^="sheet-root"] > div[class^="sheet-main-content"] {
@@ -1413,3 +1421,67 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-parameters-ta
     text-align: center;
 }
 
+.sheet-specialization-select00:checked ~ * .sheet-specialization-button-technic {
+    --nscs-specialization-color: var(--nscs-technic-active-color);
+}
+
+.sheet-specialization-select01:checked ~ * .sheet-specialization-button-smarty {
+    --nscs-specialization-color: var(--nscs-smarty-active-color);
+}
+
+.sheet-specialization-select02:checked ~ * .sheet-specialization-button-ranger {
+    --nscs-specialization-color: var(--nscs-ranger-active-color);
+}
+
+.sheet-specialization-select03:checked ~ * .sheet-specialization-button-warrior {
+    --nscs-specialization-color: var(--nscs-warrior-active-color);
+}
+
+.sheet-specialization-button-technic {
+    --nscs-specialization-color: var(--nscs-technic-inactive-color);
+}
+
+.sheet-specialization-button-smarty {
+    --nscs-specialization-color: var(--nscs-smarty-inactive-color);
+}
+
+.sheet-specialization-button-ranger {
+    --nscs-specialization-color: var(--nscs-ranger-inactive-color);
+}
+
+.sheet-specialization-button-warrior {
+    --nscs-specialization-color: var(--nscs-warrior-inactive-color);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-specialization button {
+    width: 70%;
+    border: var(--nscs-button-border);
+    border-color: var(--nscs-specialization-color);
+    margin: auto;
+    text-align: center;
+    color: var(--nscs-specialization-color);
+    height: 40px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-specialization button:before {
+    display: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-specialization {
+    color: var(--nscs-specialization-color);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-specialization>div:nth-child(1) {
+    text-align: center;
+    margin: 10px;
+}
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-specialization>div:nth-child(2) {
+    text-align: justify;
+    margin: 5px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-specialization ul {
+    text-align: left;
+    margin: auto;
+    display: table;
+}
