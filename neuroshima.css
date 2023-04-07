@@ -1485,3 +1485,68 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-specializatio
     margin: auto;
     display: table;
 }
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(1)>td {
+    text-align: center;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(1)>td>div {
+    margin: 5px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table td {
+    margin: 2px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(2)>td:nth-child(1),
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(3)>td:nth-child(1),
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(1),
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(2)>td:nth-child(3),
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(3)>td:nth-child(3),
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(3){
+    position: relative;
+    width: 25px;
+    text-align: center;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(2)>td:nth-child(1) input,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(3)>td:nth-child(1) input,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(1) input {
+    position: absolute;
+    left: -20px;
+    top: 0
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table input {
+    border: var(--nscs-button-border);
+    color: var(--nscs-text-color);
+    background: black;
+    width: 30px;
+}
+
+.sheet-skill-table {
+    margin: 5px;
+}
+
+.sheet-skill-frame-warrior,
+.sheet-skill-frame-technic,
+.sheet-skill-frame-smarty,
+.sheet-skill-frame-ranger {
+    margin: 2px;
+}
+
+.sheet-skill-frame-warrior {
+    border: 2px solid var(--nscs-warrior-active-color);
+}
+
+.sheet-skill-frame-technic {
+    border: 2px solid var(--nscs-technic-active-color);
+}
+
+.sheet-skill-frame-smarty {
+    border: 2px solid var(--nscs-smarty-active-color);
+}
+
+.sheet-skill-frame-ranger {
+    border: 2px solid var(--nscs-ranger-active-color);
+}
