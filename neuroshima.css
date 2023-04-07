@@ -1498,6 +1498,10 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table t
     margin: 2px;
 }
 
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table {
+    width: 100%;
+}
+
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(2)>td:nth-child(1),
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(3)>td:nth-child(1),
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(1),
@@ -1514,7 +1518,13 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table t
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(1) input {
     position: absolute;
     left: -20px;
-    top: 0
+    top: 0;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(2)>td:nth-child(1),
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(3)>td:nth-child(1),
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(1) {
+    display: none;
 }
 
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table input {
@@ -1549,4 +1559,49 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table t
 
 .sheet-skill-frame-ranger {
     border: 2px solid var(--nscs-ranger-active-color);
+}
+
+.sheet-skill-frame-warrior-ranger {
+    border: 2px solid var(--nscs-warrior-active-color);
+}
+
+.sheet-skill-frame-warrior-ranger > div {
+    border: 2px solid var(--nscs-ranger-active-color);
+}
+
+.sheet-skill-frame-smarty-ranger {
+    border: 2px solid var(--nscs-smarty-active-color);
+}
+
+.sheet-skill-frame-smarty-ranger > div {
+    border: 2px solid var(--nscs-ranger-active-color);
+}
+
+.sheet-skill-points-ico {
+    display: none;
+    position: absolute;
+    left: -10px;
+}
+
+.sheet-skill-points-column-enabled:checked ~ * .sheet-skill-points-ico {
+    display: initial;
+}
+
+.sheet-skill-points-column-enabled:checked ~ * div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(2)>td:nth-child(1),
+.sheet-skill-points-column-enabled:checked ~ * div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(3)>td:nth-child(1),
+.sheet-skill-points-column-enabled:checked ~ * div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(1){
+    display: table-cell;
+}
+
+.sheet-skill-image {
+    min-height: 100px;
+    text-align: center;
+}
+
+.sheet-skill-image > div:nth-child(1) {
+    margin-top: 15px;
+}
+
+.sheet-skill-package-point-info {
+    text-align: center;
 }

@@ -231,7 +231,7 @@
 <input type='checkbox' class='sheet-skill-leadership' name='attr_skill_leadership' style="display:none" /><!--Zdolności przywódcze-->
 
 <input type='checkbox' class='sheet-skill-empathy' name='attr_skill_empathy' style="display:none" /><!--Empatia (spec. Cwaniak)-->
-<input type='checkbox' class='sheet-skill-perception' name='attr_skill_perception' style="display:none" /><!--Postrzeganie emocji-->
+<input type='checkbox' class='sheet-skill-emotional-perception' name='attr_skill_emotional_perception' style="display:none" /><!--Postrzeganie emocji-->
 <input type='checkbox' class='sheet-skill-bluff' name='attr_skill_bluff' style="display:none" /><!--Blef-->
 <input type='checkbox' class='sheet-skill-animalcare' name='attr_skill_animalcare' style="display:none" /><!--Opieka nad zwierzętami-->
 
@@ -275,7 +275,7 @@
 <input type='checkbox' class='sheet-skill-driving' name='attr_skill_driving' style="display:none" /> <!-- Powożenie -->
 <input type='checkbox' class='sheet-skill-dressage' name='attr_skill_dressage' style="display:none" /> <!-- Ujeżdżanie -->
 
-<!--<input type='checkbox' class='sheet-skill-fight' name='attr_skill_fight' style="display:none" />-->
+<input type='checkbox' class='sheet-skill-points-column-enabled' name='attr_skill_points_column_enabled' style="display:none" />
 <!--<input type='checkbox' class='sheet-skill-fight' name='attr_skill_fight' style="display:none" />-->
 <!--<input type='checkbox' class='sheet-skill-fight' name='attr_skill_fight' style="display:none" />-->
 <!--<input type='checkbox' class='sheet-skill-fight' name='attr_skill_fight' style="display:none" />-->
@@ -4371,12 +4371,20 @@
                 <div class="sheet-row">
                     <div class="sheet-col-2">
                         <div class="sheet-skill-image">
-                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/zr.png?raw=true">
+                            <div>
+                                <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/zr.png?raw=true">
+                            </div>
+                            <div>
+                                Zręczność
+                            </div>
                         </div>
                         <div class="sheet-skill-frame">
                             <div class="sheet-skill-frame-warrior">
                                 <div>
                                     <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
                                         <table>
                                             <tr>
                                                 <td colspan="3">
@@ -4385,7 +4393,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="sheet-skill-brawl-row">
                                                 <td>
                                                     <input type="text" name="attr_skill_brawl_success_input">
                                                 </td>
@@ -4396,18 +4404,18 @@
                                                     <input type="text" name="attr_skill_brawl_input">
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="sheet-skill-handheld-weapon-row">
                                                 <td>
-                                                    <input type="text" name="attr_skill_handheld_weapon_success_input">
+                                                    <input type="text" name="attr_skill_handheld-weapon_success_input">
                                                 </td>
                                                 <td>
                                                     Broń ręczna
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="attr_skill_handheld_weapon_input">
+                                                    <input type="text" name="attr_skill_handheld-weapon_input">
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="sheet-skill-throwing-row">
                                                 <td>
                                                     <input type="text" name="attr_skill_throwing_success_input">
                                                 </td>
@@ -4426,7 +4434,7 @@
                                 <div>
                                     <div class="sheet-skill-table">
                                         <div class="sheet-skill-points-ico">
-                                            <img src="">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
                                         </div>
                                         <table>
                                             <tr>
@@ -4436,7 +4444,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="sheet-skill-car-row">
                                                 <td>
                                                     <input type="text" name="attr_skill_car_success_input">
                                                 </td>
@@ -4447,7 +4455,7 @@
                                                     <input type="text" name="attr_skill_car_input">
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="sheet-skill-motorcycle-row">
                                                 <td>
                                                     <input type="text" name="attr_skill_motorcycle_success_input">
                                                 </td>
@@ -4458,7 +4466,7 @@
                                                     <input type="text" name="attr_skill_motorcycle_input">
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="sheet-skill-truck-row">
                                                 <td>
                                                     <input type="text" name="attr_skill_truck_success_input">
                                                 </td>
@@ -4472,6 +4480,556 @@
                                         </table>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="sheet-skill-frame-smarty">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Zdolności manualne
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-pickpocketing-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_pickpocketing_success_input">
+                                                </td>
+                                                <td>
+                                                    Kradzież kieszonkowa
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_pickpocketing_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-lockpicking-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_lockpicking_success_input">
+                                                </td>
+                                                <td>
+                                                    Otwieranie zamków
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_lockpicking_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-agile-hands-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_agile-hands_success_input">
+                                                </td>
+                                                <td>
+                                                    Zwinne dłonie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_agile-hands_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-warrior">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Broń strzelecka
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-pistols-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_pistols_success_input">
+                                                </td>
+                                                <td>
+                                                    Pistolety
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_pistols_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-rifles-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_rifles_success_input">
+                                                </td>
+                                                <td>
+                                                    Karabiny
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_rifles_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-machine-guns-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_machine-guns_success_input">
+                                                </td>
+                                                <td>
+                                                    Broń maszynowa
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_machine-guns_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-warrior-ranger">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Broń dystansowa
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-bow-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_bow_success_input">
+                                                </td>
+                                                <td>
+                                                    Łuk
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_bow_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-crossbow-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_crossbow_success_input">
+                                                </td>
+                                                <td>
+                                                    Kusza
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_crossbow_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-sling-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_sling_success_input">
+                                                </td>
+                                                <td>
+                                                    Proca
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_sling_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col-2">
+                        <div class="sheet-skill-image">
+                            <div>
+                                <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/per.png?raw=true">
+                            </div>
+                            <div>
+                                Percepcja
+                            </div>
+                        </div>
+                        <div class="sheet-skill-frame">
+                            <div class="sheet-skill-frame-ranger">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Orientacja w terenie
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-direction-sense-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_direction-sense_success_input">
+                                                </td>
+                                                <td>
+                                                    Wyczucie kierunku
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_direction-sense_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-trap-preparation-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_trap-preparation_success_input">
+                                                </td>
+                                                <td>
+                                                    Przygotowanie pułapki
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_trap-preparation_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-tracking-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_tracking_success_input">
+                                                </td>
+                                                <td>
+                                                    Tropienie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_tracking_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-ranger">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Spostrzegawczość
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-listening-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_listening_success_input">
+                                                </td>
+                                                <td>
+                                                    Nasłuchiwanie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_listening_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-spotting-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_spotting_success_input">
+                                                </td>
+                                                <td>
+                                                    Wypatrywanie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_spotting_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-alertness-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_alertness_success_input">
+                                                </td>
+                                                <td>
+                                                    Czujność
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_alertness_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-smarty-ranger">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Kamuflaż
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-sneaking-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_sneaking_success_input">
+                                                </td>
+                                                <td>
+                                                    Skradanie się
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_sneaking_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-hiding-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_hiding_success_input">
+                                                </td>
+                                                <td>
+                                                    Ukrywanie się
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_hiding_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-disguise-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_disguise_success_input">
+                                                </td>
+                                                <td>
+                                                    Maskowanie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_disguise_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-ranger">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Przetrwanie
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-hunting-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_hunting_success_input">
+                                                </td>
+                                                <td>
+                                                    Łowiectwo
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_hunting_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-terrain-knowledge-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_terrain-knowledge_success_input">
+                                                </td>
+                                                <td>
+                                                    Znajomość terenu
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_terrain-knowledge_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-water-acquisition-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_water-acquisition_success_input">
+                                                </td>
+                                                <td>
+                                                    Zdobywanie wody
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_water-acquisition_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-package-point-info">
+                                Pakiet (5) <br/>
+                                0-(3)-1 <br/>
+                                1-(2)-2 <br/>
+                                1-(5)-3 <br/>
+                                1-(9)-4 <br/>
+                                1-(14)-5
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col-2">
+                        <div class="sheet-skill-image">
+                            <div>
+                                <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/ch.png?raw=true">
+                            </div>
+                            <div>
+                                Charakter
+                            </div>
+                        </div>
+                        <div class="sheet-skill-frame">
+                            <div class="sheet-skill-frame-smarty">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Negocjacje
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-intimidation-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_intimidation_success_input">
+                                                </td>
+                                                <td>
+                                                    Zastraszanie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_intimidation_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-persuasion-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_persuasion_success_input">
+                                                </td>
+                                                <td>
+                                                    Perswazja
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_persuasion_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-leadership-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_leadership_success_input">
+                                                </td>
+                                                <td>
+                                                    Zdolności przywódcze
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_leadership_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-smarty">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Empatia
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-emotional-perception-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_emotional-perception_success_input">
+                                                </td>
+                                                <td>
+                                                    Postrzeganie emocji
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_emotional-perception_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-bluff-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_bluff_success_input">
+                                                </td>
+                                                <td>
+                                                    Blef
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_bluff_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-animalcare-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_animalcare_success_input">
+                                                </td>
+                                                <td>
+                                                    Opieka nad zwierzętami
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_animalcare_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-warrior">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Siła woli
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-toughness-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_toughness_success_input">
+                                                </td>
+                                                <td>
+                                                    Odporność na ból
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_toughness_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-resolve-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_resolve_success_input">
+                                                </td>
+                                                <td>
+                                                    Niezłomność
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_resolve_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-morale-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_morale_success_input">
+                                                </td>
+                                                <td>
+                                                    Morale
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_morale_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-package-point-info">
+                                2-(3)-3 <br/>
+                                2-(7)-4 <br/>
+                                2-(11)-5 <br/>
+                                3-(4)-4 <br/>
+                                3-(9)-5 <br/>
+                                4-(5)-5
                             </div>
                         </div>
                     </div>
