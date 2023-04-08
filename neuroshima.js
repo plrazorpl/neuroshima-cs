@@ -180,9 +180,19 @@ function isInvalidFilterSpec(characterId, skillPackage) {
     return false;
 }
 
+function isInvalidFilterEmptyPackage(characterId, skillPackage) {
+    const functionActive = getAttrNSCS(characterId, "skill_filters_recalculate_package_by_skills", "off").get("current") === "off";
+    if (functionActive) {
+        return false;
+    }
+
+    return skillPackage.skillAttrs.find(attr => getAttrNSCS(characterId, attr, "off").get("current") === "on") == null
+}
+
 function recalculateSkillFiltersPackage(characterId, skillPackage) {
     let isInValid = isInvalidFilterName(characterId, skillPackage, "skill_filter_window_package_phrase_search");
     isInValid = isInValid || isInvalidFilterSpec(characterId, skillPackage);
+    isInValid = isInValid || isInvalidFilterEmptyPackage(characterId, skillPackage);
     setAttrNSCS(characterId, skillPackage.attr, isInValid ? "off" : "on");
 }
 

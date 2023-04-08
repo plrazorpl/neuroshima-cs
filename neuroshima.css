@@ -2018,6 +2018,7 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-filter-text-b
 }
 
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-hide-inactive-button-a,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-filters-recalculate-package-by-skills-inactive-button-a,
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-warrior-inactive-button-a,
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-ranger-inactive-button-a,
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-smarty-inactive-button-a,
@@ -2027,6 +2028,7 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-
 }
 
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-hide-inactive-button-i,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-filters-recalculate-package-by-skills-inactive-button-i,
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-warrior-inactive-button-i,
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-ranger-inactive-button-i,
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-smarty-inactive-button-i,
@@ -2036,6 +2038,7 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-
 }
 
 .sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-hide-inactive-button-a,
+.sheet-skill-filters-recalculate-package-by-skills:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-filters-recalculate-package-by-skills-inactive-button-a,
 .sheet-skill-filters-warrior-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-warrior-inactive-button-a,
 .sheet-skill-filters-ranger-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-ranger-inactive-button-a,
 .sheet-skill-filters-smarty-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-smarty-inactive-button-a,
@@ -2044,6 +2047,7 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-
 }
 
 .sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-hide-inactive-button-i,
+.sheet-skill-filters-recalculate-package-by-skills:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-filters-recalculate-package-by-skills-inactive-button-i,
 .sheet-skill-filters-warrior-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-warrior-inactive-button-i,
 .sheet-skill-filters-ranger-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-ranger-inactive-button-i,
 .sheet-skill-filters-smarty-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-smarty-inactive-button-i,
