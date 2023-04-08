@@ -278,7 +278,12 @@
 <input type='checkbox' class='sheet-skill-points-column-enabled' name='attr_skill_points_column_enabled' style="display:none" />
 <input type='checkbox' class='sheet-skill-filters-active' name='attr_skill_filters_active' style="display:none" />
 <input type='checkbox' class='sheet-skill-filters-hide-inactive' name='attr_skill_filters_hide_inactive' style="display:none" />
-<!--<input type='checkbox' class='sheet-skill-fight' name='attr_skill_fight' style="display:none" />-->
+<input type='checkbox' class='sheet-skill-filters-recalculate-package-by-skills' name='attr_skill_filters_recalculate_package_by_skills' style="display:none" />
+
+<input type='checkbox' class='sheet-skill-filters-warrior-inactive' name='attr_skill_filters_warrior_inactive' style="display:none" />
+<input type='checkbox' class='sheet-skill-filters-ranger-inactive' name='attr_skill_filters_ranger_inactive' style="display:none" />
+<input type='checkbox' class='sheet-skill-filters-smarty-inactive' name='attr_skill_filters_smarty_inactive' style="display:none" />
+<input type='checkbox' class='sheet-skill-filters-technic-inactive' name='attr_skill_filters_technic_inactive' style="display:none" />
 
 <div class="sheet-root">
     <div class="sheet-main-content">
@@ -4393,6 +4398,38 @@
                                     </button>
                                     <button type="roll" class="sheet-filter-text-button sheet-skill-filter-hide-inactive-button-i" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_hide_inactive|-|csId:@{character_id}">
                                         Ukryj nieaktywne
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="roll" class="sheet-filter-text-button sheet-skill-filter-warrior-inactive-button-a" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_warrior_inactive|-|updateData:true|-|csId:@{character_id}">
+                                        Pokaż dla Wojownika
+                                    </button>
+                                    <button type="roll" class="sheet-filter-text-button sheet-skill-filter-warrior-inactive-button-i" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_warrior_inactive|-|updateData:true|-|csId:@{character_id}">
+                                        Ukryj dla Wojownika
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="roll" class="sheet-filter-text-button sheet-skill-filter-ranger-inactive-button-a" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_ranger_inactive|-|updateData:true|-|csId:@{character_id}">
+                                        Pokaż dla Rangera
+                                    </button>
+                                    <button type="roll" class="sheet-filter-text-button sheet-skill-filter-ranger-inactive-button-i" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_ranger_inactive|-|updateData:true|-|csId:@{character_id}">
+                                        Ukryj dla Rangera
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="roll" class="sheet-filter-text-button sheet-skill-filter-smarty-inactive-button-a" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_smarty_inactive|-|updateData:true|-|csId:@{character_id}">
+                                        Pokaż dla Cwaniaka
+                                    </button>
+                                    <button type="roll" class="sheet-filter-text-button sheet-skill-filter-smarty-inactive-button-i" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_smarty_inactive|-|updateData:true|-|csId:@{character_id}">
+                                        Ukryj dla Cwaniaka
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="roll" class="sheet-filter-text-button sheet-skill-filter-technic-inactive-button-a" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_technic_inactive|-|updateData:true|-|csId:@{character_id}">
+                                        Pokaż dla Technika
+                                    </button>
+                                    <button type="roll" class="sheet-filter-text-button sheet-skill-filter-technic-inactive-button-i" value="!nscs|-|switchCheckbox|-|buttons:skill_filters_technic_inactive|-|updateData:true|-|csId:@{character_id}">
+                                        Ukryj dla Technika
                                     </button>
                                 </div>
                             </div>

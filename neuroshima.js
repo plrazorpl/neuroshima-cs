@@ -46,8 +46,12 @@ function switchCheckbox(msg) {
     let paramsText = msg.replace("!nscs|-|switchCheckbox|-|", "");
     let params = paramsText.split("|-|")
     let characterId = getParam(params, "csId:");
+    let updateData = getParam(params, "updateData:");
     let checkboxes = getParam(params, "buttons:").split(",");
     checkboxes.forEach(checkbox => switchCheckboxFunction(checkbox, characterId));
+    if (updateData != null) {
+        recalculateData(characterId);
+    }
 }
 
 function rollAnimation(characterId, diceAttr, currentTimeout, maxTimeout, multiplier, calculateFunction) {
@@ -159,11 +163,26 @@ function isInvalidFilterName(characterId, skill, attr) {
 
 function recalculateSkillFiltersSkill(characterId, skill) {
     let isInValid = isInvalidFilterName(characterId, skill, "skill_filter_window_phrase_search");
+    isInValid = isInValid || isInvalidFilterSpec(characterId, skill);
     setAttrNSCS(characterId, skill.attr, isInValid ? "off" : "on");
+}
+
+function isInvalidFilterSpec(characterId, skillPackage) {
+    const warrior = getAttrNSCS(characterId, "skill_filters_warrior_inactive", "off").get("current") === "on";
+    const ranger = getAttrNSCS(characterId, "skill_filters_ranger_inactive", "off").get("current") === "on";
+    const smarty = getAttrNSCS(characterId, "skill_filters_smarty_inactive", "off").get("current") === "on";
+    const technic = getAttrNSCS(characterId, "skill_filters_technic_inactive", "off").get("current") === "on";
+    if (warrior || ranger || smarty || technic) {
+        const spec = skillPackage.forSpec;
+        return !((warrior && spec.includes("warrior")) || (ranger && spec.includes("ranger")) || (smarty && spec.includes("smarty")) || (technic && spec.includes("technic")))
+    }
+
+    return false;
 }
 
 function recalculateSkillFiltersPackage(characterId, skillPackage) {
     let isInValid = isInvalidFilterName(characterId, skillPackage, "skill_filter_window_package_phrase_search");
+    isInValid = isInValid || isInvalidFilterSpec(characterId, skillPackage);
     setAttrNSCS(characterId, skillPackage.attr, isInValid ? "off" : "on");
 }
 

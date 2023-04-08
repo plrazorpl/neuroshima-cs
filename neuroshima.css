@@ -2017,20 +2017,36 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-filter-text-b
     display: none;
 }
 
-div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-hide-inactive-button-a {
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-hide-inactive-button-a,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-warrior-inactive-button-a,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-ranger-inactive-button-a,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-smarty-inactive-button-a,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-technic-inactive-button-a {
     border: var(--nscs-button-border);
     display: none;
 }
 
-div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-hide-inactive-button-i {
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-hide-inactive-button-i,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-warrior-inactive-button-i,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-ranger-inactive-button-i,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-smarty-inactive-button-i,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-technic-inactive-button-i {
     border: var(--nscs-disabled-button-border);
     display: inline;
 }
 
-.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-hide-inactive-button-a {
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-hide-inactive-button-a,
+.sheet-skill-filters-warrior-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-warrior-inactive-button-a,
+.sheet-skill-filters-ranger-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-ranger-inactive-button-a,
+.sheet-skill-filters-smarty-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-smarty-inactive-button-a,
+.sheet-skill-filters-technic-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-technic-inactive-button-a {
     display: inline;
 }
 
-.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-hide-inactive-button-i {
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-hide-inactive-button-i,
+.sheet-skill-filters-warrior-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-warrior-inactive-button-i,
+.sheet-skill-filters-ranger-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-ranger-inactive-button-i,
+.sheet-skill-filters-smarty-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-smarty-inactive-button-i,
+.sheet-skill-filters-technic-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-technic-inactive-button-i {
     display: none;
 }
