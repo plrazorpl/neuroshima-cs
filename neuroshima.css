@@ -759,7 +759,7 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-selectable-bu
     width: 100%;
     background: var(--nscs-background1);
     min-height: 860px;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
 }
 
 .sheet-bookmark {
@@ -1569,11 +1569,27 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table t
     border: 2px solid var(--nscs-ranger-active-color);
 }
 
+.sheet-skill-frame-warrior-technic {
+    border: 2px solid var(--nscs-warrior-active-color);
+}
+
+.sheet-skill-frame-warrior-technic > div {
+    border: 2px solid var(--nscs-technic-active-color);
+}
+
 .sheet-skill-frame-smarty-ranger {
     border: 2px solid var(--nscs-smarty-active-color);
 }
 
 .sheet-skill-frame-smarty-ranger > div {
+    border: 2px solid var(--nscs-ranger-active-color);
+}
+
+.sheet-skill-frame-technic-ranger {
+    border: 2px solid var(--nscs-technic-active-color);
+}
+
+.sheet-skill-frame-technic-ranger > div {
     border: 2px solid var(--nscs-ranger-active-color);
 }
 
@@ -1602,6 +1618,25 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table t
     margin-top: 15px;
 }
 
+.sheet-skill-image img {
+    max-height: 70px;
+}
+
 .sheet-skill-package-point-info {
     text-align: center;
+}
+
+.sheet-skill-exp-info {
+    text-align: left;
+}
+
+.sheet-skill-exp-info table {
+    width: 100%;
+    margin: 5px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(2)>td:nth-child(2) .sheet-skill-general-knowledge-input,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(3)>td:nth-child(2) .sheet-skill-general-knowledge-input,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(2) .sheet-skill-general-knowledge-input {
+    width: calc(100% - 10px);
 }

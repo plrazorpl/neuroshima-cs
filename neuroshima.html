@@ -272,11 +272,11 @@
 
 <input type='checkbox' class='sheet-skill-equestrianism' name='attr_skill_equestrianism' style="display:none" /> <!-- Jeździectwo -->
 <input type='checkbox' class='sheet-skill-horseback-riding' name='attr_skill_horseback_riding' style="display:none" /> <!-- Jazda konna -->
-<input type='checkbox' class='sheet-skill-driving' name='attr_skill_driving' style="display:none" /> <!-- Powożenie -->
+<input type='checkbox' class='sheet-skill-horse-driving' name='attr_skill_driving' style="display:none" /> <!-- Powożenie -->
 <input type='checkbox' class='sheet-skill-dressage' name='attr_skill_dressage' style="display:none" /> <!-- Ujeżdżanie -->
 
 <input type='checkbox' class='sheet-skill-points-column-enabled' name='attr_skill_points_column_enabled' style="display:none" />
-<!--<input type='checkbox' class='sheet-skill-fight' name='attr_skill_fight' style="display:none" />-->
+<input type='checkbox' class='sheet-skill-filters-active' name='attr_skill_filters_active' style="display:none" />
 <!--<input type='checkbox' class='sheet-skill-fight' name='attr_skill_fight' style="display:none" />-->
 <!--<input type='checkbox' class='sheet-skill-fight' name='attr_skill_fight' style="display:none" />-->
 
@@ -5030,6 +5030,538 @@
                                 3-(4)-4 <br/>
                                 3-(9)-5 <br/>
                                 4-(5)-5
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col-2">
+                        <div class="sheet-skill-image">
+                            <div>
+                                <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/sp.png?raw=true">
+                            </div>
+                            <div>
+                                Spryt
+                            </div>
+                        </div>
+                        <div class="sheet-skill-frame">
+                            <div class="sheet-skill-frame-technic-ranger">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Medycyna
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-first-aid-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_first-aid_success_input">
+                                                </td>
+                                                <td>
+                                                    Pierwsza pomoc
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_first-aid_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-wound-treatment-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_wound-treatment_success_input">
+                                                </td>
+                                                <td>
+                                                    Leczenie ran
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_wound-treatment_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-disease-treatment-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_disease-treatment_success_input">
+                                                </td>
+                                                <td>
+                                                    Leczenie chorób
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_disease-treatment_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-technic">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Technika
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-mechanics-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_mechanics_success_input">
+                                                </td>
+                                                <td>
+                                                    Mechanika
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_mechanics_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-electronics-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_electronics_success_input">
+                                                </td>
+                                                <td>
+                                                    Elektronika
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_electronics_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-computers-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_computers_success_input">
+                                                </td>
+                                                <td>
+                                                    Komputery
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_computers_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-technic">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Wiedza ogólna
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-general-knowledge1-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_general-knowledge1_success_input">
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        Wiedza ogólna
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" class="sheet-skill-general-knowledge-input" name="attr_skill_general-knowledge1_text_input">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_general-knowledge1_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-general-knowledge2-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_general-knowledge2_success_input">
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        Wiedza ogólna
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" class="sheet-skill-general-knowledge-input" name="attr_skill_general-knowledge2_text_input">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_general-knowledge2_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-general-knowledge3-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_general-knowledge3_success_input">
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        Wiedza ogólna
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" class="sheet-skill-general-knowledge-input" name="attr_skill_general-knowledge3_text_input">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_general-knowledge3_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-technic">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Sprzęt
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-heavy-machinery-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_heavy-machinery_success_input">
+                                                </td>
+                                                <td>
+                                                    Maszyny ciężkie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_heavy-machinery_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-military-vehicles-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_military-vehicles_success_input">
+                                                </td>
+                                                <td>
+                                                    Wozy bojowe
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_military-vehicles_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-boats-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_boats_success_input">
+                                                </td>
+                                                <td>
+                                                    Kutry
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_boats_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-warrior-technic">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Pirotechnika
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-gunsmithing-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_gunsmithing_success_input">
+                                                </td>
+                                                <td>
+                                                    Rusznikarstwo
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_gunsmithing_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-launchers-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_launchers_success_input">
+                                                </td>
+                                                <td>
+                                                    Wyrzutnie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_launchers_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-explosives-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_explosives_success_input">
+                                                </td>
+                                                <td>
+                                                    Materiały wybuchowe
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_explosives_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col-2">
+                        <div class="sheet-skill-image">
+                            <div>
+                                <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/bd.png?raw=true">
+                            </div>
+                            <div>
+                                Budowa
+                            </div>
+                        </div>
+                        <div class="sheet-skill-frame">
+                            <div class="sheet-skill-frame-ranger">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Sprawność
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-endurance-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_endurance_success_input">
+                                                </td>
+                                                <td>
+                                                    Kondycja
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_endurance_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-swimming-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_swimming_success_input">
+                                                </td>
+                                                <td>
+                                                    Pływanie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_swimming_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-climbing-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_climbing_success_input">
+                                                </td>
+                                                <td>
+                                                    Wspinaczka
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_climbing_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-frame-ranger">
+                                <div>
+                                    <div class="sheet-skill-table">
+                                        <div class="sheet-skill-points-ico">
+                                            <img src="https://github.com/plrazorpl/neuroshima-cs/blob/main/img/skills/points.png?raw=true">
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div>
+                                                        Jeździectwo
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-horseback-riding-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_horseback-riding_success_input">
+                                                </td>
+                                                <td>
+                                                    Jazda konna
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_horseback-riding_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-horse-driving-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_horse-driving_success_input">
+                                                </td>
+                                                <td>
+                                                    Powożenie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_horse-driving_input">
+                                                </td>
+                                            </tr>
+                                            <tr class="sheet-skill-dressage-row">
+                                                <td>
+                                                    <input type="text" name="attr_skill_dressage_success_input">
+                                                </td>
+                                                <td>
+                                                    Ujeżdżanie
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="attr_skill_dressage_input">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-skill-exp-info">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            P.
+                                        </td>
+                                        <td>
+                                            Spec.
+                                        </td>
+                                        <td>
+                                            W.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>200</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>60</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>90</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>200</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>250</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>300</td>
+                                        <td>600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>350</td>
+                                        <td>700</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>800</td>
+                                        <td>800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>900</td>
+                                        <td>900</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>1000</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>1100</td>
+                                        <td>1100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>2400</td>
+                                        <td>1200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>2600</td>
+                                        <td>1300</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>2800</td>
+                                        <td>1400</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>3000</td>
+                                        <td>1500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>3200</td>
+                                        <td>3200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>3400</td>
+                                        <td>3400</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>3600</td>
+                                        <td>3600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>3800</td>
+                                        <td>3800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>4000</td>
+                                        <td>6000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20+</td>
+                                        <td>n*200</td>
+                                        <td>n*300</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            Punkt reputacji
+                                        </td>
+                                        <td>
+                                            25
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            Dowolna sztuczka
+                                        </td>
+                                        <td>
+                                            200
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
