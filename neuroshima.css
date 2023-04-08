@@ -1640,3 +1640,397 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table t
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table table>tbody>tr:nth-child(4)>td:nth-child(2) .sheet-skill-general-knowledge-input {
     width: calc(100% - 10px);
 }
+
+.sheet-skill-container {
+    position: relative;
+}
+
+.sheet-skill-filter-ico {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-filter-button {
+    color: var(--nscs-button-color);
+    background: url("https://github.com/plrazorpl/neuroshima-cs/blob/main/img/ico/Filtrowanie.png?raw=true");;
+    text-shadow: var(--nscs-button-text-outline);
+    border: none;
+    width: 33px;
+    height: 35px;
+    background-position-x: -15px;
+    background-position-y: -15px;
+}
+
+.sheet-filter-button:before {
+    display: none;
+}
+
+.sheet-skill-filter-window {
+    position: absolute;
+    right: 3px;
+    top: 35px;
+    border: var(--nscs-button-border);
+    background: var(--nscs-select-button-background);
+    z-index: 100;
+    display: none;
+}
+
+.sheet-skill-filter-window > div {
+    margin: 5px
+}
+
+.sheet-skill-filters-active:checked ~ * div[class^="sheet-main-content"] .sheet-skill-filter-window {
+    display: block;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-window input {
+    background: var(--nscs-button-background);
+    border: var(--nscs-button-border);
+    color: var(--nscs-button-color);
+}
+
+.sheet-skill-hand_to_hand_combat:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-hand_to_hand_combat-row,
+.sheet-skill-brawl:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-brawl-row,
+.sheet-skill-handheld_weapon:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-handheld_weapon-row,
+.sheet-skill-throwing:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-throwing-row,
+.sheet-skill-driving:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-driving-row,
+.sheet-skill-car:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-car-row,
+.sheet-skill-motorcycle:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-motorcycle-row,
+.sheet-skill-truck:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-truck-row,
+.sheet-skill-manual_dexterity:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-manual_dexterity-row,
+.sheet-skill-pickpocketing:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-pickpocketing-row,
+.sheet-skill-lockpicking:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-lockpicking-row,
+.sheet-skill-agile_hands:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-agile_hands-row,
+.sheet-skill-firearms:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-firearms-row,
+.sheet-skill-pistols:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-pistols-row,
+.sheet-skill-rifles:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-rifles-row,
+.sheet-skill-machine_guns:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-machine_guns-row,
+.sheet-skill-long_range_weapons:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-long_range_weapons-row,
+.sheet-skill-bow:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-bow-row,
+.sheet-skill-crossbow:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-crossbow-row,
+.sheet-skill-sling:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-sling-row,
+.sheet-skill-terrain_orientation:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-terrain_orientation-row,
+.sheet-skill-direction_sense:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-direction_sense-row,
+.sheet-skill-trap_preparation:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-trap_preparation-row,
+.sheet-skill-tracking:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-tracking-row,
+.sheet-skill-perception:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-perception-row,
+.sheet-skill-listening:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-listening-row,
+.sheet-skill-spotting:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-spotting-row,
+.sheet-skill-alertness:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-alertness-row,
+.sheet-skill-camouflage:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-camouflage-row,
+.sheet-skill-sneaking:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-sneaking-row,
+.sheet-skill-hiding:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-hiding-row,
+.sheet-skill-disguise:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-disguise-row,
+.sheet-skill-survival:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-survival-row,
+.sheet-skill-hunting:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-hunting-row,
+.sheet-skill-terrain_knowledge:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-terrain_knowledge-row,
+.sheet-skill-water_acquisition:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-water_acquisition-row,
+.sheet-skill-negotiation:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-negotiation-row,
+.sheet-skill-intimidation:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-intimidation-row,
+.sheet-skill-persuasion:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-persuasion-row,
+.sheet-skill-leadership:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-leadership-row,
+.sheet-skill-empathy:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-empathy-row,
+.sheet-skill-emotional_perception:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-emotional_perception-row,
+.sheet-skill-bluff:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-bluff-row,
+.sheet-skill-animalcare:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-animalcare-row,
+.sheet-skill-willpower:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-willpower-row,
+.sheet-skill-toughness:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-toughness-row,
+.sheet-skill-resolve:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-resolve-row,
+.sheet-skill-morale:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-morale-row,
+.sheet-skill-medicine:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-medicine-row,
+.sheet-skill-first_aid:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-first_aid-row,
+.sheet-skill-wound_treatment:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-wound_treatment-row,
+.sheet-skill-disease_treatment:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-disease_treatment-row,
+.sheet-skill-technology:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-technology-row,
+.sheet-skill-mechanics:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-mechanics-row,
+.sheet-skill-electronics:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-electronics-row,
+.sheet-skill-computers:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-computers-row,
+.sheet-skill-equipment:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-equipment-row,
+.sheet-skill-heavy_machinery:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-heavy_machinery-row,
+.sheet-skill-military_vehicles:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-military_vehicles-row,
+.sheet-skill-boats:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-boats-row,
+.sheet-skill-pyrotechnics:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-pyrotechnics-row,
+.sheet-skill-gunsmithing:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-gunsmithing-row,
+.sheet-skill-launchers:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-launchers-row,
+.sheet-skill-explosives:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-explosives-row,
+.sheet-skill-general_knowledge1:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-general_knowledge1-row,
+.sheet-skill-general_knowledge2:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-general_knowledge2-row,
+.sheet-skill-general_knowledge3:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-general_knowledge3-row,
+.sheet-skill-fitness:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-fitness-row,
+.sheet-skill-endurance:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-endurance-row,
+.sheet-skill-swimming:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-swimming-row,
+.sheet-skill-climbing:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-climbing-row,
+.sheet-skill-equestrianism:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-equestrianism-row,
+.sheet-skill-horseback_riding:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-horseback_riding-row,
+.sheet-skill-horse_driving:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-horse_driving-row,
+.sheet-skill-dressage:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-dressage-row,
+.sheet-skill-hand_to_hand_combat:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-hand_to_hand_combat-row,
+.sheet-skill-driving:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-driving-row,
+.sheet-skill-manual_dexterity:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-manual_dexterity-row,
+.sheet-skill-firearms:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-firearms-row,
+.sheet-skill-long_range_weapons:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-long_range_weapons-row,
+.sheet-skill-terrain_orientation:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-terrain_orientation-row,
+.sheet-skill-perception:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-perception-row,
+.sheet-skill-camouflage:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-camouflage-row,
+.sheet-skill-survival:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-survival-row,
+.sheet-skill-negotiation:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-negotiation-row,
+.sheet-skill-empathy:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-empathy-row,
+.sheet-skill-willpower:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-willpower-row,
+.sheet-skill-medicine:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-medicine-row,
+.sheet-skill-technology:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-technology-row,
+.sheet-skill-general_knowledge:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-general_knowledge-row,
+.sheet-skill-equipment:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-equipment-row,
+.sheet-skill-pyrotechnics:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-pyrotechnics-row,
+.sheet-skill-fitness:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-fitness-row,
+.sheet-skill-equestrianism:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-equestrianism-row {
+    color: var(--nscs-button-color);
+    display: table-row;
+}
+
+.sheet-skill-hand_to_hand_combat:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-hand_to_hand_combat-section,
+.sheet-skill-driving:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-driving-section,
+.sheet-skill-manual_dexterity:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-manual_dexterity-section,
+.sheet-skill-firearms:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-firearms-section,
+.sheet-skill-long_range_weapons:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-long_range_weapons-section,
+.sheet-skill-terrain_orientation:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-terrain_orientation-section,
+.sheet-skill-perception:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-perception-section,
+.sheet-skill-camouflage:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-camouflage-section,
+.sheet-skill-survival:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-survival-section,
+.sheet-skill-negotiation:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-negotiation-section,
+.sheet-skill-empathy:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-empathy-section,
+.sheet-skill-willpower:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-willpower-section,
+.sheet-skill-medicine:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-medicine-section,
+.sheet-skill-technology:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-technology-section,
+.sheet-skill-general_knowledge:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-general_knowledge-section,
+.sheet-skill-equipment:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-equipment-section,
+.sheet-skill-pyrotechnics:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-pyrotechnics-section,
+.sheet-skill-fitness:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-fitness-section,
+.sheet-skill-equestrianism:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-equestrianism-section {
+    display: block;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-hand_to_hand_combat-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-brawl-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-handheld_weapon-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-throwing-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-driving-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-car-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-motorcycle-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-truck-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-manual_dexterity-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-pickpocketing-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-lockpicking-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-agile_hands-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-firearms-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-pistols-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-rifles-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-machine_guns-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-long_range_weapons-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-bow-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-crossbow-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-sling-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-terrain_orientation-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-direction_sense-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-trap_preparation-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-tracking-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-perception-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-listening-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-spotting-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-alertness-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-camouflage-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-sneaking-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-hiding-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-disguise-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-survival-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-hunting-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-terrain_knowledge-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-water_acquisition-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-negotiation-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-intimidation-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-persuasion-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-leadership-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-empathy-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-emotional_perception-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-bluff-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-animalcare-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-willpower-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-toughness-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-resolve-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-morale-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-medicine-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-first_aid-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-wound_treatment-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-disease_treatment-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-technology-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-mechanics-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-electronics-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-computers-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-equipment-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-heavy_machinery-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-military_vehicles-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-boats-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-pyrotechnics-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-gunsmithing-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-launchers-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-explosives-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-general_knowledge-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-general_knowledge1-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-general_knowledge2-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-general_knowledge3-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-fitness-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-endurance-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-swimming-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-climbing-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-equestrianism-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-horseback_riding-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-horse_driving-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-dressage-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-hand_to_hand_combat-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-driving-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-manual_dexterity-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-firearms-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-long_range_weapons-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-terrain_orientation-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-perception-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-camouflage-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-survival-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-negotiation-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-empathy-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-willpower-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-medicine-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-technology-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-general_knowledge-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-equipment-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-pyrotechnics-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-fitness-row,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-equestrianism-row {
+    color: var(--nscs-disabled-button-color);
+}
+
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-hand_to_hand_combat-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-brawl-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-handheld_weapon-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-throwing-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-driving-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-car-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-motorcycle-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-truck-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-manual_dexterity-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-pickpocketing-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-lockpicking-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-agile_hands-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-firearms-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-pistols-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-rifles-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-machine_guns-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-long_range_weapons-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-bow-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-crossbow-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-sling-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-terrain_orientation-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-direction_sense-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-trap_preparation-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-tracking-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-perception-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-listening-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-spotting-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-alertness-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-camouflage-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-sneaking-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-hiding-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-disguise-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-survival-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-hunting-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-terrain_knowledge-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-water_acquisition-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-negotiation-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-intimidation-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-persuasion-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-leadership-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-empathy-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-emotional_perception-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-bluff-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-animalcare-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-willpower-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-toughness-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-resolve-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-morale-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-medicine-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-first_aid-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-wound_treatment-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-disease_treatment-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-technology-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-mechanics-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-electronics-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-computers-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-equipment-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-heavy_machinery-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-military_vehicles-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-boats-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-pyrotechnics-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-gunsmithing-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-launchers-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-explosives-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-general_knowledge-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-general_knowledge1-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-general_knowledge2-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-general_knowledge3-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-fitness-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-endurance-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-swimming-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-climbing-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-equestrianism-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-horseback_riding-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-horse_driving-row,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-dressage-row,
+
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-hand_to_hand_combat-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-driving-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-manual_dexterity-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-firearms-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-long_range_weapons-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-terrain_orientation-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-perception-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-camouflage-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-survival-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-negotiation-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-empathy-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-willpower-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-medicine-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-technology-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-general_knowledge-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-equipment-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-pyrotechnics-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-fitness-section,
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-equestrianism-section {
+    display: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-filter-text-button {
+    width: 194px;
+    font-size: 1.2rem;
+    margin: 5px 3px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-filter-text-button:before {
+    display: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-hide-inactive-button-a {
+    border: var(--nscs-button-border);
+    display: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-hide-inactive-button-i {
+    border: var(--nscs-disabled-button-border);
+    display: inline;
+}
+
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-hide-inactive-button-a {
+    display: inline;
+}
+
+.sheet-skill-filters-hide-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-hide-inactive-button-i {
+    display: none;
+}

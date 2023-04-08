@@ -13,6 +13,8 @@ on("chat:message", function (msg) {
             parametersRoll(msg.content);
         } else if (msg.content.startsWith("!nscs|-|parametersRollAll|-|")) {
             parametersRollAll(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|switchCheckbox|-|")) {
+            switchCheckbox(msg.content);
         }
     } catch (e) {
         lockUpdate = false;
@@ -33,6 +35,20 @@ on("change:attribute", function (msg) {
         log(e);
     }
 });
+
+function switchCheckboxFunction(checkbox, characterId) {
+    let value = getAttrNSCS(characterId, checkbox, "off").get("current");
+    value = value === "off" ? "on" : "off";
+    setAttrNSCS(characterId, checkbox, value);
+}
+
+function switchCheckbox(msg) {
+    let paramsText = msg.replace("!nscs|-|switchCheckbox|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let checkboxes = getParam(params, "buttons:").split(",");
+    checkboxes.forEach(checkbox => switchCheckboxFunction(checkbox, characterId));
+}
 
 function rollAnimation(characterId, diceAttr, currentTimeout, maxTimeout, multiplier, calculateFunction) {
     if (currentTimeout > maxTimeout) {
@@ -135,6 +151,30 @@ function recalculateDescriptionOriginSkill20(characterId) {
     setAttrNSCS(characterId, "origin_skill_description20", description);
 }
 
+function isInvalidFilterName(characterId, skill, attr) {
+    const name = skill.nameIsReference ? getAttrNSCS(characterId, skill.name, "").get("current") : skill.name;
+    const searchPhrase = getAttrNSCS(characterId, attr, "").get("current");
+    return searchPhrase !== "" && !name.toLowerCase().includes(searchPhrase.toLowerCase());
+}
+
+function recalculateSkillFiltersSkill(characterId, skill) {
+    let isInValid = isInvalidFilterName(characterId, skill, "skill_filter_window_phrase_search");
+    setAttrNSCS(characterId, skill.attr, isInValid ? "off" : "on");
+}
+
+function recalculateSkillFiltersPackage(characterId, skillPackage) {
+    let isInValid = isInvalidFilterName(characterId, skillPackage, "skill_filter_window_package_phrase_search");
+    setAttrNSCS(characterId, skillPackage.attr, isInValid ? "off" : "on");
+}
+
+function recalculateSkillFilters(characterId) {
+    SKILLS_NAMES_CONTROLLERS.forEach(skill => recalculateSkillFiltersSkill(characterId, skill));
+}
+
+function recalculateSkillPackageFilters(characterId) {
+    SKILLS_PACKAGES_NAMES_CONTROLLERS.forEach(skillPackage => recalculateSkillFiltersPackage(characterId, skillPackage));
+}
+
 function recalculateData(characterId) {
     recalculateAbility(characterId, "bd");
     recalculateAbility(characterId, "ag");
@@ -148,6 +188,9 @@ function recalculateData(characterId) {
     recalculateParameter(characterId, "pr");
     recalculateParameter(characterId, "cha");
     recalculateParameter(characterId, "int");
+
+    recalculateSkillFilters(characterId);
+    recalculateSkillPackageFilters(characterId);
 }
 
 function prepareParameterLevelText(val, correctVal, mod) {
