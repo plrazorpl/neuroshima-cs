@@ -280,6 +280,11 @@ const SKILLS_PACKAGES_NAMES_CONTROLLERS = [
     {"attr": "skill_equestrianism", name: "Jeździectwo", nameIsReference: false, forSpec:["ranger"], skillAttrs:["skill_horseback_riding","skill_horse_driving","skill_dressage"]},
 ]
 
+const TRICKS_CONF = {
+    numberTricksPerPage: 9,
+    numberHaveTricksPerPage: 4
+}
+
 const TRICKS_LIST = [
     {
         "from": "Podstawka",
@@ -288,13 +293,46 @@ const TRICKS_LIST = [
                 "name": "3 2 1 Bum",
                 "reguirements": "Mechanika 3+, Materiały wybuchowe 3+",
                 "description": "Wszystkie urządzenia na świecie można podzielićna takie, które czasem wybuchają, i takie,które nigdy nie wybuchają. Szczególnie interesującię te pierwsze. Wystarczy tu przeciąć wężyk, tamskręcić kabel, tu znów poluzować śrubkę. I gotowe.Teraz wystarczy poczekać na fajerwerki.",
-                "action": "Możesz uzbroić - jak bombę - dowolnypojazd, urządzenie czy maszynę napędzaną łatwopalnympaliwem. Kwadrans spokojnej pracy i możeszzacząć odliczanie. Czas wybuchu określasz z pięćdziesięcioprocentowądokładnością na sekundę, minutę,kwadrans lub godzinę (np. gdy wybierzeszminutę, spodziewaj się wybuchu między pół a półtorejminuty). Czasem, jeśli MG pozwoli, nawet na tydzień.Siła wybuchu zależy od rodzaju urządzenia."
+                "action": "Możesz uzbroić - jak bombę - dowolnypojazd, urządzenie czy maszynę napędzaną łatwopalnympaliwem. Kwadrans spokojnej pracy i możeszzacząć odliczanie. Czas wybuchu określasz z pięćdziesięcioprocentowądokładnością na sekundę, minutę,kwadrans lub godzinę (np. gdy wybierzeszminutę, spodziewaj się wybuchu między pół a półtorejminuty). Czasem, jeśli MG pozwoli, nawet na tydzień.Siła wybuchu zależy od rodzaju urządzenia.",
+                req: [
+                    {
+                        type: "min",
+                        data: {
+                            attr: "skill_mechanics_input",
+                            val: 3
+                        }
+                    },
+                    {
+                        type: "min",
+                        data: {
+                            attr: "skill_explosives_input",
+                            val: 3
+                        }
+                    },
+                ]
+
             },
             {
                 "name": "Aramis",
                 "reguirements": "Zręczność 14+, Broń ręczna 5+",
                 "description": "Gdy spotkasz kiedyś wędrującego samotniedziadka, który podpiera się kijkiem, za nic w świeciego nie zaczepiaj. To może być Dziadzio z Alabamy.Najpierw wytrąci ci kijkiem twój topór, potemzłoi na kwaśne jabłko, a na koniec pogrozi palcem ipójdzie sobie dalej.",
-                "action": "Akcja za 2 sukcesy, PT testu o poziomwyższy, do ataku dowolną bronią dłuższą od noża.Szast, prast i broń przeciwnika (każda dłuższa odnoża) leci na bok."
+                "action": "Akcja za 2 sukcesy, PT testu o poziomwyższy, do ataku dowolną bronią dłuższą od noża.Szast, prast i broń przeciwnika (każda dłuższa odnoża) leci na bok.",
+                req: [
+                    {
+                        type: "min",
+                        data: {
+                            attr: "parameters_insert_ag_main",
+                            val: 14
+                        }
+                    },
+                    {
+                        type: "min",
+                        data: {
+                            attr: "skill_handheld_weapon_input",
+                            val: 5
+                        }
+                    },
+                ]
             },
             {
                 "name": "Asekuracja",

@@ -285,6 +285,21 @@
 <input type='checkbox' class='sheet-skill-filters-smarty-inactive' name='attr_skill_filters_smarty_inactive' style="display:none" />
 <input type='checkbox' class='sheet-skill-filters-technic-inactive' name='attr_skill_filters_technic_inactive' style="display:none" />
 
+<input type='checkbox' class='sheet-tricks-list-enable-1' name='attr_trick_item_1_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-list-enable-2' name='attr_trick_item_2_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-list-enable-3' name='attr_trick_item_3_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-list-enable-4' name='attr_trick_item_4_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-list-enable-5' name='attr_trick_item_5_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-list-enable-6' name='attr_trick_item_6_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-list-enable-7' name='attr_trick_item_7_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-list-enable-8' name='attr_trick_item_8_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-list-enable-9' name='attr_trick_item_9_enable' style="display:none" />
+
+<input type='checkbox' class='sheet-tricks-have-box-1-enable' name='attr_have_trick_item_1_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-have-box-2-enable' name='attr_have_trick_item_2_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-have-box-3-enable' name='attr_have_trick_item_3_enable' style="display:none" />
+<input type='checkbox' class='sheet-tricks-have-box-4-enable' name='attr_have_trick_item_4_enable' style="display:none" />
+
 <div class="sheet-root">
     <div class="sheet-main-content">
         <div class="sheet-row">
@@ -5638,6 +5653,508 @@
                                         </tr>
                                     </table>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sheet-page sheet-page7">
+                <div>
+                    <table class="sheet-tricks-table">
+                        <tr class="sheet-table-header-row">
+                            <td>
+                                <div>
+                                    Posiadane sztuczki
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    Filtry
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    Podgląd/dodawanie
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="sheet-table-bordered-div">
+                            <td>
+                                <div>
+                                    <div class="sheet-tricks-paginator-section">
+                                        <table class="sheet-paginator">
+                                            <tr>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|changeTrickPage|-|page:-1|-|source:have|-|csId:@{character_id}">
+                                                        <
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <span name="attr_have_trick_data_page"></span> / <span name="attr_have_trick_data_max_page"></span>
+                                                </td>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|changeTrickPage|-|page:1|-|source:have|-|csId:@{character_id}">
+                                                        >
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table class="sheet-tricks-haved-box sheet-tricks-haved-box-1">
+                                            <tr>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{have_trick_item_1_index}|-|source:have|-|csId:@{character_id}">
+                                                        <span name="attr_have_trick_item_1_name"></span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|removeHaveTrick|-|trick:@{have_trick_item_1_index}|-|csId:@{character_id}">
+                                                        -
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="sheet-tricks-haved-box sheet-tricks-haved-box-2">
+                                            <tr>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{have_trick_item_2_index}|-|source:have|-|csId:@{character_id}">
+                                                        <span name="attr_have_trick_item_2_name"></span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|removeHaveTrick|-|trick:@{have_trick_item_2_index}|-|csId:@{character_id}">
+                                                        -
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="sheet-tricks-haved-box sheet-tricks-haved-box-3">
+                                            <tr>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{have_trick_item_3_index}|-|source:have|-|csId:@{character_id}">
+                                                        <span name="attr_have_trick_item_3_name"></span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|removeHaveTrick|-|trick:@{have_trick_item_3_index}|-|csId:@{character_id}">
+                                                        -
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="sheet-tricks-haved-box sheet-tricks-haved-box-4">
+                                            <tr>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{have_trick_item_4_index}|-|source:have|-|csId:@{character_id}">
+                                                        <span name="attr_have_trick_item_4_name"></span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="roll" class="sheet-tricks-button" value="!nscs|-|removeHaveTrick|-|trick:@{have_trick_item_4_index}|-|csId:@{character_id}">
+                                                        -
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <div>
+                                        Umiejętności
+                                    </div>
+                                    <div class="sheet-row">
+                                        <div class="sheet-col-6">
+                                            Select
+                                        </div>
+                                        <div class="sheet-col-2">
+                                            Input
+                                        </div>
+                                    </div>
+                                    <div class="sheet-row">
+                                        <div class="sheet-col-6">
+                                            Select
+                                        </div>
+                                        <div class="sheet-col-2">
+                                            Input
+                                        </div>
+                                    </div>
+                                    <div class="sheet-row">
+                                        <div class="sheet-col-6">
+                                            Select
+                                        </div>
+                                        <div class="sheet-col-2">
+                                            Input
+                                        </div>
+                                    </div>
+                                    <div>
+                                        Współczynniki
+                                    </div>
+                                    <div>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <div>
+                                                        ZR
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        PE
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        CH
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        SP
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        BU
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div>
+                                                        0
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        0
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        0
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        0
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        0
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        Inne (nadrzędne)
+                                    </div>
+                                    <div>
+                                        Spełniam wymagania
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <div>
+                                        <textarea class="sheet-tricks-textarea" name="attr_tricks_preview_description" readonly></textarea>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Stwórz własną
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="sheet-tricks-title">
+                                    Lista sztuczek
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sheet-tricks-paginator-section">
+                                    <table class="sheet-paginator">
+                                        <tr>
+                                            <td>
+                                                <button type="roll" class="sheet-tricks-button" value="!nscs|-|changeTrickPage|-|page:-1|-|source:external|-|csId:@{character_id}">
+                                                    <
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <span name="attr_trick_data_page"></span> / <span name="attr_trick_data_max_page"></span>
+                                            </td>
+                                            <td>
+                                                <button type="roll" class="sheet-tricks-button" value="!nscs|-|changeTrickPage|-|page:1|-|source:external|-|csId:@{character_id}">
+                                                    >
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="sheet-row">
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-1">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_1_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_1_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_1_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_1_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_1_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-2">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_2_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_2_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_2_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_2_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_2_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-3">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_3_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_3_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_3_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_3_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_3_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-4">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_4_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_4_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_4_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_4_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_4_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-5">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_5_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_5_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_5_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_5_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_5_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-6">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_6_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_6_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_6_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_6_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_6_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-7">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_7_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_7_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_7_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_7_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_7_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-8">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_8_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_8_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_8_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_8_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_8_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sheet-col-1-3 sheet-tricks-select-model-9">
+                            <div>
+                                <table class="sheet-tricks-select-model">
+                                    <tr>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|showTrick|-|trick:@{trick_item_9_index}|-|source:external|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_9_name"></span>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="roll" class="sheet-tricks-button" value="!nscs|-|addOrRemoveTrick|-|trick:@{trick_item_9_index}|-|csId:@{character_id}">
+                                                <span name="attr_trick_item_9_add_symbol"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div>
+                                                Wymagania:
+                                            </div>
+                                            <div>
+                                                <span name="attr_trick_item_9_requirements_text"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>

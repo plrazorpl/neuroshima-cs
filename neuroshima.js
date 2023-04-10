@@ -15,6 +15,14 @@ on("chat:message", function (msg) {
             parametersRollAll(msg.content);
         } else if (msg.content.startsWith("!nscs|-|switchCheckbox|-|")) {
             switchCheckbox(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|changeTrickPage|-|")) {
+            changeTrickPage(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|showTrick|-|")) {
+            showTrick(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|addOrRemoveTrick|-|")) {
+            addOrRemoveTrick(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|removeHaveTrick|-|")) {
+            removeHaveTrick(msg.content);
         }
     } catch (e) {
         lockUpdate = false;
@@ -35,6 +43,105 @@ on("change:attribute", function (msg) {
         log(e);
     }
 });
+
+function removeHaveTrick(msg) {
+    let paramsText = msg.replace("!nscs|-|removeHaveTrick|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let trick = +getParam(params, "trick:");
+    let haveTrick = JSON.parse(getAttrNSCS(characterId, "have_trick_data", "[]").get("current"));
+    let select = haveTrick[trick];
+    haveTrick = removeTrick(haveTrick, select);
+    setAttrNSCS(characterId, "have_trick_data", JSON.stringify(haveTrick));
+    recalculateTricks(characterId);
+}
+
+function removeTrick(haveTrick, obj) {
+    return haveTrick.filter(trick => !(trick.name === obj.name
+        && trick.reguirements === obj.reguirements
+        && trick.description === obj.description
+        && trick.action === obj.action));
+}
+
+function addTrick(haveTrick, select) {
+    haveTrick[haveTrick.length] = select;
+    return haveTrick;
+}
+
+function addOrRemoveTrick(msg) {
+    let paramsText = msg.replace("!nscs|-|addOrRemoveTrick|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let trick = +getParam(params, "trick:");
+    let data = JSON.parse(getAttrNSCS(characterId, "tricks_data", "{}").get("current"));
+    let haveTrick = JSON.parse(getAttrNSCS(characterId, "have_trick_data", "[]").get("current"));
+    let select = data[trick];
+    if (isContainsTrick(haveTrick, select)) {
+        haveTrick = removeTrick(haveTrick, select);
+    } else {
+        haveTrick = addTrick(haveTrick, select);
+    }
+    setAttrNSCS(characterId, "have_trick_data", JSON.stringify(haveTrick));
+    recalculateTricks(characterId);
+}
+
+function showTrick(msg) {
+    let paramsText = msg.replace("!nscs|-|showTrick|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let trick = +getParam(params, "trick:");
+    let source = getParam(params, "source:");
+    let data = "";
+    switch (source) {
+        case "external":
+            data = "tricks_data";
+            break;
+        case "have":
+            data = "have_trick_data";
+            break
+    }
+    data = JSON.parse(getAttrNSCS(characterId, data, "{}").get("current"));
+    const selected = data[trick];
+    setAttrNSCS(characterId, "tricks_preview_description", prepareFullTextForTrickDescription(selected));
+}
+
+function changeTrickPage(msg) {
+    let paramsText = msg.replace("!nscs|-|changeTrickPage|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let source = getParam(params, "source:");
+    const page = +getParam(params, "page:");
+    let currentPageAttr;
+    let currentMaxPageAttr;
+    switch (source) {
+        case "external":
+            currentPageAttr = "trick_data_page";
+            currentMaxPageAttr = "trick_data_max_page";
+            break;
+        case "have":
+            currentPageAttr = "have_trick_data_page";
+            currentMaxPageAttr = "have_trick_data_max_page";
+            break
+    }
+
+    const currentPage = +getAttrNSCS(characterId, currentPageAttr, "1").get("current");
+    const currentMaxPage = +getAttrNSCS(characterId, currentMaxPageAttr, "1").get("current");
+    let newValue = page + currentPage;
+    newValue = newValue < 1 ? 1 : newValue;
+    newValue = newValue > currentMaxPage ? currentMaxPage : newValue;
+
+    if (newValue !== currentPage) {
+        setAttrNSCS(characterId, currentPageAttr, newValue);
+        switch (source) {
+            case "external":
+                prepareTricksList(characterId);
+                break;
+            case "have":
+                prepareHaveTricksList(characterId);
+                break
+        }
+    }
+}
 
 function switchCheckboxFunction(checkbox, characterId) {
     let value = getAttrNSCS(characterId, checkbox, "off").get("current");
@@ -220,6 +327,119 @@ function recalculateData(characterId) {
 
     recalculateSkillFilters(characterId);
     recalculateSkillPackageFilters(characterId);
+
+    recalculateTricks(characterId);
+}
+
+function prepareListOfTricks(characterId) {
+    let result = [];
+    TRICKS_LIST.forEach(dlc => dlc.list.forEach(trick => result[result.length] = trick));
+    return result;
+}
+
+function prepareListOfHaveTricks(characterId) {
+    let result = [];
+    const haveTricks = JSON.parse(getAttrNSCS(characterId, "have_trick_data", "[]").get("current"));
+    haveTricks.forEach(trick => result[result.length] = trick);
+    return result;
+}
+
+function prepareTricksBasicData(characterId, listOfTricks, tricksTableAttr, dataPageAttr, dataMaxPageAttr, elementsPerPage) {
+    setAttrNSCS(characterId, tricksTableAttr, JSON.stringify(listOfTricks));
+    let trickPage = +getAttrNSCS(characterId, dataPageAttr, "1").get("current");
+    let currentMaxPage = Math.ceil(listOfTricks.length / elementsPerPage);
+    currentMaxPage = currentMaxPage === 0 ? 1 : currentMaxPage;
+    trickPage = trickPage < 1 ? 1 : trickPage;
+    trickPage = trickPage > currentMaxPage ? currentMaxPage : trickPage;
+    setAttrNSCS(characterId, dataPageAttr, trickPage);
+    setAttrNSCS(characterId, dataMaxPageAttr, currentMaxPage);
+}
+
+function isContainsTrick(listOfTricks, obj) {
+    return listOfTricks.find(trick => trick.name === obj.name
+        && trick.reguirements === obj.reguirements
+        && trick.description === obj.description
+        && trick.action === obj.action)
+}
+
+function selectSymbolForTrickList(characterId, obj, haveTrick) {
+    if (isContainsTrick(haveTrick, obj)) {
+        return "-";
+    }
+    return "+";
+}
+
+function prepareFullTextForTrickDescription(obj) {
+    const separator = "\n\n";
+    let result = "Nazwa: " + obj.name + separator;
+    result += "Wymagania: " + obj.reguirements + separator;
+    result += "Opis: " + obj.description + separator;
+    result += "Działanie: " + obj.action;
+    return result;
+}
+
+function prepareTricksList(characterId) {
+    const pageNumber = +getAttrNSCS(characterId, "trick_data_page", "1").get("current");
+    const tricks = JSON.parse(getAttrNSCS(characterId, "tricks_data", "{}").get("current"));
+    let startFrom = TRICKS_CONF.numberTricksPerPage * (pageNumber - 1);
+    let endOn = startFrom + TRICKS_CONF.numberTricksPerPage;
+    endOn = endOn > tricks.length ? tricks.length : endOn;
+    let diff = endOn - startFrom;
+    let haveTrick = JSON.parse(getAttrNSCS(characterId, "have_trick_data", "[]").get("current"));
+    for (let i = 0; i < diff; i++) {
+        let obj = tricks[i+startFrom];
+        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_index", (i+startFrom));
+        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_enable", "on");
+        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_name", obj.name);
+        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_add_symbol", selectSymbolForTrickList(characterId, obj, haveTrick));
+        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_requirements_text", obj.reguirements);
+        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_full_text", prepareFullTextForTrickDescription(obj));
+    }
+
+    for (let i = diff; i < TRICKS_CONF.numberTricksPerPage; i++) {
+        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_enable", "off");
+    }
+}
+
+function selectSymbolForHaveTrickList(characterId, obj) {
+    return "-";
+}
+
+function prepareHaveTricksList(characterId) {
+    const pageNumber = +getAttrNSCS(characterId, "have_trick_data_page", "1").get("current");
+    const tricks = JSON.parse(getAttrNSCS(characterId, "have_trick_data", "[]").get("current"));
+    let startFrom = TRICKS_CONF.numberHaveTricksPerPage * (pageNumber - 1);
+    let endOn = startFrom + TRICKS_CONF.numberHaveTricksPerPage;
+    endOn = endOn > tricks.length ? tricks.length : endOn;
+    let diff = endOn - startFrom;
+    for (let i = 0; i < diff; i++) {
+        let obj = tricks[i+startFrom];
+        setAttrNSCS(characterId, "have_trick_item_" + (i + 1) + "_index", (i+startFrom));
+        setAttrNSCS(characterId, "have_trick_item_" + (i + 1) + "_enable", "on");
+        setAttrNSCS(characterId, "have_trick_item_" + (i + 1) + "_name", obj.name);
+        setAttrNSCS(characterId, "have_trick_item_" + (i + 1) + "_add_symbol", selectSymbolForHaveTrickList(characterId, obj));
+        setAttrNSCS(characterId, "have_trick_item_" + (i + 1) + "_full_text", prepareFullTextForTrickDescription(obj));
+    }
+
+    for (let i = diff; i < TRICKS_CONF.numberHaveTricksPerPage; i++) {
+        setAttrNSCS(characterId, "have_trick_item_" + (i + 1) + "_enable", "off");
+    }
+}
+
+function recalculateTricks(characterId) {
+    prepareTricksBasicData(characterId, prepareListOfTricks(characterId),
+        "tricks_data",
+        "trick_data_page",
+        "trick_data_max_page",
+        TRICKS_CONF.numberTricksPerPage);
+    prepareTricksList(characterId);
+
+    prepareTricksBasicData(characterId, prepareListOfHaveTricks(characterId),
+        "have_trick_data",
+        "have_trick_data_page",
+        "have_trick_data_max_page",
+        TRICKS_CONF.numberHaveTricksPerPage);
+    prepareHaveTricksList(characterId);
 }
 
 function prepareParameterLevelText(val, correctVal, mod) {
@@ -234,7 +454,7 @@ function prepareParameterLevelText(val, correctVal, mod) {
 
 function recalculateParameter(characterId, param) {
     const val = getAttrNSCS(characterId, "parameters_insert_" + param +"_main", "").get("current");
-    const correctVal = val != "" && Number.isInteger(+val);
+    const correctVal = val !== "" && Number.isInteger(+val);
     setAttrNSCS(characterId, "parameters_" + param + "_level_0", prepareParameterLevelText(val, correctVal, 2));
     setAttrNSCS(characterId, "parameters_" + param + "_level_1", prepareParameterLevelText(val, correctVal, 0));
     setAttrNSCS(characterId, "parameters_" + param + "_level_2", prepareParameterLevelText(val, correctVal, -2));

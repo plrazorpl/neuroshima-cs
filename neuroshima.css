@@ -2054,3 +2054,175 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-filter-
 .sheet-skill-filters-technic-inactive:checked ~ * div[class^="sheet-main-content"] .sheet-skill-container .sheet-skill-filter-technic-inactive-button-i {
     display: none;
 }
+
+.sheet-tricks-table {
+    width: 100%;
+    margin: 5px;
+}
+
+.sheet-tricks-table > tbody > tr > td:nth-child(1) {
+    width: 30%;
+}
+
+.sheet-tricks-table > tbody > tr > td:nth-child(2) {
+    width: 25%;
+}
+
+.sheet-tricks-table > tbody > tr > td:nth-child(3) {
+    width: 45%;
+}
+
+.sheet-tricks-table td > div {
+    margin: 5px;
+}
+
+.sheet-tricks-table .sheet-table-header-row {
+    font-size: 1.9rem;
+}
+
+.sheet-tricks-table .sheet-table-bordered-div > td > div {
+    border: var(--nscs-button-border);
+    min-height: 300px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-button {
+    border: none;
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: left;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-button span {
+    white-space: pre-wrap;
+}
+
+.sheet-tricks-button:before {
+    display: none;
+}
+
+.sheet-tricks-select-model {
+    width: calc(100% - 10px);
+    margin: 5px 10px;
+    height: 120px;
+}
+
+.sheet-tricks-select-model td {
+    border: var(--nscs-button-border);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-select-model .sheet-tricks-button {
+    margin: 5px 0;
+}
+
+.sheet-tricks-select-model tr:nth-child(1)>td:nth-child(1) {
+    width: 100%;
+}
+
+.sheet-tricks-select-model tr:nth-child(1)>td:nth-child(2) {
+    min-width: 40px;
+}
+
+.sheet-tricks-select-model tr:nth-child(1)>td:nth-child(2) button {
+    text-align: center;
+    width:75%;
+}
+
+.sheet-tricks-select-model tr:nth-child(1) span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.sheet-tricks-select-model tr:nth-child(1) td {
+    height: 72px;
+}
+
+.sheet-tricks-paginator-section {
+    text-align: center;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"]  .sheet-paginator {
+    font-size: 2.2rem;
+    display: inline;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"]  .sheet-paginator button {
+    font-size: 2.2rem;
+    width: 40px;
+    font-weight: bold;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-paginator td:nth-child(1)>button {
+    text-align: right;
+}
+
+.sheet-tricks-select-model-1,
+.sheet-tricks-select-model-2,
+.sheet-tricks-select-model-3,
+.sheet-tricks-select-model-4,
+.sheet-tricks-select-model-5,
+.sheet-tricks-select-model-6,
+.sheet-tricks-select-model-7,
+.sheet-tricks-select-model-8,
+.sheet-tricks-select-model-9,
+.sheet-tricks-haved-box-1,
+.sheet-tricks-haved-box-2,
+.sheet-tricks-haved-box-3,
+.sheet-tricks-haved-box-4 {
+    display: none;
+}
+
+.sheet-tricks-list-enable-1:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-1,
+.sheet-tricks-list-enable-2:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-2,
+.sheet-tricks-list-enable-3:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-3,
+.sheet-tricks-list-enable-4:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-4,
+.sheet-tricks-list-enable-5:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-5,
+.sheet-tricks-list-enable-6:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-6,
+.sheet-tricks-list-enable-7:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-7,
+.sheet-tricks-list-enable-8:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-8,
+.sheet-tricks-list-enable-9:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-select-model-9,
+.sheet-tricks-have-box-1-enable:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-haved-box-1,
+.sheet-tricks-have-box-2-enable:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-haved-box-2,
+.sheet-tricks-have-box-3-enable:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-haved-box-3,
+.sheet-tricks-have-box-4-enable:checked ~ * div[class^="sheet-main-content"] .sheet-tricks-haved-box-4 {
+    display: block;
+}
+
+.sheet-tricks-title {
+    font-size: 2rem;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-textarea {
+    background: transparent;
+    resize: none;
+    width: calc(100% - 20px);
+    height: 280px;
+    border: none;
+    outline: none;
+    color: var(--nscs-text-color);
+    cursor: default;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-haved-box {
+    width: 90%;
+    margin: 5px auto;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-haved-box button {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.sheet-tricks-haved-box td:nth-child(1) {
+    width: 100%;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-haved-box td:nth-child(2) > button {
+    min-width: 40px;
+    text-align: center;
+    margin: auto;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-haved-box td {
+    border: var(--nscs-button-border);
+    height: 40px;
+}
