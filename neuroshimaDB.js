@@ -1114,6 +1114,12 @@ const TRICKS_LIST = [
                         attr: "parameters_insert_cha_main",
                         val: 14
                     }
+                }, {
+                    type: "eq",
+                    data: {
+                        attr: "sex",
+                        val: "Kobieta"
+                    }
                 }]
             }, {
                 "name": "Hokus pokus",
