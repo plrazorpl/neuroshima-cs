@@ -416,7 +416,8 @@ const SKILLS_PACKAGES_NAMES_CONTROLLERS = [
 
 const TRICKS_CONF = {
     numberTricksPerPage: 9,
-    numberHaveTricksPerPage: 4
+    numberHaveTricksPerPage: 4,
+    numberElementsInCombobox: 4
 }
 
 const TRICKS_LIST = [
@@ -3248,4 +3249,222 @@ const TRICKS_LIST = [
             }
         ]
     }
+]
+
+const OTHER_SKILL_INPUT_LIST = [
+    {
+        "attr": "skill_other_skill_ag_1_text_input",
+        "param": "ag",
+    },
+    {
+        "attr": "skill_other_skill_ag_2_text_input",
+        "param": "ag",
+    },
+    {
+        "attr": "skill_other_skill_ag_3_text_input",
+        "param": "ag",
+    },
+    {
+        "attr": "skill_other_skill_pr_1_text_input",
+        "param": "pr",
+    },
+    {
+        "attr": "skill_other_skill_pr_2_text_input",
+        "param": "pr",
+    },
+    {
+        "attr": "skill_other_skill_pr_3_text_input",
+        "param": "pr",
+    },
+    {
+        "attr": "skill_other_skill_cha_1_text_input",
+        "param": "cha",
+    },
+    {
+        "attr": "skill_other_skill_cha_2_text_input",
+        "param": "cha",
+    },
+    {
+        "attr": "skill_other_skill_cha_3_text_input",
+        "param": "cha",
+    },
+    {
+        "attr": "skill_other_skill_int_1_text_input",
+        "param": "int",
+    },
+    {
+        "attr": "skill_other_skill_int_2_text_input",
+        "param": "int",
+    },
+    {
+        "attr": "skill_other_skill_int_3_text_input",
+        "param": "int",
+    },
+    {
+        "attr": "skill_other_skill_bd_1_text_input",
+        "param": "bd",
+    },
+    {
+        "attr": "skill_other_skill_bd_2_text_input",
+        "param": "bd",
+    },
+    {
+        "attr": "skill_other_skill_bd_3_text_input",
+        "param": "bd",
+    }
+]
+
+const PARAMETERS_COMBOBOX_DATA_INPUT = [
+    {
+        "label": "Zręczność",
+        "data": "parameters_insert_ag_main"
+    },
+    {
+        "label": "Percepcja",
+        "data": "parameters_insert_pr_main"
+    },
+    {
+        "label": "Charakter",
+        "data": "parameters_insert_cha_main"
+    },
+    {
+        "label": "Spryt",
+        "data": "parameters_insert_int_main"
+    },
+    {
+        "label": "Budowa",
+        "data": "parameters_insert_bd_main"
+    },
+]
+
+const SKILLS_COMBOBOX_DATA_INPUT = [
+    {"data": "skill_brawl_input", "label": "Bijatyka"},
+    {"data": "skill_handheld_weapon_input", "label": "Broń ręczna"},
+    {"data": "skill_throwing_input", "label": "Rzucanie"},
+    {"data": "skill_car_input", "label": "Samochód"},
+    {"data": "skill_motorcycle_input", "label": "Motocykl"},
+    {"data": "skill_truck_input", "label": "Ciężarówka"},
+    {"data": "skill_pickpocketing_input", "label": "Kradzież kieszonkowa"},
+    {"data": "skill_lockpicking_input", "label": "Otwieranie zamków"},
+    {"data": "skill_agile_hands_input", "label": "Zwinne dłonie"},
+    {"data": "skill_pistols_input", "label": "Pistolety"},
+    {"data": "skill_rifles_input", "label": "Karabiny"},
+    {"data": "skill_machine_guns_input", "label": "Broń maszynowa"},
+    {"data": "skill_bow_input", "label": "Łuk"},
+    {"data": "skill_crossbow_input", "label": "Kusza"},
+    {"data": "skill_sling_input", "label": "Proca"},
+    {"data": "skill_direction_sense_input", "label": "Wyczucie kierunku"},
+    {"data": "skill_trap_preparation_input", "label": "Przygotowanie pułapki"},
+    {"data": "skill_tracking_input", "label": "Tropienie"},
+    {"data": "skill_listening_input", "label": "Nasłuchiwanie"},
+    {"data": "skill_spotting_input", "label": "Wypatrywanie"},
+    {"data": "skill_alertness_input", "label": "Czujność"},
+    {"data": "skill_sneaking_input", "label": "Skradanie się"},
+    {"data": "skill_hiding_input", "label": "Ukrywanie się"},
+    {"data": "skill_disguise_input", "label": "Maskowanie"},
+    {"data": "skill_hunting_input", "label": "Łowiectwo"},
+    {"data": "skill_terrain_knowledge_input", "label": "Znajomość terenu"},
+    {"data": "skill_water_acquisition_input", "label": "Zdobywanie wody"},
+    {"data": "skill_intimidation_input", "label": "Zastraszanie"},
+    {"data": "skill_persuasion_input", "label": "Perswazja"},
+    {"data": "skill_leadership_input", "label": "Zdolności przywódcze"},
+    {"data": "skill_emotional_perception_input", "label": "Postrzeganie emocji"},
+    {"data": "skill_bluff_input", "label": "Blef"},
+    {"data": "skill_animalcare_input", "label": "Opieka nad zwierzętami"},
+    {"data": "skill_toughness_input", "label": "Odporność na ból"},
+    {"data": "skill_resolve_input", "label": "Niezłomność"},
+    {"data": "skill_morale_input", "label": "Morale"},
+    {"data": "skill_first_aid_input", "label": "Pierwsza pomoc"},
+    {"data": "skill_wound_treatment_input", "label": "Leczenie ran"},
+    {"data": "skill_disease_treatment_input", "label": "Leczenie chorób"},
+    {"data": "skill_mechanics_input", "label": "Mechanika"},
+    {"data": "skill_electronics_input", "label": "Elektronika"},
+    {"data": "skill_computers_input", "label": "Komputery"},
+    {"data": "skill_heavy_machinery_input", "label": "Maszyny ciężkie"},
+    {"data": "skill_military_vehicles_input", "label": "Wozy bojowe"},
+    {"data": "skill_boats_input", "label": "Kutry"},
+    {"data": "skill_gunsmithing_input", "label": "Rusznikarstwo"},
+    {"data": "skill_launchers_input", "label": "Wyrzutnie"},
+    {"data": "skill_explosives_input", "label": "Materiały wybuchowe"},
+    {"data": "skill_endurance_input", "label": "Kondycja"},
+    {"data": "skill_swimming_input", "label": "Pływanie"},
+    {"data": "skill_climbing_input", "label": "Wspinaczka"},
+    {"data": "skill_horseback_riding_input", "label": "Jazda konna"},
+    {"data": "skill_horse_driving_input", "label": "Powożenie"},
+    {"data": "skill_dressage_input", "label": "Ujeżdżanie"},
+]
+
+const REF_SKILLS_COMBOBOX_DATA_INPUT = [
+    {
+        "data": "skill_other_skill_ag_1_input",
+        "label": "skill_other_skill_ag_1_text_input",
+    },
+    {
+        "data": "skill_other_skill_ag_2_input",
+        "label": "skill_other_skill_ag_2_text_input",
+    },
+    {
+        "data": "skill_other_skill_ag_3_input",
+        "label": "skill_other_skill_ag_3_text_input",
+    },
+    {
+        "data": "skill_other_skill_pr_1_input",
+        "label": "skill_other_skill_pr_1_text_input",
+    },
+    {
+        "data": "skill_other_skill_pr_2_input",
+        "label": "skill_other_skill_pr_2_text_input",
+    },
+    {
+        "data": "skill_other_skill_pr_3_input",
+        "label": "skill_other_skill_pr_3_text_input",
+    },
+    {
+        "data": "skill_other_skill_cha_1_input",
+        "label": "skill_other_skill_cha_1_text_input",
+    },
+    {
+        "data": "skill_other_skill_cha_2_input",
+        "label": "skill_other_skill_cha_2_text_input",
+    },
+    {
+        "data": "skill_other_skill_cha_3_input",
+        "label": "skill_other_skill_cha_3_text_input",
+    },
+    {
+        "data": "skill_other_skill_int_1_input",
+        "label": "skill_other_skill_int_1_text_input",
+    },
+    {
+        "data": "skill_other_skill_int_2_input",
+        "label": "skill_other_skill_int_2_text_input",
+    },
+    {
+        "data": "skill_other_skill_int_3_input",
+        "label": "skill_other_skill_int_3_text_input",
+    },
+    {
+        "data": "skill_other_skill_bd_1_input",
+        "label": "skill_other_skill_bd_1_text_input",
+    },
+    {
+        "data": "skill_other_skill_bd_2_input",
+        "label": "skill_other_skill_bd_2_text_input",
+    },
+    {
+        "data": "skill_other_skill_bd_3_input",
+        "label": "skill_other_skill_bd_3_text_input",
+    },
+    {
+        "data": "skill_general_knowledge1_input",
+        "label": "skill_general_knowledge1_text_input"
+    },
+    {
+        "data": "skill_general_knowledge2_input",
+        "label": "skill_general_knowledge2_text_input"
+    },
+    {
+        "data": "skill_general_knowledge3_input",
+        "label": "skill_general_knowledge3_text_input"
+    },
 ]

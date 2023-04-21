@@ -23,6 +23,14 @@ on("chat:message", function (msg) {
             addOrRemoveTrick(msg.content);
         } else if (msg.content.startsWith("!nscs|-|removeHaveTrick|-|")) {
             removeHaveTrick(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|comboBoxToggleExpand|-|")) {
+            comboBoxToggleExpand(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|comboBoxScrollUp|-|")) {
+            comboBoxScrollUp(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|comboBoxScrollDown|-|")) {
+            comboBoxScrollDown(msg.content);
+        } else if (msg.content.startsWith("!nscs|-|comboBoxSelect|-|")) {
+            comboBoxSelect(msg.content);
         }
     } catch (e) {
         lockUpdate = false;
@@ -37,12 +45,127 @@ on("change:attribute", function (msg) {
             return;
         }
         let characterId = msg.get('_characterid');
-        recalculateData(characterId);
+        if (msg.get("name").startsWith("combo_box_input_param_")) {
+            processSearchCombobox(characterId, msg.get("name"));
+        } else {
+            recalculateData(characterId);
+        }
 
     } catch (e) {
         log(e);
     }
 });
+
+function comboBoxSelect(msg) {
+    let paramsText = msg.replace("!nscs|-|comboBoxSelect|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let source = getParam(params, "source:");
+    let number = +getParam(params, "number:");
+
+    let offset = +getAttrNSCS(characterId, "combo_box_selector_offset_" + source, "0").get("current");
+    let elements = JSON.parse(getAttrNSCS(characterId, "combo_box_selector_filtered_elements_" + source, "[]").get("current"));
+    let selected = elements[number + offset];
+    setAttrNSCS(characterId, "combo_box_input_param_" + source, selected.label);
+    setAttrNSCS(characterId, "combo_box_input_value_attr_" + source, selected.data);
+    setAttrNSCS(characterId, "combo_box_selector_enable_" + source, "off");
+    setAttrNSCS(characterId, "combo_box_unknown_param_" + source, "off");
+    recalculateTricks(characterId);
+}
+
+function processSearchCombobox(characterId, paramName) {
+    let source = paramName.replace("combo_box_input_param_", "");
+    setAttrNSCS(characterId, "combo_box_unknown_param_" + source, "on");
+    setAttrNSCS(characterId, "combo_box_selector_enable_" + source, "on");
+    setAttrNSCS(characterId, "combo_box_input_value_attr_" + source, "");
+    prepareComboExpandList(characterId, source);
+}
+
+function comboBoxScrollUp(msg) {
+    let paramsText = msg.replace("!nscs|-|comboBoxScrollUp|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let source = getParam(params, "source:");
+    setComboboxOffset(source, characterId, -1);
+}
+
+function comboBoxScrollDown(msg) {
+    let paramsText = msg.replace("!nscs|-|comboBoxScrollDown|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let source = getParam(params, "source:");
+    setComboboxOffset(source, characterId, 1);
+}
+
+function setComboboxOffset(source, characterId, value) {
+    let offset = +getAttrNSCS(characterId, "combo_box_selector_offset_" + source, "0").get("current");
+    offset += value;
+    let maxOffset = +getAttrNSCS(characterId, "combo_box_selector_max_offset_" + source, "0").get("current");
+    setAttrNSCS(characterId, "combo_box_selector_offset_" + source, verifyOffsetForCombobox(offset, maxOffset));
+    prepareComboExpandList(characterId, source);
+}
+
+function comboBoxToggleExpand(msg) {
+    let paramsText = msg.replace("!nscs|-|comboBoxToggleExpand|-|", "");
+    let params = paramsText.split("|-|")
+    let characterId = getParam(params, "csId:");
+    let source = getParam(params, "source:");
+    let status = getAttrNSCS(characterId, "combo_box_selector_enable_" + source, "off").get("current");
+    if (status === "off") {
+        status = "on";
+    } else {
+        status = "off";
+    }
+    setAttrNSCS(characterId, "combo_box_selector_enable_" + source, status);
+    prepareComboExpandList(characterId, source);
+}
+
+function isComboItemValid(characterId, source, el) {
+    let param = getAttrNSCS(characterId, "combo_box_input_param_" + source, "").get("current").trim();
+    if (param === "") {
+        return true;
+    }
+    log("el.label: " + el.label.toLowerCase())
+    log("param: " + param.toLowerCase())
+    return el.label.toLowerCase().includes(param.toLowerCase());
+}
+
+function prepareComboExpandList(characterId, source) {
+    let data = JSON.parse(getAttrNSCS(characterId, "combo_box_selector_all_elements_" + source, "").get("current"));
+    let elements = data.filter(el => isComboItemValid(characterId, source, el))
+    setAttrNSCS(characterId, "combo_box_selector_filtered_elements_" + source, JSON.stringify(elements));
+
+    let maxOffset = elements.length;
+    maxOffset -= TRICKS_CONF.numberElementsInCombobox;
+    maxOffset = maxOffset < 0 ? 0 : maxOffset;
+
+    setAttrNSCS(characterId, "combo_box_selector_max_offset_" + source, maxOffset);
+    let offset = +getAttrNSCS(characterId, "combo_box_selector_offset_" + source, "0").get("current");
+    setAttrNSCS(characterId, "combo_box_selector_offset_" + source, verifyOffsetForCombobox(offset, maxOffset));
+
+    log("offset: " + offset);
+    log("maxOffset: " + maxOffset);
+
+    prepareComboExpandListElement(0, elements, offset, source, characterId, maxOffset);
+    prepareComboExpandListElement(1, elements, offset, source, characterId, maxOffset);
+    prepareComboExpandListElement(2, elements, offset, source, characterId, maxOffset);
+    prepareComboExpandListElement(3, elements, offset, source, characterId, maxOffset);
+
+    setAttrNSCS(characterId, "combo_box_scroll_up_enable_" + source, offset === 0 ? "off" : "on");
+    setAttrNSCS(characterId, "combo_box_scroll_down_enable_" + source, offset >= maxOffset ? "off" : "on");
+}
+
+function prepareComboExpandListElement(elementNumber, elements, offset, source, characterId, maxOffset) {
+    const index = offset + elementNumber;
+    if (index > elements.length) {
+        setAttrNSCS(characterId, "combo_box_expand_panel_row_" + (elementNumber + 1) + "_visible_" + source, "off");
+        return;
+    }
+    const element = elements[index];
+    setAttrNSCS(characterId, "combo_box_expand_panel_row_" + (elementNumber + 1) + "_text_" + source, element.label);
+    setAttrNSCS(characterId, "combo_box_expand_panel_row_" + (elementNumber + 1) + "_value_" + source, element.data);
+    setAttrNSCS(characterId, "combo_box_expand_panel_row_" + (elementNumber + 1) + "_visible_" + source, "on");
+}
 
 function removeHaveTrick(msg) {
     let paramsText = msg.replace("!nscs|-|removeHaveTrick|-|", "");
@@ -329,11 +452,56 @@ function recalculateData(characterId) {
     recalculateSkillPackageFilters(characterId);
 
     recalculateTricks(characterId);
+    prepareTricksFilters(characterId);
+}
+
+function prepareTricksFilters(characterId) {
+    let result = [];
+    result = addComboboxData(result, PARAMETERS_COMBOBOX_DATA_INPUT, false, characterId);
+    result = addComboboxData(result, SKILLS_COMBOBOX_DATA_INPUT, false, characterId);
+    result = addComboboxData(result, REF_SKILLS_COMBOBOX_DATA_INPUT, true, characterId);
+    setAttrNSCS(characterId, "combo_box_selector_all_elements_trick_filter_skill_1", JSON.stringify(result));
+    setAttrNSCS(characterId, "combo_box_selector_all_elements_trick_filter_skill_2", JSON.stringify(result));
+    setAttrNSCS(characterId, "combo_box_selector_all_elements_trick_filter_skill_3", JSON.stringify(result));
+    setAttrNSCS(characterId, "combo_box_selector_all_elements_trick_filter_skill_4", JSON.stringify(result));
+}
+
+function verifyOffsetForCombobox(offset, maxOffset) {
+    if (offset < 0) {
+        return 0;
+    }
+
+    if (offset > maxOffset) {
+        return maxOffset;
+    }
+    return offset;
+}
+
+function addComboboxData(list, elements, isReference, characterId) {
+    elements.forEach(el => {
+        const data = prepareComboboxData(el, isReference, characterId);
+        if (data.label !== "") {
+            list[list.length] = data;
+        }
+    });
+    return list;
+}
+
+function prepareComboboxData(element, isReference, characterId) {
+    let result = {
+        "data": element.data,
+        "label": element.label
+    }
+    if (isReference) {
+        result.label = getAttrNSCS(characterId, element.label, "").get("current");
+    }
+    return result;
 }
 
 function prepareListOfTricks(characterId) {
     let result = [];
     TRICKS_LIST.forEach(dlc => dlc.list.forEach(trick => result[result.length] = trick));
+    result = result.filter(trick => isTrickValid(trick, characterId));
     return result;
 }
 
@@ -380,15 +548,15 @@ function prepareFullTextForTrickDescription(obj) {
 
 function prepareTricksList(characterId) {
     const pageNumber = +getAttrNSCS(characterId, "trick_data_page", "1").get("current");
-    const tricks = JSON.parse(getAttrNSCS(characterId, "tricks_data", "{}").get("current"));
+    let tricks = JSON.parse(getAttrNSCS(characterId, "tricks_data", "{}").get("current"));
     let startFrom = TRICKS_CONF.numberTricksPerPage * (pageNumber - 1);
     let endOn = startFrom + TRICKS_CONF.numberTricksPerPage;
     endOn = endOn > tricks.length ? tricks.length : endOn;
     let diff = endOn - startFrom;
     let haveTrick = JSON.parse(getAttrNSCS(characterId, "have_trick_data", "[]").get("current"));
     for (let i = 0; i < diff; i++) {
-        let obj = tricks[i+startFrom];
-        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_index", (i+startFrom));
+        let obj = tricks[i + startFrom];
+        setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_index", (i + startFrom));
         setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_enable", "on");
         setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_name", obj.name);
         setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_add_symbol", selectSymbolForTrickList(characterId, obj, haveTrick));
@@ -399,6 +567,63 @@ function prepareTricksList(characterId) {
     for (let i = diff; i < TRICKS_CONF.numberTricksPerPage; i++) {
         setAttrNSCS(characterId, "trick_item_" + (i + 1) + "_enable", "off");
     }
+}
+
+function isTrickValid(trick, characterId) {
+    let result = isTrickValidWith(trick, characterId, "trick_filter_skill_1")
+        && isTrickValidWith(trick, characterId, "trick_filter_skill_2")
+        && isTrickValidWith(trick, characterId, "trick_filter_skill_3")
+        && isTrickValidWith(trick, characterId, "trick_filter_skill_4")
+
+    return result;
+}
+
+function isTrickValidWith(trick, characterId, source) {
+    const attr = getAttrNSCS(characterId, "combo_box_input_value_attr_" + source, "").get("current");
+    const value = getAttrNSCS(characterId, "combo_box_input_value_" + source, "").get("current");
+    if (attr === "") {
+        return true
+    }
+
+    let reqOK = trick.req.filter(r => isTrickValidWithRequirement(r, characterId, attr, value))
+
+    return reqOK.length > 0;
+}
+
+function isTrickValidWithRequirement(requirement, characterId, attr, value) {
+    switch (requirement.type) {
+        case "min":
+            return isTrickValidWithRequirementMin(requirement, characterId, attr, value);
+        case "or":
+            return isTrickValidWithRequirementOr(requirement, characterId, attr, value);
+        case "eq":
+            return false;
+        case "anyGeneralKnowledge":
+            return false;
+        case "minOther":
+            return false;
+        default:
+            log("Unknown req: " + requirement.type);
+            return false;
+
+    }
+}
+
+function isTrickValidWithRequirementOr(requirement, characterId, attr, value) {
+    let result = false;
+    requirement.data.elements.forEach(req => result = result || isTrickValidWithRequirementMin(req, characterId, attr, value));
+    return result;
+}
+
+function isTrickValidWithRequirementMin(requirement, characterId, attr, value) {
+    if (requirement.data.attr !== attr) {
+        return false;
+    }
+
+    if (value.trim() === "") {
+        return true;
+    }
+    return requirement.data.val <= (+value);
 }
 
 function selectSymbolForHaveTrickList(characterId, obj) {

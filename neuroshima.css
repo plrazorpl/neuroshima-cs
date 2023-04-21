@@ -35,6 +35,8 @@
     --nscs-ranger-inactive-color: #296a1a;
     --nscs-warrior-active-color: #ed3565;
     --nscs-warrior-inactive-color: #7f1a34;
+    --nscs-other-inactive-color: #636363;
+    --nscs-other-active-color: #ffffff;
 }
 
 div[class^="sheet-root"] > div[class^="sheet-main-content"] {
@@ -1541,8 +1543,13 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-skill-table t
 .sheet-skill-frame-warrior,
 .sheet-skill-frame-technic,
 .sheet-skill-frame-smarty,
-.sheet-skill-frame-ranger {
+.sheet-skill-frame-ranger,
+.sheet-skill-frame-other{
     margin: 2px;
+}
+
+.sheet-skill-frame-other {
+    border: 2px solid var(--nscs-other-active-color);
 }
 
 .sheet-skill-frame-warrior {
@@ -2093,7 +2100,7 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-button
 }
 
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-button span {
-    white-space: pre-wrap;
+    white-space: initial;
 }
 
 .sheet-tricks-button:before {
@@ -2225,4 +2232,157 @@ div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-haved-
 div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-tricks-haved-box td {
     border: var(--nscs-button-border);
     height: 40px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] table tr .sheet-skill-general_knowledge-input,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] table tr .sheet-skill-other_skill-input {
+    width: 95%;
+}
+
+.sheet-table-div-fieldset {
+    display: table;
+}
+
+.sheet-table-div-fieldset .sheet-table-div-fieldset-tr {
+    display: table-row;
+}
+
+.sheet-table-div-fieldset .sheet-table-div-fieldset-tr .sheet-table-div-fieldset-td {
+    display: table-cell;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container {
+    display: block;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container input {
+    background: none;
+    border: none;
+    width: 100%;
+    color: var(--nscs-text-color);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container button {
+    width: 100%;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container input:active,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container input:focus,
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container input:hover {
+    background: black;
+    outline: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-selector {
+    width: calc(100% - 10px);
+    margin: 0 5px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-selector tr > td:nth-child(2) {
+    width: 30px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-selector tr > td {
+    border: var(--nscs-button-border);
+}
+
+.sheet-combo-box-container .sheet-combo-box-colapsed {
+    display: block;
+}
+
+.sheet-combo-box-container .sheet-combo-box-expanded {
+    display: none;
+}
+
+.sheet-combo-box-container .sheet-combo-box-selector-enable:checked ~ * .sheet-combo-box-expanded {
+    display: block;
+}
+
+.sheet-combo-box-container .sheet-combo-box-selector-enable:checked ~ * .sheet-combo-box-colapsed {
+    display: none;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-value-input-div input {
+    border: var(--nscs-button-border);
+    margin: 0 5px 0 0;
+    width: 30px
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-expand-panel-container {
+    position: relative;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-expand-panel-container .sheet-combo-box-expand-panel {
+    position: absolute;
+    width: 90%;
+    border: var(--nscs-button-border);
+    background: black;
+    left: 5px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-expand-panel-container .sheet-combo-box-expand-panel table {
+    width: 100%;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-expand-panel-container .sheet-combo-box-expand-panel table tr>td:nth-child(1) {
+    height: 30px;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-expand-panel-container .sheet-combo-box-expand-panel table tr>td:nth-child(2) {
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border: var(--nscs-button-border);
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-expand-panel-container .sheet-combo-box-expand-panel table tr>td:nth-child(2) button span {
+    width: 17px;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+}
+
+div[class^="sheet-root"] > div[class^="sheet-main-content"] .sheet-combo-box-container .sheet-combo-box-expand-panel-container .sheet-combo-box-expand-panel table tr>td:nth-child(2) button {
+
+}
+
+.sheet-combo-box-expand-panel {
+    display: none;
+}
+
+.sheet-combo-box-container .sheet-combo-box-selector-enable:checked ~ * .sheet-combo-box-expand-panel {
+    display: block;
+}
+
+.sheet-combo-box-container .sheet-combo-box-scroll-up-enable:checked ~ * .sheet-combo-box-expand-panel-scroll-up,
+.sheet-combo-box-container .sheet-combo-box-scroll-down-enable:checked ~ * .sheet-combo-box-expand-panel-scroll-down {
+    display: table-cell;
+}
+
+.sheet-combo-box-expand-panel-scroll-up,
+.sheet-combo-box-expand-panel-scroll-down {
+    display: none;
+}
+
+.sheet-combo-box-container .sheet-combo-box-unknown-param-enable:checked ~ * .sheet-combo-box-selector tr>td:nth-child(1)>input {
+    color: red;
+}
+
+.sheet-combo-box-expand-panel-row-1,
+.sheet-combo-box-expand-panel-row-2,
+.sheet-combo-box-expand-panel-row-3,
+.sheet-combo-box-expand-panel-row-4 {
+    display: none;
+}
+
+.sheet-combo-box-container .sheet-combo-box-expand-panel-row-1-visible:checked ~ * .sheet-combo-box-expand-panel-row-1,
+.sheet-combo-box-container .sheet-combo-box-expand-panel-row-2-visible:checked ~ * .sheet-combo-box-expand-panel-row-2,
+.sheet-combo-box-container .sheet-combo-box-expand-panel-row-3-visible:checked ~ * .sheet-combo-box-expand-panel-row-3,
+.sheet-combo-box-container .sheet-combo-box-expand-panel-row-4-visible:checked ~ * .sheet-combo-box-expand-panel-row-4 {
+    display: table-row;
 }
